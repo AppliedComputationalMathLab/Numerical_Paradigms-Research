@@ -108,7 +108,7 @@ representado em ponto flutuante em computadores é então calculado como
     \beta^p,
     \label{eq:spf}
 \end{equation}
-onde $s$ é o \textit{bit} de sinal, $d_i$ são os dígitos significativos, $p$ é o expoente, $\beta$ é a base e $t$ é o número de dígitos significativos. O expoente é armazenado com um viés (\textit{bias}), ou seja, o valor real do expoente é calculado como $P = p + \textit{bias} $, onde $P$ é o valor armazenado e \textit{bias} é um valor constante que depende do formato de precisão utilizado. O sistema para 64 \textit{bits}, utilizado na maioria dos computadores atuais, é definido por $\beta = 2$, $t = 53$, $L = -1022$, $U = 1023$ e $\textit{bias} = 1023$.
+onde $s$ é o \textit{bit} de sinal, $d_i$ são os dígitos significativos, $p$ é o expoente, $\beta$ é a base e $t$ é o número de dígitos significativos. O expoente é armazenado com um viés (\textit{bias}), ou seja, o valor real do expoente é calculado como $P = p + \textit{bias} $, onde $P$ é o valor armazenado e \textit{bias} é um valor constante que depende do formato de precisão utilizado. O sistema para 64 \textit{bits}, utilizado na maioria dos computadores atuais, é definido por $\beta = 2$, $t = 53$, $L = -1022$, $U = 1023$ e $\textit{bias} = 1023$ em que $L$ e $U$ são os limites inferior e superior do expoente, respectivamente.
 
 O padrão definido pela IEEE-754~\cite{IEEE754} formaliza essa arquitetura,
 alocando \textit{bits} para sinal, expoente e mantissa em precisões simples (32
