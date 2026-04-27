@@ -1,4 +1,5 @@
 {
+  "latex-workshop.latex.outDir": "%DIR%/build",
   "latex-workshop.latex.tools": [
     {
       "name": "pdflatex",
@@ -7,14 +8,15 @@
         "-synctex=1",
         "-interaction=nonstopmode",
         "-file-line-error",
+        "-output-directory=%OUTDIR%",
         "%DOC%"
       ]
     },
     {
-      "name": "biber",
-      "command": "biber",
+      "name": "bibtex",
+      "command": "bibtex",
       "args": [
-        "%DOCFILE%"
+        "%OUTDIR%/%DOCFILE%"
       ]
     },
     {
@@ -25,6 +27,7 @@
         "-interaction=nonstopmode",
         "-file-line-error",
         "-pdf",
+        "-outdir=%OUTDIR%",
         "-bibtex-",
         "%DOC%"
       ]
@@ -32,10 +35,10 @@
   ],
   "latex-workshop.latex.recipes": [
     {
-      "name": "pdflatex -> biber -> pdflatex x2",
+      "name": "pdflatex -> bibtex -> pdflatex x2",
       "tools": [
         "pdflatex",
-        "biber",
+        "bibtex",
         "pdflatex",
         "pdflatex"
       ]

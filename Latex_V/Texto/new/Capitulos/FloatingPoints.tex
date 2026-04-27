@@ -1,69 +1,95 @@
 \chapter{Pontos Flutuantes}
 \label{chap:floatingpoints}
 
-\section{Sistemas Numéricos}
-Na matemática, um sistema numérico é um conjunto de regras e símbolos utilizados para representar quantidades através do que chamamos de números. Existem dois tipos de sistemas: os posicionais e os aditivos.
+\section{Sistemas de Numeração}
+Na matemática, um sistema de numeração consiste em é um conjunto de símbolos e
+um esquema ou regra para combiná-los, utilizados para representar quantidades
+através do que chamamos de números. Existem dois tipos principais de sistemas:
+os posicionais e os aditivos.
 
-O sistema aditivo é aquele em que os números são representados pelas somas dos valores dos símbolos, geralmente agrupados lado a lado em ordem decrescente, como, por exemplo, os sistemas romano e egípcio. Já o sistema posicional leva em conta não só os dígitos mas também a posição que eles ocupam no número. A quantidade de símbolos diferentes que são utilizados para representar os dígitos está ligada à \textbf{base} desse sistema, e cada posição do dígito no número refere-se a uma potência dessa base. Por exemplo, no sistema decimal (base 10), usamos os dígitos de 0 a 9. No sistema binário (base 2), usamos os dígitos 0 e 1. E já no sistema hexadecimal (base 16), usamos de 0 a 9 e as letras A a F (que representam 10 a 15).
-A quantidade de símbolos diferentes que são utilizados para representar os dígitos está ligada à \textbf{base} desse sistema, e cada posição do dígito no número refere-se a uma potência dessa base. Por exemplo, no sistema decimal (base 10), usamos os dígitos de 0 a 9. No sistema binário (base 2), usamos os dígitos 0 e 1. E já no sistema hexadecimal (base 16), usamos de 0 a 9 e as letras A a F (que representam 10 a 15).
+O sistema aditivo é aquele em que os números são representados pelas somas dos
+valores dos símbolos, geralmente agrupados lado a lado em ordem decrescente,
+como, por exemplo, os sistemas romano e egípcio. Já o sistema posicional leva
+em conta não só os dígitos mas também a posição que eles ocupam no número. A
+quantidade de símbolos diferentes que são utilizados para representar os
+dígitos está ligada à \textbf{base} desse sistema, e cada posição do dígito no
+número refere-se a uma potência dessa base. Por exemplo, no sistema decimal
+(base 10), usamos os dígitos de 0 a 9. No sistema binário (base 2), usamos os
+dígitos 0 e 1. E já no sistema hexadecimal (base 16), usamos de 0 a 9 e as
+letras A a F (que representam 10 a 15). A quantidade de símbolos diferentes que
+são utilizados para representar os dígitos está ligada à \textbf{base} desse
+sistema, e cada posição do dígito no número refere-se a uma potência dessa
+base. Por exemplo, no sistema decimal (base 10), usamos os dígitos de 0 a 9. No
+sistema binário (base 2), usamos os dígitos 0 e 1. E já no sistema hexadecimal
+(base 16), usamos de 0 a 9 e as letras A a F (que representam 10 a 15).
 
-Com essas diferentes formas de representar um número, a escolha do sistema depende do contexto e da aplicação. No uso cotidiano, a base decimal é a mais utilizada. Já as bases binária e hexadecimal, são amplamente utilizadas na ciência da computação em operações aritméticas dos processadores e em algumas linguagens de programação para endereçamento de memória.
+Com essas diferentes formas de representar um número, a escolha do sistema
+depende do contexto e da aplicação. No uso cotidiano, a base decimal é a mais
+utilizada. Já as bases binária e hexadecimal, são amplamente utilizadas na
+ciência da computação em operações aritméticas dos processadores e em algumas
+linguagens de programação para endereçamento de memória.
 
 Um número $N$ pode ser representado em uma base \(b\) no seguinte formato
 \begin{equation}
-N = \pm \sum_{i=-k}^{n} d_i b^i,
+  N = \pm \sum_{i=-k}^{n} d_i b^i,
 \end{equation}
 em que \(d_i\) são os dígitos na base \(b\), \(k\) é o número de casas decimais à direita do ponto, e \(n+1+k\) é o número de dígitos significativos. Vejamos alguns exemplos.
 
 \begin{ex}
-Vamos escrever o número 13 nas bases 10 e 2.
-\begin{itemize}
+  Vamos escrever o número 13 nas bases 10 e 2.
+  \begin{itemize}
     \item Número na base decimal: $ 13 = 1 \times 10^1 + 3 \times 10^0 = 13_{10}$
-    \item Número na base binária: $ 13 = 1 \times 2^3 + 1 \times 2^2 + 0  \times 2^1 + 1 \times 2^0  = 1101_2$
-\end{itemize}
+    \item Número na base binária: $ 13 = 1 \times 2^3 + 1 \times 2^2 + 0 \times 2^1 + 1
+            \times 2^0 = 1101_2$
+  \end{itemize}
 \end{ex}
 
 \begin{ex}
-Agora vamos escrever o número 3,5625 nas bases 10 e 2.
+  Agora vamos escrever o número 3,5625 nas bases 10 e 2.
 
-\begin{itemize}
-    \item Número na base decimal: 
-    \[
-    3{,}5625 = 3 \times 10^0 + 5 \times 10^{-1} + 6 \times 10^{-2} + 2 \times 10^{-3} + 5 \times 10^{-4} = 3{,}5625_{10}
-    \]
-    
+  \begin{itemize}
+    \item Número na base decimal:
+          \[
+            3{,}5625 = 3 \times 10^0 + 5 \times 10^{-1} + 6 \times 10^{-2} + 2 \times 10^{-3} + 5 \times 10^{-4} = 3{,}5625_{10}
+          \]
+
     \item Número na base binária:
-    \[
-    3{,}5625 = 1\times 2^{1} + 1 \times 2^0 + 1 \times 2^{-1} + 0 \times 2^{-2} + 0 \times 2^{-3} + 1 \times 2^{-4} = 11{,}1001_2
-    \]
-\end{itemize}
+          \[
+            3{,}5625 = 1\times 2^{1} + 1 \times 2^0 + 1 \times 2^{-1} + 0 \times 2^{-2} + 0 \times 2^{-3} + 1 \times 2^{-4} = 11{,}1001_2
+          \]
+  \end{itemize}
 \end{ex}
 
 \section{Aritmética de Ponto Flutuante}
 
-A \textit{aritmética de ponto flutuante} é o sistema adotado por computadores para que lidem com números reais utilizando uma notação compacta e eficaz. Essa técnica é utilizada para representar e manipular números reais de forma prática e eficiente. Ela permite representar números de grandezas diversas, que não podem ser armazenados com precisão, utilizando apenas números inteiros.
-
+A \textit{aritmética de ponto flutuante} é o sistema adotado por computadores
+para que lidem com números reais utilizando uma notação compacta e eficaz. Essa
+técnica é utilizada para representar e manipular números reais de forma prática
+e eficiente. Ela permite representar números de grandezas diversas, que não
+podem ser armazenados com precisão, utilizando apenas números inteiros.
 
 Um sistema de ponto flutuante $F$ pode ser definido como
 \[
-F(\beta, t, L, U)\]
+  \mathcal{F}(\beta, t, L, U)\]
 cuja representação normalizada de um número real N nesse sistema é dada por
 \begin{equation}
-N = \pm (d_{1}.d_{2} . . . d_{t})_\beta \times \beta^e 
+  \label{eq:normalizedfp}
+  N = \pm (d_{1}.d_{2} . . . d_{t})_{\beta} \times \beta^e
 \end{equation}
 em que
 \begin{itemize}
   \item \( N \) é o número real;
   \item \(\beta\) é a base que a máquina opera;
-  \item \( t \) é o número de dígitos na mantissa, tal que \( 0 \leq d_{j} \leq \beta-1 \), j = 1, ...,t, \(d_{1} \neq 0\);
+  \item \( t \) é o número de dígitos na mantissa, tal que \( 0 \leq d_{j} \leq \beta-1 \), j = 1, \ldots, t, \(d_{1} \neq 0\);
   \item \( L \) é o menor expoente inteiro;
   \item \( U \) é o maior expoente inteiro;
   \item \( e \) é o expoente inteiro no intervalo [\( L \),\( U \)].
 \end{itemize}
 
-%\subsection*{Representação segundo o padrão IEEE 754}
+\subsection{Representação segundo o padrão IEEE 754}
 
-No padrão IEEE 754 (usado na maioria dos sistemas eletrônicos), um número de ponto flutuante é dividido em três partes:
+No padrão IEEE 754 (usado na maioria dos sistemas eletrônicos), um número de
+ponto flutuante é dividido em três partes:
 
 \begin{itemize}
   \item \textbf{Sinal (S)}: 1 bit indicando se o número é positivo (\( S = 0 \)) ou negativo (\( S = 1 \)),
@@ -74,7 +100,7 @@ No padrão IEEE 754 (usado na maioria dos sistemas eletrônicos), um número de 
 A fórmula completa de reconstrução do número é:
 
 \[
-\text{Valor} = (-1)^S \times (1.M) \times 2^{E - \text{bias}}
+  \text{Valor} = (-1)^S \times (1.M) \times 2^{E - \text{bias}}
 \]
 
 onde:
@@ -85,46 +111,48 @@ onde:
   \item \( \text{bias} \) é um valor constante que depende da precisão (por exemplo, 127 para 32 bits).
 \end{itemize}
 
-\subsection{Precisão Simples e Precisão Dupla}
+\subsubsection{Precisão Simples e Precisão Dupla}
 
-Em sistemas computacionais, os números em ponto flutuante podem ser representados em diferentes níveis de precisão. Os dois mais comuns são:
+Em sistemas computacionais, os números em ponto flutuante podem ser
+representados em diferentes níveis de precisão. Os dois mais comuns são:
 
 \begin{itemize}
   \item \textbf{Precisão Simples (32 bits)}
   \item \textbf{Precisão Dupla (64 bits)}
 \end{itemize}
 
-Esses formatos seguem o padrão \texttt{IEEE 754} de representação binária de números reais.
+Esses formatos seguem o padrão \texttt{IEEE 754} de representação binária de
+números reais.
 
-\subsubsection*{Comparação entre os formatos}
+\subsubsection{Comparação entre os formatos}
 
 \begin{center}
-\begin{tabular}{|l|c|c|}
-\hline
-\textbf{Característica} & \textbf{Precisão Simples (32 bits)} & \textbf{Precisão Dupla (64 bits)} \\
-\hline
-Bits totais & 32 & 64 \\
-\hline
-Bit de sinal & 1 & 1 \\
-\hline
-Bits de expoente & 8 & 11 \\
-\hline
-Bits de mantissa & 23 & 52 \\
-\hline
-Bias & 127 & 1023 \\
-\hline
-Intervalo do expoente real & \(-126\) a \(+127\) & \(-1022\) a \(+1023\) \\
-\hline
-Precisão (dígitos decimais) & Aproximadamente 7 & Aproximadamente 16 \\
-\hline
-\end{tabular}
+  \begin{tabular}{|l|c|c|}
+    \hline
+    \textbf{Característica}     & \textbf{Precisão Simples (32 bits)} & \textbf{Precisão Dupla (64 bits)} \\
+    \hline
+    Bits totais                 & 32                                  & 64                                \\
+    \hline
+    Bit de sinal                & 1                                   & 1                                 \\
+    \hline
+    Bits de expoente            & 8                                   & 11                                \\
+    \hline
+    Bits de mantissa            & 23                                  & 52                                \\
+    \hline
+    Bias                        & 127                                 & 1023                              \\
+    \hline
+    Intervalo do expoente real  & \(-126\) a \(+127\)                 & \(-1022\) a \(+1023\)             \\
+    \hline
+    Precisão (dígitos decimais) & Aproximadamente 7                   & Aproximadamente 16                \\
+    \hline
+  \end{tabular}
 \end{center}
 
 \subsubsection*{Exemplo: Representação em \textbf{Precisão Simples}}
 
 Considere o número decimal \( x = -12{,}25 \). Sua representação em binário é:
 \[
-x = -1100{,}01_2 = -1{,}10001 \times 2^3
+  x = -1100{,}01_2 = -1{,}10001 \times 2^3
 \]
 Formato:
 
@@ -136,22 +164,23 @@ Formato:
 
 Portanto, o número seria representado, em binário de 32 bits, como:
 \[
-\boxed{1\ 10000010\ 10001000000000000000000}
+  \boxed{1\ 10000010\ 10001000000000000000000}
 \]
 \[
-\begin{array}{|c|c|c|} \hline
-s_n & e        & m \\ \hline
-1   & 10000010 & 10001000000000000000000 \\ \hline
-\end{array}
+  \begin{array}{|c|c|c|} \hline
+    s_n & e        & m                       \\ \hline
+    1   & 10000010 & 10001000000000000000000 \\ \hline
+  \end{array}
 \]
 \subsubsection*{Exemplo: Representação em Precisão Dupla}
 
-Vamos representar o número decimal \( x = 12{,}375 \) em ponto flutuante com \textbf{precisão dupla (64 bits)}.
+Vamos representar o número decimal \( x = 12{,}375 \) em ponto flutuante com
+\textbf{precisão dupla (64 bits)}.
 
 \paragraph{1. Conversão para binário:}
 
 \[
-12{,}375_{10} = 1100{,}011_2 = 1{,}100011 \times 2^3
+  12{,}375_{10} = 1100{,}011_2 = 1{,}100011 \times 2^3
 \]
 
 \paragraph{2. Identificação dos componentes:}
@@ -168,9 +197,9 @@ Vamos representar o número decimal \( x = 12{,}375 \) em ponto flutuante com \t
 \paragraph{3. Representação final (64 bits):}
 
 \[
-\boxed{
-0\ 10000000010\ 1000110000000000000000000000000000000000000000000000
-}
+  \boxed{
+    0\ 10000000010\ 1000110000000000000000000000000000000000000000000000
+  }
 \]
 
 \noindent Essa é a representação de \( 12{,}375 \) em ponto flutuante com precisão dupla.
@@ -182,535 +211,614 @@ Vamos representar o número decimal \( x = 12{,}375 \) em ponto flutuante com \t
   \item \textbf{Bits da mantissa}: \( 100011 \) seguidos de zeros até completar 52 bits
 \end{itemize}
 
-
 \subsubsection*{Considerações}
 
 A escolha entre precisão simples e dupla depende da aplicação:
 
-
-
 \begin{itemize}
   \item \textbf{Precisão Simples}: adequada para aplicações com memória limitada e que não exigem alta precisão.
   \item \textbf{Precisão Dupla}: usada em aplicações científicas, cálculos de engenharia, simulações e algoritmos numéricos mais sensíveis.
-Apesar do ganho de precisão, o uso de precisão dupla demanda mais memória e tempo de processamento.
+        Apesar do ganho de precisão, o uso de precisão dupla demanda mais memória e tempo de processamento.
 \end{itemize}
 
-\subsection{Representação de Números em Sistemas de Ponto Flutuante}
+\subsection{Representação de Números Reais em Sistemas de Ponto Flutuante}
 
-Em máquinas que operam em sistemas de ponto flutuante, apenas um subconjunto finito de \(\mathbb{R} \) pode ser representado de maneira exata. Por isso, frequentemente, é necessário limitar a quantidade de dígitos significativos na representação de números a fim de  adequá-los ao sistema que a máquina opera. Dois dos principais processos empregados para este fim são o \textbf{truncamento} e o \textbf{arredondamento}.
+Em máquinas que operam em sistemas de ponto flutuante, apenas um subconjunto
+finito de \(\mathbb{R} \) pode ser representado de maneira exata. Por isso,
+frequentemente, é necessário limitar a quantidade de dígitos significativos na
+representação de números a fim de adequá-los ao sistema que a máquina opera.
+Dois dos principais processos empregados para este fim são o
+\textbf{truncamento} e o \textbf{arredondamento}.
 
-O truncamento consiste na supressão de todos os dígitos após uma determinada posição, sem qualquer ajuste adicional no último dígito mantido. Formalmente, dado um número real \( x \), sua aproximação truncada com \( n \) dígitos na base \( b \) é expressa por
+O truncamento consiste na supressão de todos os dígitos após uma determinada
+posição, sem qualquer ajuste adicional no último dígito mantido. Formalmente,
+dado um número real \( x \), sua aproximação truncada com \( n \) dígitos na
+base \( b \) é expressa por
 \[
-T(x) = \sum_{i = -k}^{n-1} d_i b^i
+  T(x) = \sum_{i = -k}^{n-1} d_i b^i
 \]
 onde os dígitos \( d_i \) com \( i < -k \) são descartados.
 
-O erro introduzido por este processo, dado por $E_T = x-T(x)$, é denominado \textit{erro de truncamento}. Ele é limitado superiormente por
+O erro introduzido por este processo, dado por $E_T = x-T(x)$, é denominado
+\textit{erro de truncamento}. Ele é limitado superiormente por
 \begin{equation}
-    |x - T(x)| < b^{-k}.
+  |x - T(x)| < b^{-k}.
 \end{equation}
 \begin{ex}
-Considere a aproximação com oito casas decimais de \(\pi = 3,14159265\).
-Para truncar $\pi$  com precisão de 4 casas decimais, descartamos todos os termos da sexta casa em diante. Assim, o valor truncado fica
-$T(\pi) = 3,1415$.
-O erro do truncamento é, nesse caso, $E_T = 3,14159265 - 3,1415 = 0,00009265$. Diante disso, podemos observar que $|E_T| < 10^{-4}$.
+  Considere a aproximação com oito casas decimais de \(\pi = 3,14159265\).
+  Para truncar $\pi$  com precisão de 4 casas decimais, descartamos todos os termos da sexta casa em diante. Assim, o valor truncado fica
+  $T(\pi) = 3,1415$.
+  O erro do truncamento é, nesse caso, $E_T = 3,14159265 - 3,1415 = 0,00009265$. Diante disso, podemos observar que $|E_T| < 10^{-4}$.
 \end{ex}
 
-O arredondamento, por outro lado, ajusta o último dígito mantido com base no valor do primeiro dígito descartado, buscando minimizar o erro absoluto da aproximação. No arredondamento simétrico (ou clássico), se o primeiro dígito descartado for maior ou igual a \( \frac{b^{-n}}{2} \), incrementa-se o último dígito mantido em uma unidade; caso contrário, seu valor permanece inalterado.
+O arredondamento, por outro lado, ajusta o último dígito mantido com base no
+valor do primeiro dígito descartado, buscando minimizar o erro absoluto da
+aproximação. No arredondamento simétrico (ou clássico), se o primeiro dígito
+descartado for maior ou igual a \( \frac{b^{-n}}{2} \), incrementa-se o último
+dígito mantido em uma unidade; caso contrário, seu valor permanece inalterado.
 
-Seja \( x \) um número real e \( R(x) \) sua aproximação arredondada com \( n \) dígitos na base \( b \). O erro de arredondamento satisfaz:
+Seja \( x \) um número real e \( R(x) \) sua aproximação arredondada com \( n
+\) dígitos na base \( b \). O erro de arredondamento satisfaz:
 
 \[
-|x - R(x)| \leq \frac{1}{2} b^{-n}
+  |x - R(x)| \leq \frac{1}{2} b^{-n}
 \]
 
 \begin{ex}
-Ainda considerando a mesma aproximação de \(\pi = 3,14159265\).
-Para arredondar $\pi$  com precisão de 4 casas decimais, vamos analisar o número da próxima casa em que queremos arredondar. Nesse caso, o número na quinta posição é 9, então vamos arredondar a quarta casa para cima 
-$$R(\pi) = 3,1416.$$
-O erro do arredondamento é, nesse caso, $$E_R = 3,14159265 - 3,1416  = -0,00000735.$$  
-Diante disso, podemos observar que $|E_R| \leq  \frac{ 1}{2}10^{-4}$ . %Consequentemente $|E_R| \leq  |E_T|$
+  Ainda considerando a mesma aproximação de \(\pi = 3,14159265\).
+  Para arredondar $\pi$  com precisão de 4 casas decimais, vamos analisar o número da próxima casa em que queremos arredondar. Nesse caso, o número na quinta posição é 9, então vamos arredondar a quarta casa para cima
+  $$R(\pi) = 3,1416.$$
+  O erro do arredondamento é, nesse caso, $$E_R = 3,14159265 - 3,1416  = -0,00000735.$$
+  Diante disso, podemos observar que $|E_R| \leq  \frac{ 1}{2}10^{-4}$ . %Consequentemente $|E_R| \leq  |E_T|$
 \end{ex}
 
-Em geral, o erro máximo introduzido pelo arredondamento é metade daquele introduzido pelo truncamento, razão pela qual o arredondamento tende a produzir aproximações mais precisas.
+Em geral, o erro máximo introduzido pelo arredondamento é metade daquele
+introduzido pelo truncamento, razão pela qual o arredondamento tende a produzir
+aproximações mais precisas.
 
+\subsubsection*{Menor e Maior valor num sistema de ponto flutuante}
 
-%\subsection*{Menor e Maior valor num sistema de ponto flutuante}
+Para compreendermos melhor as limitações na representação de números em um
+sistema de ponto flutuante, vamos explorar o exemplo a seguir. Seja uma máquina
+opere no sistema $\mathcal{F}(\beta=10, t=5, L=-5, U=5)$. Nesse sistema, os
+números serão representados da seguinte maneira
+\begin{equation*}
+  \pm (0.d_{1}d_{2} . . . d_{t}) \times 10^e,  0 \leq |d_{j}| \leq 9,  d_{1} \neq 0, e \in [-5,5].
+\end{equation*}
+O \textbf{menor valor}, em módulo, representado nesse sistema é
+$  m = 0.10000 \times 10^{-5} = 10^{-6},$ enquanto que o \textbf{maior valor} é $M = 0.99999 \times 10^{5} = 99999$.
 
+\subsubsection*{Números representáveis e limitações}
 
-Para compreendermos melhor as limitações na representação de números em um sistema de ponto flutuante, vamos explorar o exemplo a seguir. Suponha que uma máquina opere no sistema $F(10, 5, -5, 5)$. %{\color{red}
-%$F(\beta, t, L ,U)$ em que 
-%\[
-%\beta = 10; t = 5; L=-5;U=5.
-%\]
-%}
-Nesse sistema, os números serão representados da seguinte maneira
-\begin{equation}
-\pm (0.d_{1}d_{2} . . . d_{t}) \times 10^e,  0 \leq |d_{j}| \leq 9,  d_{1} \neq 0, e \in [-5,5].
-\end{equation}
-O menor valor, em módulo, representado nesse sistema é
-$$
-m = 0.10000 \times 10^{-5} = 10^{-6},
-$$
-enquanto que o maior é
-$$
-M = 0.99999 \times 10^{5} = 99999.
-$$
-\begin{comment}
-  O subconjunto $\mathcal{G} \subset \mathbb{R}$ definido como
+O subconjunto $\mathcal{G} \subset \mathbb{R}$ definido como
 \[
-\mathcal{G} = \left\{ \mathcal{F}(\beta,t,L,U)={\pm 0.m \times \beta^e \mid m \in \mathbb{Z}, \beta^{t-1} \le m < \beta^t, L \leq e \leq U}\cup{0} \right\}
+  \mathcal{G} = \left\{ \mathcal{F}(\beta,t,L,U)={\pm 0.m \times \beta^e \mid m \in \mathbb{Z}, \beta^{t-1} \le m < \beta^t, L \leq e \leq U}\cup{0} \right\}
 \]
-\end{comment}
-\[
-G = \left\{ x \in \mathbb{R} \mid x\ \text{corresponde a um número representado no sistema}\ \mathcal{F}(\beta,t,L,U) \right\}
-\]
-\LucasM{aqui vale a pena trocar por algo do tipo pontos 
-flutuantes e inclusive inserir uma 
-imagem mostrando que trata-se de um conjunto 
-discreto}
+é o conjunto dos números que são representáveis pelo sistema $\mathcal{F}$ em que \( m \) é a mantissa \( m = \pm 1d_2\ldots d_t \) e \( e \) é o expoente. No conjunto $\mathcal{G}$, apenas alguns números podem ser representados com
+precisão, analisemos as seguintes situações para um número real qualquer:
 
-é o conjunto dos números que são representáveis por esse sistema de ponto flutuante. Nesse conjunto \( m \) é a mantissa %\( m = \pm 1d_2...d_t \)%.
 Dado um número real $x$, as seguintes situações podem ocorrer:
 
-\subsubsection{Caso 1: \( x \in G \) (Número representável)}
-Seja $x = 12237,76$. 
+\subsubsection*{Caso 1: \( x \in G \) (Número representável)}
+Seja $x = 12237,76$. Na forma normalizada temos \(x = 1,223776 \times10^4\). Porém, esse número não pode ser representado precisamente no sistema $F$ e, portanto, precisamos aplicar uma das técnicas de aproximação. Utilizando o truncamento o resultado é \( \bar{x} = 1{,}22377 \times 10^4 \). Já com o arredondamento \( \bar{x} = 1{,}22378 \times 10^4 \).
 
-Na forma normalizada temos \(x = 1,223776 \times10^4\).
-Porém, esse número não pode ser representado precisamente no sistema $F$ e, portanto, precisamos aplicar uma das técnicas de aproximação. Utilizando o truncamento o resultado é \( \bar{x} = 1{,}22377 \times 10^4 \). Já com o arredondamento \( \bar{x} = 1{,}22378 \times 10^4 \).
-
-O número está dentro da faixa de expoente permitida e é representável com perda controlada de precisão.
+O número está dentro da faixa de expoente permitida e é representável com perda
+controlada de precisão.
 
 \subsubsection*{Caso 2: \( |x| < m \) (Underflow)}
-
-Seja \( x = 0{,}582 \times 10^{-6} \).
-
-O expoente é  \(-6\) , menor que o limite inferior $L = -5$. Portanto, o número não pode ser representado e ocorre \textbf{underflow}. Nesse caso, na maioria das vezes o valor é tratado como zero.
+Seja \( x = 0{,}582 \times 10^{-6} \). O expoente é \(-6\) , menor que o limite inferior $L = -5$. Portanto, o número não pode ser representado e ocorre \textbf{underflow}. Nesse caso, na maioria das vezes o valor é tratado como zero.
 
 \subsubsection*{Caso 3: \( |x| > M \) (Overflow)}
+Seja \( x = 0{,}927 \times 10^6 \). O expoente é +6, maior que $U = 5$. Portanto, ocorre \textbf{overflow} e o número não pode ser representado precisamente. Neste caso, o valor pode ser tratado como infinito ou como uma flag indicando o \textbf{overflow}.
 
-Seja \( x = 0{,}927 \times 10^6 \)
-
-O expoente é +6, maior que $U = 5$. 
-Portanto, ocorre \textbf{overflow} e o número não pode ser representado precisamente. Neste caso, o valor pode ser tratado como infinito ou como uma flag indicando o \textbf{overflow}.
-
-
-Vejamos a seguir uma comparação da técnicas de arredondamento e de truncamento.
-
-Considere uma máquina decimal com 3 dígitos na mantissa e expoentes variando de –4 a 4:
-
+Vejamos a seguir uma comparação das técnicas de arredondamento e de
+truncamento, considerando uma máquina decimal com 3 dígitos na mantissa e
+expoentes variando de –4 a 4:
 \begin{center}
-\small
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\textbf{Número Real} & \textbf{Arredondamento} & \textbf{\(E_R\)}  & \textbf{Truncamento} & \textbf{\(E_T\)}  \\
-\hline
-5{,}678 & \( 0{,}568 \times 10^1 \) & \( 0{,}2 \times 10^{-3} \) & \( 0{,}567 \times 10^1 \) & \( 0{,}8 \times 10^{-3} \) \\
-\hline
-–192{,}73 & \( -0{,}193 \times 10^3 \) & \( 0{,}27 \times 10^{1} \) & \( -0{,}192 \times 10^3 \) & \( 0{,}73 \times 10^{1} \) \\
-\hline
-3{,}14159 & \( 0{,}314 \times 10^1 \) & \( 0{,}159 \times 10^{-2} \) & \( 0{,}314 \times 10^1 \) & \( 0{,}159 \times 10^{-2} \) \\
-\hline
-0{,}0000063 & \multicolumn{4}{c|}{Underflow} \\
-\hline
-920000{,}0 & \multicolumn{4}{c|}{Overflow} \\
-\hline
-\end{tabular}
+  \small
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Número Real} & \textbf{Arredondamento}        & \textbf{\(E_R\)}             & \textbf{Truncamento}       & \textbf{\(E_T\)}             \\
+    \hline
+    5{,}678              & \( 0{,}568 \times 10^1 \)      & \( 0{,}2 \times 10^{-3} \)   & \( 0{,}567 \times 10^1 \)  & \( 0{,}8 \times 10^{-3} \)   \\
+    \hline
+    –192{,}73            & \( -0{,}193 \times 10^3 \)     & \( 0{,}27 \times 10^{1} \)   & \( -0{,}192 \times 10^3 \) & \( 0{,}73 \times 10^{1} \)   \\
+    \hline
+    3{,}14159            & \( 0{,}314 \times 10^1 \)      & \( 0{,}159 \times 10^{-2} \) & \( 0{,}314 \times 10^1 \)  & \( 0{,}159 \times 10^{-2} \) \\
+    \hline
+    0{,}0000063          & \multicolumn{4}{c|}{Underflow}                                                                                            \\
+    \hline
+    920000{,}0           & \multicolumn{4}{c|}{Overflow}                                                                                             \\
+    \hline
+  \end{tabular}
 \end{center}
 
+\subsubsection{Representação Especial do Zero}
 
-\subsection{Representação Especial do Zero}
-
-Na representação de ponto flutuante, um número real é geralmente expresso na forma normalizada:
-
-\[
-N = \pm (d_1{,}d_2 d_3 \ldots d_t)_\beta \times \beta^{e},
-\]
-com \( d_1 \neq 0 \), garantindo o aproveitamento máximo da precisão disponível e evitando representações redundantes. Contudo, o número zero não pode ser representado nesta forma, pois exigiria \( d_1 = 0 \), o que contraria a normalização. 
+Na representação de ponto flutuante, um número real é geralmente expresso na
+forma normalizada (ver Equação~\ref{eq:normalizedfp}), com \( d_1 \neq 0 \),
+garantindo o aproveitamento máximo da precisão disponível e evitando
+representações redundantes. Contudo, o número zero não pode ser representado
+nesta forma, pois exigiria \( d_1 = 0 \), o que contraria a normalização.
 
 Assim, o zero recebe uma \textit{representação especial} denotada por
-
-\[
-N = \pm (0{,}000\ldots 0_{t})_\beta \times \beta^{L - 1},
-\]
-em que \( L \) é o menor expoente permitido no sistema. Este tratamento especial assegura que o zero seja manipulado de forma única e consistente dentro do sistema de ponto flutuante, evitando, assim, a perda de informação ao realizar operações aritméticas que o envolvam. Essa perda de informação será discutida na seção \ref{subsec:erroselim}.
+\begin{equation}
+  N = \pm (0{,}000\ldots 0_{t})_\beta \times \beta^{L - 1},
+\end{equation}
+em que \( L \) é o menor expoente permitido no sistema. Este tratamento
+especial assegura que o zero seja manipulado de forma única e consistente
+dentro do sistema de ponto flutuante, evitando, assim, a perda de informação ao
+realizar operações aritméticas que o envolvam. Essa perda de informação será
+discutida na seção \ref{subsec:erroselim}.
 
 %\newpage
-
 
 \section{Erros e Limitações}\label{subsec:erroselim}
 \TODO{adicionar nessa seção uma subseção falando sobre epsilon de maquina, contextualizando para o experimento com as ULPS nos próximos capitulos}
 
-Erros em operações com pontos flutuantes podem se propagar e aumentar em cálculos mais complexos. Por exemplo, pequenos erros de arredondamento em etapas iniciais podem afetar significativamente o resultado final, especialmente em somas repetitivas ou subtrações de números muito próximos. Isso torna importante considerar a ordem das operações e o impacto da precisão em aplicações sensíveis.
+Erros em operações com pontos flutuantes podem se propagar e aumentar em
+cálculos mais complexos. Por exemplo, pequenos erros de arredondamento em
+etapas iniciais podem afetar significativamente o resultado final,
+especialmente em somas repetitivas ou subtrações de números muito próximos.
+Isso torna importante considerar a ordem das operações e o impacto da precisão
+em aplicações sensíveis.
 
 \subsection{Erro Absoluto e Relativo}
 
-Em cálculos numéricos, frequentemente lidamos com aproximações devido a arredondamentos e truncamentos. Para avaliar a precisão dessas aproximações, utilizamos as métricas de erro absoluto e erro relativo.
-  
-O erro absoluto mede a diferença entre o valor real \(\boldsymbol{x_r}\) e o valor aproximado \(\boldsymbol{x_a}\), ou seja, a quantidade exata de erro na aproximação. Ele é definido como:
+Em cálculos numéricos, frequentemente lidamos com aproximações devido a
+arredondamentos e truncamentos. Para avaliar a precisão dessas aproximações,
+utilizamos as métricas de erro absoluto e erro relativo.
+
+O erro absoluto mede a diferença entre o valor real \(\boldsymbol{x_r}\) e o
+valor aproximado \(\boldsymbol{x_a}\), ou seja, a quantidade exata de erro na
+aproximação. Ele é definido como:
 
 \begin{equation}
-\text{EA} = |x_a - x_r|.
+  \text{EA} = |x_a - x_r|.
 \end{equation}
 
-Quanto menor for o erro absoluto, mais próximo o valor aproximado está do valor real. No entanto, essa métrica não fornece informações diretas sobre o impacto do erro em relação à magnitude do número em questão.  
+Quanto menor for o erro absoluto, mais próximo o valor aproximado está do valor
+real. No entanto, essa métrica não fornece informações diretas sobre o impacto
+do erro em relação à magnitude do número em questão.
 
-O erro relativo indica o quão preciso é o valor aproximado em relação ao valor real. Ele pode ser tratado como um decimal ou na forma de porcentagem. Ele é definido como
+O erro relativo indica o quão preciso é o valor aproximado em relação ao valor
+real. Ele pode ser tratado como um decimal ou na forma de porcentagem. Ele é
+definido como
 \begin{equation}
-\text{ER} = \frac{|x_a - x_r|}{|x_r|}\ \ \textrm{ou}\ \ \frac{|x_a - x_r|}{|x_r|}\times 100\%.
+  \text{ER} = \frac{|x_a - x_r|}{|x_r|}\ \ \textrm{ou}\ \ \frac{|x_a - x_r|}{|x_r|}\times 100\%.
 \end{equation}
 Isso pode ser reescrito como
 \begin{equation}
-\text{ER} = \frac{{EA}}{|x_r|}\ \ \textrm{ou}\ \ \frac{{EA}}{|x_r|}\times 100\%.
+  \text{ER} = \frac{{EA}}{|x_r|}\ \ \textrm{ou}\ \ \frac{{EA}}{|x_r|}\times 100\%.
 \end{equation}
-Essa métrica é útil quando lidamos com valores de grandezas muito diferentes. Por exemplo, um erro absoluto de \( 0.1 \) pode ser insignificante se estivermos tratando de números na ordem de milhares, mas pode ser relevante se estivermos lidando com valores decimais. 
+Essa métrica é útil quando lidamos com valores de grandezas muito diferentes. Por exemplo, um erro absoluto de \( 0.1 \) pode ser insignificante se estivermos tratando de números na ordem de milhares, mas pode ser relevante se estivermos lidando com valores decimais.
 
-Vamos analisar dois casos com mesmo erro absoluto mas diferentes erros relativos. Considere um valor real \( x_{r1} = 10.5 \) com uma aproximação de \( x_{a1} = 10.3 \). O seu erro absoluto é \(|10.3 - 10.5| = 0.2\) e seu erro relativo \(\frac{0.2}{10.5} \approx 0.019\) (ou 1.9\%). Agora considere um segundo valor real de \(x_{r2} =  0.4 \) com uma aproximação de \(x_{a2} = 0.2 \), seu erro absoluto é \(|0.4 - 0.2| = 0.2\), o seu erro relativo será \(\frac{0.2}{0.4} = 0.5\) ou seja, 50\%.
+Vamos analisar dois casos com mesmo erro absoluto mas diferentes erros
+relativos. Considere um valor real \( x_{r1} = 10.5 \) com uma aproximação de
+\( x_{a1} = 10.3 \). O seu erro absoluto é \(|10.3 - 10.5| = 0.2\) e seu erro
+relativo \(\frac{0.2}{10.5} \approx 0.019\) (ou 1.9\%). Agora considere um
+segundo valor real de \(x_{r2} = 0.4 \) com uma aproximação de \(x_{a2} = 0.2
+\), seu erro absoluto é \(|0.4 - 0.2| = 0.2\), o seu erro relativo será
+\(\frac{0.2}{0.4} = 0.5\) ou seja, 50\%.
 
 \begin{center}
-\small
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Número Real} & \textbf{Aproximação} & \textbf{Erro Absoluto} & \textbf{Erro Relativo}  \\
-\hline
-\(  10{.}5 \) & \(  10{.}3 \) & \(  0{.}2 \) & \(  0{.}019 \) ou \( 1{.}9\% \) \\
-\hline
-\(  0{.}4 \) & \(  0{.}2 \) & \(  0{.}2 \) & \(  0{.}5 \) ou \( 50{.}0\% \) \\
-\hline
-\end{tabular}
+  \small
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{Número Real} & \textbf{Aproximação} & \textbf{Erro Absoluto} & \textbf{Erro Relativo}          \\
+    \hline
+    \(  10{.}5 \)        & \(  10{.}3 \)        & \(  0{.}2 \)           & \(  0{.}019 \) ou \( 1{.}9\% \) \\
+    \hline
+    \(  0{.}4 \)         & \(  0{.}2 \)         & \(  0{.}2 \)           & \(  0{.}5 \) ou \( 50{.}0\% \)  \\
+    \hline
+  \end{tabular}
 \end{center}
 Apesar dos dois casos terem o mesmo erro absoluto \( (EA=  0{.}2) \), o erro relativo relacionado à aproximação no primeiro caso representa menos de 2\% do valor real, indicando que a aproximação é razoavelmente precisa. Em contrapartida, no segundo caso, o erro relativo é de 50\%, um valor relativamente alto comparado ao primeiro, o que indica uma aproximação deficiente. Dessa forma, o erro relativo é uma ferramenta importante para interpretar melhor a qualidade de uma aproximação, independentemente da escala dos números envolvidos.
 
 \section{Perda de Significância em Operações com Pontos Flutuantes}
-A perda de significância (também conhecida como cancelamento catastrófico) ocorre de modo mais evidente quando há grande diferença de ordem de grandeza entre os números envolvidos na operação. Por exemplo, considere:
+A perda de significância (também conhecida como cancelamento catastrófico)
+ocorre de modo mais evidente quando há grande diferença de ordem de grandeza
+entre os números envolvidos na operação. Por exemplo, considere:
 
 \[
-x = 1{,}000 \times 10^{4} \quad \text{e} \quad y = 0{,}276 \times 10^{-2}.
+  x = 1{,}000 \times 10^{4} \quad \text{e} \quad y = 0{,}276 \times 10^{-2}.
 \]
 
-Para realizar a soma, ambos os operandos precisam ser expressos com o mesmo expoente:
+Para realizar a soma, ambos os operandos precisam ser expressos com o mesmo
+expoente:
 
 \[
-x = 1{,}000000000 \times 10^4, \quad y = 0{,}000000276 \times 10^4.
+  x = 1{,}000000000 \times 10^4, \quad y = 0{,}000000276 \times 10^4.
 \]
 
 A soma exata seria:
 
 \[
-x + y = (1{,}000000000 + 0{,}000000276) \times 10^4 = 1{,}000000276 \times 10^4.
+  x + y = (1{,}000000000 + 0{,}000000276) \times 10^4 = 1{,}000000276 \times 10^4.
 \]
 
-Contudo, devido à precisão limitada do sistema (7 dígitos significativos), a aritmética de ponto flutuante armazena apenas:
+Contudo, devido à precisão limitada do sistema (7 dígitos significativos), a
+aritmética de ponto flutuante armazena apenas:
 
 \[
-x + y \approx 1{,}0000002 \times 10^4.
+  x + y \approx 1{,}0000002 \times 10^4.
 \]
 
-Uma parte do termo \( y \) é completamente desprezada, e a soma não resulta numericamente igual a \( x + y\), evidenciando a perda catastrófica de significância.
+Uma parte do termo \( y \) é completamente desprezada, e a soma não resulta
+numericamente igual a \( x + y\), evidenciando a perda catastrófica de
+significância.
 
-Outro caso peculiar é a soma de um número muito grande com uma sequência de números pequenos. Dependendo da ordem em que as somas são realizadas, o número grande pode "mascarar" os pequenos, resultando em diferentes valores finais.
+Outro caso peculiar é a soma de um número muito grande com uma sequência de
+números pequenos. Dependendo da ordem em que as somas são realizadas, o número
+grande pode "mascarar" os pequenos, resultando em diferentes valores finais.
 
 Por exemplo:
 \[
-S = 10^{8} + 10^{-1} + 10^{-2} + 10^{-3} + \ldots + 10^{-10}.
+  S = 10^{8} + 10^{-1} + 10^{-2} + 10^{-3} + \ldots + 10^{-10}.
 \]
-Se somarmos primeiro o número grande (\(10^8\)) e depois os números pequenos, muitos destes podem ser ignorados devido à falta de precisão da mantissa. Por outro lado, ao somar os números pequenos antes, o valor final será mais próximo do esperado.
+Se somarmos primeiro o número grande (\(10^8\)) e depois os números pequenos,
+muitos destes podem ser ignorados devido à falta de precisão da mantissa. Por
+outro lado, ao somar os números pequenos antes, o valor final será mais próximo
+do esperado.
 
 Para ilustrar, suponha a seguinte ordem de cálculo:
 \begin{itemize}
-    \item Caso 1: \(S = 10^{8} + (10^{-1} + 10^{-2} + \ldots + 10^{-10})\).
-    \item Caso 2: \(S = (10^{-1} + 10^{-2} + \ldots + 10^{-10}) + 10^{8}\).
+  \item Caso 1: \(S = 10^{8} + (10^{-1} + 10^{-2} + \ldots + 10^{-10})\).
+  \item Caso 2: \(S = (10^{-1} + 10^{-2} + \ldots + 10^{-10}) + 10^{8}\).
 \end{itemize}
 No primeiro caso, muitos números pequenos são ignorados devido ao arredondamento. No segundo, o somatório dos números pequenos é calculado antes de adicionar o número grande, preservando mais informações significativas.
 
 \subsubsection*{Prevenção da perda de significância em operações com Zero}
 \label{subsec:repZero}
 
-O zero possui uma representação especial na aritmética de ponto flutuante devido à sua importância nas operações numéricas e à necessidade de evitar ambiguidades. Essa representação permite o tratamento adequado de operações que envolvem valores nulos, prevenindo erros numéricos e a perda de significância em cálculos sensíveis.
-Considere um sistema de ponto flutuante \( F(10, 7, -5, 5) \). Sejam  
+O zero possui uma representação especial na aritmética de ponto flutuante
+devido à sua importância nas operações numéricas e à necessidade de evitar
+ambiguidades. Essa representação permite o tratamento adequado de operações que
+envolvem valores nulos, prevenindo erros numéricos e a perda de significância
+em cálculos sensíveis. Considere um sistema de ponto flutuante \( F(10, 7, -5,
+5) \). Sejam
 \[
-x = 0{,}000 \times 10^{-6} \quad (\text{o número zero}), \quad y = 0{,}276 \times 10^{-2}.
+  x = 0{,}000 \times 10^{-6} \quad (\text{o número zero}), \quad y = 0{,}276 \times 10^{-2}.
 \]
 Na operação de soma:
 \[
-x + y = 0{,}276 \times 10^{-2},
+  x + y = 0{,}276 \times 10^{-2},
 \]
-como \( x \) é exatamente zero, o resultado mantém integralmente os dígitos significativos de \( y \).
-\EnzoR{@LucasM por favor, verifique se o exemplo ficou bom }
-Se o zero não tivesse uma representação especial e fosse tratado como um número subnormal com expoente mínimo, o alinhamento das mantissas poderia comprometer a precisão de \( y \), deslocando seus dígitos significativos e resultando em perda de informação.
-Nesse sentido, suponha que \( x \) não tivesse uma representação especial e fosse tratado como um número subnormal com o expoente mínimo \( -5 \), com mantissa ajustada para
+como \( x \) é exatamente zero, o resultado mantém integralmente os dígitos
+significativos de \( y \). \EnzoR{@LucasM por favor, verifique se o exemplo
+  ficou bom } Se o zero não tivesse uma representação especial e fosse tratado
+como um número subnormal com expoente mínimo, o alinhamento das mantissas
+poderia comprometer a precisão de \( y \), deslocando seus dígitos
+significativos e resultando em perda de informação. Nesse sentido, suponha que
+\( x \) não tivesse uma representação especial e fosse tratado como um número
+subnormal com o expoente mínimo \( -5 \), com mantissa ajustada para
 \[
-x' = 0{,}000000 \times 10^{-5}.
+  x' = 0{,}000000 \times 10^{-5}.
 \]
-Para somar \( x' \) e \( y \), é necessário alinhar os expoentes, o que implica deslocar a mantissa de \( y \) para a direita:
+Para somar \( x' \) e \( y \), é necessário alinhar os expoentes, o que implica
+deslocar a mantissa de \( y \) para a direita:
 \[
-y = 0{,}276 \times 10^{-2} = 0{,}00000276 \times 10^{-5}.
+  y = 0{,}276 \times 10^{-2} = 0{,}00000276 \times 10^{-5}.
 \]
 Ao realizar a soma,
 \[
-x' + y = (0{,}000000 + 0{,}00000276) \times 10^{-5} = 0{,}00000276 \times 10^{-5}.
+  x' + y = (0{,}000000 + 0{,}00000276) \times 10^{-5} = 0{,}00000276 \times 10^{-5}.
 \]
-Devido à precisão limitada do sistema (7 dígitos significativos), essa operação pode fazer com que os dígitos significativos de \( y \) sejam deslocados para posições menos precisas, causando perda de informação relevante.
+Devido à precisão limitada do sistema (7 dígitos significativos), essa operação
+pode fazer com que os dígitos significativos de \( y \) sejam deslocados para
+posições menos precisas, causando perda de informação relevante.
 \[
-x' + y = 0{,}0000027 \times 10^{-5}.
+  x' + y = 0{,}0000027 \times 10^{-5}.
 \]
 
-Portanto, a representação especial do zero evita esse problema, preservando a precisão e assegurando a estabilidade numérica das operações.
+Portanto, a representação especial do zero evita esse problema, preservando a
+precisão e assegurando a estabilidade numérica das operações.
 
 \section{Análise de Instabilidades e Casos Peculiares}
 \EnzoR{@LuisD preciso que verifique se a seção está coerente e se os exemplos estão corretos.}
 
-Na aritmética de ponto flutuante, certos casos resultam em erros devido à limitação da precisão e à maneira como os números são representados. 
+Na aritmética de ponto flutuante, certos casos resultam em erros devido à
+limitação da precisão e à maneira como os números são representados.
 
-\subsection{Units in Last Place (ULP's)} 
-Diferentemente dos conjuntos matatemáticos comuns ($\mathbb{R}, \mathbb{Z}$, etc.), todo conjunto de números de um sistema de ponto flutuante (PF) é, por natureza, discreto, ou seja, possui uma quantidade finita de números representáveis. Para cada número real $x$ existe um $X$ que será a sua representação num dado sistema de PF. Definimos $ulp(x)$ pela lacuna entre dois números $X_{1}$ e $X_{2}$ mais próximos de $x$, mesmo que $x$ seja um deles.
-Tome o sistema $F(\beta = 2, t = 3, L = 3 , U = 5)$. O menor número que pode ser representado nesse sistema é $1{,}00_{2}$ x $2^{3}$ = $8_{10}$, o seu sucessor é $1{,}01_{2}$ = $1{,}25_{10}$ x $2^{3}$ = $10_{10}$.
-Em $x \in [8_{10} , 10_{10}]$ ulp ($x$) = 2.
+\subsection{Units in Last Place (ULP's)}
+Diferentemente dos conjuntos matatemáticos comuns ($\mathbb{R}, \mathbb{Z}$,
+etc.), todo conjunto de números de um sistema de ponto flutuante (PF) é, por
+natureza, discreto, ou seja, possui uma quantidade finita de números
+representáveis. Para cada número real $x$ existe um $X$ que será a sua
+representação num dado sistema de PF. Definimos $ulp(x)$ pela lacuna entre dois
+números $X_{1}$ e $X_{2}$ mais próximos de $x$, mesmo que $x$ seja um deles.
+Tome o sistema $F(\beta = 2, t = 3, L = 3 , U = 5)$. O menor número que pode
+ser representado nesse sistema é $1{,}00_{2}$ x $2^{3}$ = $8_{10}$, o seu
+sucessor é $1{,}01_{2}$ = $1{,}25_{10}$ x $2^{3}$ = $10_{10}$. Em $x \in
+  [8_{10} , 10_{10}]$ ulp ($x$) = 2.
 
-Para definir para qual PF $x$ o número real $x$ será aproximado, existem várias estratégias, como o truncamento e o arredondamento. A escolha da estratégia de aproximação pode afetar o valor de ulp($x$). Por exemplo, se $x = 9{,}6_{10}$, no sistema $F(\beta = 2, t = 3, L = 3 , U = 5)$, o valor de ulp($x$) é 2. Se usarmos truncamento, $X = 8_{10}$ e o erro absoluto é $|x - X| = 1{,}6_{10}$, ou seja, $0{,}8 \times ulp(x)$. Se usarmos arredondamento, $X = 10_{10}$ e o erro absoluto é $|x - X| = 0{,}4_{10}$, ou seja, $0{,}2 \times ulp(x)$.
-
+Para definir para qual PF $x$ o número real $x$ será aproximado, existem várias
+estratégias, como o truncamento e o arredondamento. A escolha da estratégia de
+aproximação pode afetar o valor de ulp($x$). Por exemplo, se $x = 9{,}6_{10}$,
+no sistema $F(\beta = 2, t = 3, L = 3 , U = 5)$, o valor de ulp($x$) é 2. Se
+usarmos truncamento, $X = 8_{10}$ e o erro absoluto é $|x - X| = 1{,}6_{10}$,
+ou seja, $0{,}8 \times ulp(x)$. Se usarmos arredondamento, $X = 10_{10}$ e o
+erro absoluto é $|x - X| = 0{,}4_{10}$, ou seja, $0{,}2 \times ulp(x)$.
 
 INICIO TEXTO PROVISORIO
 
-
-\textbf{What is an ULP?} ULP stands for \textit{Unit in the Last Place}. 
+\textbf{What is an ULP?} ULP stands for \textit{Unit in the Last Place}.
 The original (now obsolete) definition from 1960 was the following:
 
 \begin{equation}
-\mathrm{ulp}(x)
+  \mathrm{ulp}(x)
 \end{equation}
 
-is the gap between the two floating-point numbers nearest to $x$, 
-even if $x$ is one of them.
+is the gap between the two floating-point numbers nearest to $x$, even if $x$
+is one of them.
 
-The term ``ulp'' was coined to characterize the accuracy of implementations 
-of run-time mathematical library functions on the IBM 7090 and IBM 7094. 
-At the time (around 1960), these implementations were neither as accurate 
-nor as fast as they should have been. By 1964, most of their deficiencies 
-had been corrected through contributions to SHARE (the organized users of 
-IBM mainframes), especially through the work of Hirondo Kuki at the 
-University of Chicago.
+The term ``ulp'' was coined to characterize the accuracy of implementations of
+run-time mathematical library functions on the IBM 7090 and IBM 7094. At the
+time (around 1960), these implementations were neither as accurate nor as fast
+as they should have been. By 1964, most of their deficiencies had been
+corrected through contributions to SHARE (the organized users of IBM
+mainframes), especially through the work of Hirondo Kuki at the University of
+Chicago.
 
-From time to time, well-intentioned attempts to speed up mathematical 
-libraries introduced inaccuracies so severe that Fred Gustavson at 
-IBM Yorktown Heights coined the term ``GULP'' (\textit{Giga-Ulp}) to 
-describe them. 
+From time to time, well-intentioned attempts to speed up mathematical libraries
+introduced inaccuracies so severe that Fred Gustavson at IBM Yorktown Heights
+coined the term ``GULP'' (\textit{Giga-Ulp}) to describe them.
 
-Today, there is little justification for a mathematical library less 
-accurate than the freely distributed mathematical library \texttt{fdlibm}, 
-promulgated by Sun Microsystems and largely developed by graduates of the 
-University of California at Berkeley. These developers were also responsible 
-for the mathematical libraries distributed with the 4.3 BSD Berkeley UNIX 
-systems during the 1980s.
+Today, there is little justification for a mathematical library less accurate
+than the freely distributed mathematical library \texttt{fdlibm}, promulgated
+by Sun Microsystems and largely developed by graduates of the University of
+California at Berkeley. These developers were also responsible for the
+mathematical libraries distributed with the 4.3 BSD Berkeley UNIX systems
+during the 1980s.
 
-With the adoption of the IEEE Standard 754, infinities and NaNs became 
+With the adoption of the IEEE Standard 754, infinities and NaNs became
 ubiquitous, which required a refinement of the definition of an ulp:
 
 \begin{equation}
-\mathrm{ulp}(x)
+  \mathrm{ulp}(x)
 \end{equation}
 
-is the gap between the two \textit{finite} floating-point numbers nearest 
-to $x$, even if $x$ is one of them. In particular,
+is the gap between the two \textit{finite} floating-point numbers nearest to
+$x$, even if $x$ is one of them. In particular,
 
 \begin{equation}
-\mathrm{ulp}(\mathrm{NaN}) = \mathrm{NaN}.
+  \mathrm{ulp}(\mathrm{NaN}) = \mathrm{NaN}.
 \end{equation}
 
 Um sistema de ponto flutuante pode ser definido da seguinte forma:
 \begin{equation}
-\mathbb{F}(\beta, t, L, U) = \{0\} \cup \{\pm d_1.d_2d_3 \ldots d_t \times \beta^e : d_1 \neq 0, d_i \in \{0, 1, \ldots, \beta-1\}, e = L, L+1, \ldots, U\},
+  \mathbb{F}(\beta, t, L, U) = \{0\} \cup \{\pm d_1.d_2d_3 \ldots d_t \times \beta^e : d_1 \neq 0, d_i \in \{0, 1, \ldots, \beta-1\}, e = L, L+1, \ldots, U\},
 \end{equation}
-onde $\beta$ é a base, $t$ é o número de dígitos significativos, $L$ é o menor expoente e $U$ é o maior expoente. 
+onde $\beta$ é a base, $t$ é o número de dígitos significativos, $L$ é o menor expoente e $U$ é o maior expoente.
 
-O IEEE-754 é um padrão para a representação de números em ponto flutuante em sistemas computacionais, que define formatos de precisão simples (32 bits) e dupla (64 bits). Ele especifica como os números devem ser representados, incluindo a forma como os bits são alocados para o sinal, o expoente e a mantissa. O padrão também define regras para arredondamento, tratamento de casos especiais (como infinito e NaN) e operações aritméticas.
+O IEEE-754 é um padrão para a representação de números em ponto flutuante em
+sistemas computacionais, que define formatos de precisão simples (32 bits) e
+dupla (64 bits). Ele especifica como os números devem ser representados,
+incluindo a forma como os bits são alocados para o sinal, o expoente e a
+mantissa. O padrão também define regras para arredondamento, tratamento de
+casos especiais (como infinito e NaN) e operações aritméticas.
 
 O número representado em ponto flutuante é então calculado como:
 \begin{equation}
-x = (-1)^s \times (1 + \sum_{i=1}^{t-1} (d_i \times \beta^{-i})) \times \beta^e,
+  x = (-1)^s \times (1 + \sum_{i=1}^{t-1} (d_i \times \beta^{-i})) \times \beta^e,
 \end{equation}
 onde $s$ é o bit de sinal, $d_i$ são os dígitos significativos e $e$ é o expoente.
 
-O sistema para 64 bits é definido por $\beta = 2$, $t = 53$, $L = -1022$ e $U = 1023$. O sistema para 32 bits é definido por $\beta = 2$, $t = 24$, $L = -126$ e $U = 127$.
+O sistema para 64 bits é definido por $\beta = 2$, $t = 53$, $L = -1022$ e $U =
+  1023$. O sistema para 32 bits é definido por $\beta = 2$, $t = 24$, $L = -126$
+e $U = 127$.
 
-No sistema de precisão dupla (64 bits), o número é representado por um bit de sinal, 11 bits para o expoente e 52 bits para a mantissa. No sistema de precisão simples (32 bits), o número é representado por um bit de sinal, 8 bits para o expoente e 23 bits para a mantissa.
+No sistema de precisão dupla (64 bits), o número é representado por um bit de
+sinal, 11 bits para o expoente e 52 bits para a mantissa. No sistema de
+precisão simples (32 bits), o número é representado por um bit de sinal, 8 bits
+para o expoente e 23 bits para a mantissa.
 
 \begin{equation}
-x = (-1)^s \times (1.\textit{f}) \times 2^{e - \text{bias}},
+  x = (-1)^s \times (1.\textit{f}) \times 2^{e - \text{bias}},
 \end{equation}
 
-Os expoentes $e$ são armazenados em um formato de bias (ou excesso), onde o valor real do expoente é obtido subtraindo-se um valor de bias do valor armazenado. Para o sistema de 64 bits, o bias é 1023, e para o sistema de 32 bits, o bias é 127. Assim o valor real do expoente $e$ é calculado como:
+Os expoentes $e$ são armazenados em um formato de bias (ou excesso), onde o
+valor real do expoente é obtido subtraindo-se um valor de bias do valor
+armazenado. Para o sistema de 64 bits, o bias é 1023, e para o sistema de 32
+bits, o bias é 127. Assim o valor real do expoente $e$ é calculado como:
 \begin{equation}
-e = E - \text{bias},
-\label{eq:expoente}
+  e = E - \text{bias},
+  \label{eq:expoente}
 \end{equation}
 onde $E$ é o valor armazenado para o expoente.
 
-Por exemplo, considere o número $5.5^{23}$. Para representá-lo em ponto flutuante de precisão dupla, primeiro precisamos determinar o expoente binário do número. Isso pode ser feito observando entre quais potências de 2 o valor se encontra.
+Por exemplo, considere o número $5.5^{23}$. Para representá-lo em ponto
+flutuante de precisão dupla, primeiro precisamos determinar o expoente binário
+do número. Isso pode ser feito observando entre quais potências de 2 o valor se
+encontra.
 
 Calculando uma aproximação do número, temos:
 \begin{equation}
-5.5^{23} \approx 8.18545 \times 10^{16}.
+  5.5^{23} \approx 8.18545 \times 10^{16}.
 \end{equation}
 
 Agora comparamos com potências de 2 próximas:
 \begin{equation}
-2^{56} = 72057594037927936
+  2^{56} = 72057594037927936
 \end{equation}
 
 \begin{equation}
-2^{57} = 144115188075855872
+  2^{57} = 144115188075855872
 \end{equation}
 
 Como
 \begin{equation}
-2^{56} < 5.5^{23} < 2^{57},
+  2^{56} < 5.5^{23} < 2^{57},
 \end{equation}
 
 o número pode ser escrito na forma normalizada em base 2:
 \begin{equation}
-5.5^{23} = (1.f) \times 2^{56}.
+  5.5^{23} = (1.f) \times 2^{56}.
 \end{equation}
 
 Assim, o expoente real é
 \begin{equation}
-e = 56.
+  e = 56.
 \end{equation}
 
-Em precisão dupla, o expoente armazenado utiliza um \textit{bias} de 1023, portanto:
+Em precisão dupla, o expoente armazenado utiliza um \textit{bias} de 1023,
+portanto:
 \begin{equation}
-E = e + 1023 = 56 + 1023 = 1079.
+  E = e + 1023 = 56 + 1023 = 1079.
 \end{equation}
 
 Agora calculamos a mantissa normalizando o número:
 \begin{equation}
-1.f = \frac{5.5^{23}}{2^{56}}
+  1.f = \frac{5.5^{23}}{2^{56}}
 \end{equation}
 
 \begin{equation}
-1.f \approx \frac{8.18545 \times 10^{16}}{72057594037927936} \approx 1.135905
+  1.f \approx \frac{8.18545 \times 10^{16}}{72057594037927936} \approx 1.135905
 \end{equation}
 
 Logo,
 \begin{equation}
-f \approx 0.135905.
+  f \approx 0.135905.
 \end{equation}
 
 Portanto, a representação normalizada aproximada do número é:
 \begin{equation}
-5.5^{23} \approx (-1)^0 \times (1.135905) \times 2^{56}.
+  5.5^{23} \approx (-1)^0 \times (1.135905) \times 2^{56}.
 \end{equation}
 
-O erro de ponto flutuante pode ser definido como a diferença entre o valor real e o valor representado em ponto flutuante. 
+O erro de ponto flutuante pode ser definido como a diferença entre o valor real
+e o valor representado em ponto flutuante.
 
 \begin{equation}
-Erro = \left|\bar{x} - x\right|,
+  Erro = \left|\bar{x} - x\right|,
 \end{equation}
 
-A ULP é a menor diferença entre dois números representáveis em ponto flutuante, ou seja, a distância entre um número e o próximo número representável. Pela natureza discreta do sistema de ponto flutuante, a ULP é uma medida importante para avaliar a precisão dos cálculos realizados com ponto flutuante. A ULP pode ser definida como:
+A ULP é a menor diferença entre dois números representáveis em ponto flutuante,
+ou seja, a distância entre um número e o próximo número representável. Pela
+natureza discreta do sistema de ponto flutuante, a ULP é uma medida importante
+para avaliar a precisão dos cálculos realizados com ponto flutuante. A ULP pode
+ser definida como:
 \begin{equation}
-ULP(x) = \beta^{e - t + 1},
-\label{eq:ulp}
+  ULP(x) = \beta^{e - t + 1},
+  \label{eq:ulp}
 \end{equation}
 
 Vamos analisar o número $5.5^{23}$.
 
-O número $5.5^{23}$ é um número muito grande, e quando representado em ponto flutuante, ele pode ser aproximado para um valor próximo a $1.0 \times 10^{16}$.
+O número $5.5^{23}$ é um número muito grande, e quando representado em ponto
+flutuante, ele pode ser aproximado para um valor próximo a $1.0 \times
+  10^{16}$.
 
 A ULP para o número $5.5^{23}$ pode ser calculada como:
 \begin{equation}
-ULP(5.5^{23}) = \beta^{e - t + 1},
+  ULP(5.5^{23}) = \beta^{e - t + 1},
 \end{equation}
 
-
-
-onde $e$ é o expoente do número $5.5^{23}$ e $t$ é o número de dígitos significativos.
-
-
+onde $e$ é o expoente do número $5.5^{23}$ e $t$ é o número de dígitos
+significativos.
 
 FIM TEXTO PROVISORIO
 
-
 \TODO{Adidicionar gráfico ilustrando as ulps}
 
-
-A seguir, descrevemos dois exemplos clássicos que ilustram essas instabilidades.
+A seguir, descrevemos dois exemplos clássicos que ilustram essas
+instabilidades.
 
 \subsection{Imprecisão de operações de Ponto flutuante}
-Considere o cálculo de $f(x) = x^{10} + 1 - x^{10}$ para \(x \in [-60, 60]\). As partes envolvendo $x$ são variáveis e a parte "$1$" é o literal, ou seja, um valor fixo. Analiticamente, o resultado deveria ser exatamente 1. No entanto, em implementações numéricas, pequenas imprecisões na representação de \(x^{10}\) podem levar a resultados instáveis, especialmente para valores de \(|x|\) além de um limiar. Isso ocorre devido ao erro relacionado às operações de ponto flutuante, como mostrado na Figura \ref{fig:catastrofic_cancelation}. 
+Considere o cálculo de $f(x) = x^{10} + 1 - x^{10}$ para \(x \in [-60, 60]\).
+As partes envolvendo $x$ são variáveis e a parte "$1$" é o literal, ou seja, um
+valor fixo. Analiticamente, o resultado deveria ser exatamente 1. No entanto,
+em implementações numéricas, pequenas imprecisões na representação de
+\(x^{10}\) podem levar a resultados instáveis, especialmente para valores de
+\(|x|\) além de um limiar. Isso ocorre devido ao erro relacionado às operações
+de ponto flutuante, como mostrado na Figura \ref{fig:catastrofic_cancelation}.
 
 \begin{figure}[h]
-    \centering 
-    \includegraphics[width=1\textwidth]{Imagens/casosPeculiaresFP/catastrofic_cancelation.png}
-    \caption{Comportamento da expressão \(x^{10} + 1 - x^{10}\) no intervalo \([-40, 40]\).}
-    \label{fig:catastrofic_cancelation}
+  \centering
+  \includegraphics[width=1\textwidth]{Imagens/casosPeculiaresFP/catastrofic_cancelation.png}
+  \caption{Comportamento da expressão \(x^{10} + 1 - x^{10}\) no intervalo \([-40, 40]\).}
+  \label{fig:catastrofic_cancelation}
 \end{figure}
 \begin{figure}[h]
-    \centering 
-    \includegraphics[width=1\textwidth]{Imagens/casosPeculiaresFP/zoom.png}
-    \caption{Comportamento da expressão \(x^{10} + 1 - x^{10}\) no intervalo \([-43, -39]\).}
-    \label{fig:zoom}
+  \centering
+  \includegraphics[width=1\textwidth]{Imagens/casosPeculiaresFP/zoom.png}
+  \caption{Comportamento da expressão \(x^{10} + 1 - x^{10}\) no intervalo \([-43, -39]\).}
+  \label{fig:zoom}
 \end{figure}
 
-Podemos observar que em um determinado limiar, a função para de se comportar como esperado $f(x) = 1$ e passa a assumir valores os de  $f(x) = 2$ e $f(x) = 0$.
+Podemos observar que em um determinado limiar, a função para de se comportar
+como esperado $f(x) = 1$ e passa a assumir valores os de $f(x) = 2$ e $f(x) =
+  0$.
 
-Vamos manipular essa expressão e ver como ela se comporta em diferentes situações.
+Vamos manipular essa expressão e ver como ela se comporta em diferentes
+situações.
 
 \begin{figure}[h]
-    \centering 
-    \includegraphics[width=1\textwidth]{Imagens/casosPeculiaresFP/literal79.png}
-    \caption{Comportamento da expressão \(x^{10} + 79 - x^{10}\) no intervalo \([38, 65]\).}
-    \label{fig:literal79}
+  \centering
+  \includegraphics[width=1\textwidth]{Imagens/casosPeculiaresFP/literal79.png}
+  \caption{Comportamento da expressão \(x^{10} + 79 - x^{10}\) no intervalo \([38, 65]\).}
+  \label{fig:literal79}
 \end{figure}
 
-Na figura  \ref{fig:literal79}. é possível observar que a função assume mais de dois valores inesperados para $f(x)$, nesse caso, o conjunto imagem no intervalo \([38, 65]\) é \( Im(f)  = \bigl\{ {0{,}64{,}78{,}79{,}80{,}128}\}\). 
-O seguinte conjunto de valores para o literal foi testado \(\{3,12,79,98\}\), e acreditamos que para valores que não podem ser escritos como uma potência de base 2, esse padrão ocorra.
-\TODO{adicionar explicação}
-Explicação: blablabla
+Na figura \ref{fig:literal79}. é possível observar que a função assume mais de
+dois valores inesperados para $f(x)$, nesse caso, o conjunto imagem no
+intervalo \([38, 65]\) é \( Im(f) = \bigl\{ {0{,}64{,}78{,}79{,}80{,}128}\}\).
+O seguinte conjunto de valores para o literal foi testado \(\{3,12,79,98\}\), e
+acreditamos que para valores que não podem ser escritos como uma potência de
+base 2, esse padrão ocorra. \TODO{adicionar explicação} Explicação: blablabla
 
-
-Uma dúvida comum é se a precisão desses sistemas afeta nessa expressão. Vamos comparar então um sistema de float32 (Cerca de 7-8 bits dígitos decimais de precisão) a um sistema float64
-(Cerca de 15-16  dígitos decimais de precisão)
+Uma dúvida comum é se a precisão desses sistemas afeta nessa expressão. Vamos
+comparar então um sistema de float32 (Cerca de 7-8 bits dígitos decimais de
+precisão) a um sistema float64 (Cerca de 15-16 dígitos decimais de precisão)
 \begin{figure}[h]
-    \centering 
-    \includegraphics[width=1\textwidth]{Imagens/casosPeculiaresFP/32x64_full.png}
-    \caption{Comportamento da expressão \(x^{10} + 2 - x^{10}\) no intervalo \([-40, 40]\).}
-    \label{fig:32x64_full}
+  \centering
+  \includegraphics[width=1\textwidth]{Imagens/casosPeculiaresFP/32x64_full.png}
+  \caption{Comportamento da expressão \(x^{10} + 2 - x^{10}\) no intervalo \([-40, 40]\).}
+  \label{fig:32x64_full}
 \end{figure}
 \begin{figure}[H]
-    \centering 
-    \includegraphics[width=1\textwidth]{Imagens/casosPeculiaresFP/32x64.png}
-    \caption{Comportamento da expressão \(x^{10} + 79 - x^{10}\) no intervalo \([0, 60]\).}
-    \label{fig:32x64}
+  \centering
+  \includegraphics[width=1\textwidth]{Imagens/casosPeculiaresFP/32x64.png}
+  \caption{Comportamento da expressão \(x^{10} + 79 - x^{10}\) no intervalo \([0, 60]\).}
+  \label{fig:32x64}
 \end{figure}
 Dos testes experimentais, exemplificado nas figuras \ref{fig:32x64_full} e \ref{fig:32x64}, foi concluído que o $|x|$ onde a instabilidade ocorre é menor é menor na precisão dupla.
 
-Outro caso interessante é quando analisamos a função $f(x) = (x\times x\times x\times x\times x\times x\times x\times x \times x) - x^{10} $. Vejamos o gráfico dessa função.
+Outro caso interessante é quando analisamos a função $f(x) = (x\times x\times
+  x\times x\times x\times x\times x\times x \times x) - x^{10} $. Vejamos o
+gráfico dessa função.
 \begin{figure}[H]
-    \centering 
-    \includegraphics[width=1\textwidth]{Imagens/casosPeculiaresFP/timesXpot_literal0.png}
-    \caption{Comportamento da expressão $f(x) = (x \times x \times x \times x \times x \times x \times x \times x \times x) - x^{10}$, com precisão dupla, no intervalo \([0{,}1, 0{,}2]\).}
-    \label{fig:timesXpot_literal0}
+  \centering
+  \includegraphics[width=1\textwidth]{Imagens/casosPeculiaresFP/timesXpot_literal0.png}
+  \caption{Comportamento da expressão $f(x) = (x \times x \times x \times x \times x \times x \times x \times x \times x) - x^{10}$, com precisão dupla, no intervalo \([0{,}1, 0{,}2]\).}
+  \label{fig:timesXpot_literal0}
 \end{figure}
 \begin{figure}[H]
-    \centering 
-    \includegraphics[width=1\textwidth]{Imagens/casosPeculiaresFP/timesXpot_literal0_1.png}
-    \caption{Comportamento da expressão $f(x) = (x \times x \times x \times x \times x \times x \times x \times x \times x) - x^{10}$, com precisão simples, no intervalo \([0{,}1, 0{,}2]\).}
-    \label{fig:timesXpot_literal0_1}
+  \centering
+  \includegraphics[width=1\textwidth]{Imagens/casosPeculiaresFP/timesXpot_literal0_1.png}
+  \caption{Comportamento da expressão $f(x) = (x \times x \times x \times x \times x \times x \times x \times x \times x) - x^{10}$, com precisão simples, no intervalo \([0{,}1, 0{,}2]\).}
+  \label{fig:timesXpot_literal0_1}
 \end{figure}
 A instabilidade na precisão dupla (Figura~\ref{fig:timesXpot_literal0_1}) produz imagem em torno de $[-4 \times 10^{-23},2 \times 10^{-23}]$, enquanto na precisão simples (Figura~\ref{fig:timesXpot_literal0}) está em torno de $[-20^{-15},20^{-15}]$ ($[-20 femto, 20 femto]$). Observa-se, portanto, que a diferença de instabilidade é extremamente menor na precisão dupla em comparação com a simples.
 
-Uma outra situação é a diferença de como o computador interpreta algumas funções se forem reescritas de maneiras diferentes. Seja $p(x) = (x - 1)^6$ e $q(x) = x^6 - 6x^5 + 15x^4 - 20x^3 + 15x^2 - 6x + 1$, analiticamente essas funções são idênticas, porém existem problemas de cancelamento catastrófico na hora de analisarmos ambas em um sistema de ponto flutuante.
+Uma outra situação é a diferença de como o computador interpreta algumas
+funções se forem reescritas de maneiras diferentes. Seja $p(x) = (x - 1)^6$ e
+$q(x) = x^6 - 6x^5 + 15x^4 - 20x^3 + 15x^2 - 6x + 1$, analiticamente essas
+funções são idênticas, porém existem problemas de cancelamento catastrófico na
+hora de analisarmos ambas em um sistema de ponto flutuante.
 
 \begin{figure}[H]
-    \centering 
-    \includegraphics[width=1\textwidth]{Imagens/casosPeculiaresFP/error2.png}
-    \caption{Comparação entre as funções $p(x) = (x - 1)^6$ e $q(x) = x^6 - 6x^5 + 15x^4 - 20x^3 + 15x^2 - 6x + 1$.}
-    \label{fig:error2}
+  \centering
+  \includegraphics[width=1\textwidth]{Imagens/casosPeculiaresFP/error2.png}
+  \caption{Comparação entre as funções $p(x) = (x - 1)^6$ e $q(x) = x^6 - 6x^5 + 15x^4 - 20x^3 + 15x^2 - 6x + 1$.}
+  \label{fig:error2}
 \end{figure}
 \TODO{adicionar explicação}
-Explicação: yada yada yada 
+Explicação: yada yada yada
 
 \subsection{Discussão}
 
-Esses exemplos destacam a importância da ordem das operações e da análise cuidadosa ao trabalhar com algoritmos numéricos. Técnicas como a reordenação de cálculos e o uso de formatos de precisão estendida podem ajudar a minimizar esses erros em contextos críticos.
+Esses exemplos destacam a importância da ordem das operações e da análise
+cuidadosa ao trabalhar com algoritmos numéricos. Técnicas como a reordenação de
+cálculos e o uso de formatos de precisão estendida podem ajudar a minimizar
+esses erros em contextos críticos.

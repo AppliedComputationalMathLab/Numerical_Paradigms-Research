@@ -52,4 +52,4 @@
 \contentsline {subsection}{\numberline {3.3.3}Método de Euler}{66}{subsection.3.3.3}%
 \contentsline {chapter}{\numberline {4}Comparação entre Paradigmas de Programação}{67}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Comparação Entre Paradigmas}{68}{section.4.1}%
-\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{81}{chapter*.88}%
+\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{81}{chapter*.91}%
