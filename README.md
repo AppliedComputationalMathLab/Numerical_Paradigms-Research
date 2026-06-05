@@ -120,14 +120,15 @@ The project uses multiple languages and tools depending on the experiment.
 
 ---
 
-## Author
-
-**Enzo Rocha Leite Diniz Ribas**
-
 ## Supervisors
 
 **Prof. Dr. Luis Alberto D'Afonseca**
 **Prof. Dr. Lucas Martins Rocha**
+
+## Researchers
+
+**Enzo Rocha Leite Diniz Ribas**
+**Daniel S. Pazini**
 
 Research interests:
 
