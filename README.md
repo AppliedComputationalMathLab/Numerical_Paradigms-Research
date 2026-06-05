@@ -122,13 +122,13 @@ The project uses multiple languages and tools depending on the experiment.
 
 ## Supervisors
 
-**Prof. Dr. Luis Alberto D'Afonseca**
-**Prof. Dr. Lucas Martins Rocha**
+- **Prof. Dr. Luis Alberto D'Afonseca**
+- **Prof. Dr. Lucas Martins Rocha**
 
 ## Researchers
 
-**Enzo Rocha Leite Diniz Ribas**
-**Daniel S. Pazini**
+- **Enzo Rocha Leite Diniz Ribas**
+- **Daniel S. Pazini**
 
 Research interests:
 
