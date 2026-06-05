@@ -1,0 +1,44 @@
+
+\section{Introdução}
+\label{sec:intro}
+
+Os computadores representam números reais usando a aritmética de ponto flutuante, que é uma aproximação finita e sistemática do conjunto continuo dos números reais (\cite{IEEE754_2019}). Embora essa representação seja eficiente e amplamente adotada, ela introduz erros numéricos inevitáveis devido à natureza discreta do armazenamento digital. Esses erros podem se manifestar de várias formas, como erros de arredondamento, cancelamento catastrófico, overflow e underflow, afetando a precisão e a confiabilidade dos cálculos computacionais.
+
+Esse trabalho tem como objetivo fazer uma revisão da norma da IEEE (IEEE 754) sobre a aritmética de ponto flutuante e explorar graficamente os efeitos da aritmética de ponto flutuante em cálculos numéricos. Através de visualizações e experimentos controlados, buscamos ilustrar como esses erros se manifestam em diferentes situações.
+
+
+Objetivos:
+\begin{itemize}
+    \item Revisar os conceitos fundamentais da aritmética de ponto flutuante conforme definido pela norma IEEE 754.
+    \item Apresentar casos peculiares onde os erros de ponto flutuante se tornam evidentes.
+    \item Explorar graficamente os efeitos dos erros numéricos introduzidos pela aritmética de ponto flutuante em cálculos comuns.
+    \item Analisar como esses erros podem impactar a precisão e a confiabilidade dos resultados computacionais.
+\end{itemize}
+
+Contribuições principais:
+\begin{itemize}
+    \item Uma coleção de exemplos e gráficos que ilustram comportamentos típicos da aritmética de ponto flutuante.
+    \item Análises interpretativas que relacionam os efeitos observados com os princípios teóricos da norma IEEE 754.
+    \item Observações pedagógicas sobre como projetar experimentos numéricos robustos e interpretar resultados à luz dos erros de representação.
+\end{itemize}
+
+Organização do texto: na Seção~\ref{sec:fundamentos} revisamos conceitos fundamentais da representação em ponto flutuante; na Seção~\ref{sec:experimentos} apresentamos experimentos e visualizações; na Seção~\ref{sec:analise} discutimos implicações práticas e estratégias para mitigar erros; por fim, na Seção~\ref{sec:conclusao} sintetizamos os achados e sugerimos direções para trabalhos futuros.
+
+A classe \textsl{sbc2025} é projetada para trabalhar com os \textit{engines} pdftex e luatex. Dessa forma, deve-se compilar o documento 
+
+
+A classe \textsl{sbc2025} inclui internamente os seguintes pacotes:
+\begin{itemize}
+    \item xcolor
+    \item graphicx
+    \item amsmath amssymb
+    \item hyperref
+    \item babel
+\end{itemize}
+\noindent consequentemente, não há necessidade de incluí-los no preâmbulo.
+
+{\bfseries Quem tentar compilar usando a opção \texttt{pdflatex} no Overleaf vai receber uma mensagem de erro solicitando o usuário a ajustar a opção de compilação.}
+
+Para a pergunta \textit{Por que não funciona com o \texttt{pdflatex}}?  A resposta é: \textbf{fontes!} Pdflatex usa um esquema de codificação de fontes complexo. 
+O fonte \texttt{academicons}\footnote{Do fonte em questão usa-se apenas o glifo associado ao Orchid.} não tem as definições necessárias para uso com o \texttt{pdflatex}. Enquanto isso não for realizado, \texttt{pdflatex} não pode ser usado. 
+

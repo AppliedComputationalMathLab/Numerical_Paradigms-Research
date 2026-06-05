@@ -1,0 +1,188 @@
+\chapter{Métodos Iterativos para Zeros de Função}
+
+Em muitas aplicações, as soluções buscadas se resumem a encontrar os zeros (ou raízes) de uma função. Entretanto, nem sempre é possível fazê-lo analiticamente, devido a natureza das componentes envolvidas na função, por exemplo, funções polinomiais a partir do 3º grau, somas de funções trigonométricas e logarítmicas, entre outras. Nesse ínterim, recorremos então a maneiras de obter valores aproximados para tais raízes. 
+
+Uma classe de métodos utilizados para aproximar raízes de funções são os \textbf{métodos iterativos}. A essência desses métodos está em, partindo de um chute inicial e de uma função apropriada $\varphi$, obter uma sequência $x_k$ onde cada termo é obtido do anterior recursivamente como $x_{k+1} = \varphi(x_k)$. Essa sequência, sob certas hipóteses, converge para a raiz $\xi$ da função.
+
+Ao longo do capítulo, reservaremos o símbolo $\xi$ para representar raízes de funções.
+
+\section{Localização de Raízes}
+
+Mais adiante no capítulo, para garantir a convergência da sequência iterativa, é necessário que o primeiro termo esteja suficientemente próximo da raiz e, desse modo, faz-se necessário restringir as funções a intervalos que contenham raízes. Quando as funções envolvidas são contínuas, o resultado a seguir garante a existência de raízes em um intervalo [a,b] desde que as imagens dos extremos tenham sinais opostos.
+
+%\textcolor{blue}{Aqui, depois, fazer uma breve introdução sobre métodos para cálculo de raízes de funções, falando dos passos iniciais de determinação de intervalos que contenham raízes e em seguida do processo de refinamento.}  \textcolor{orange}{Foi o que quis indicar com as subsections}
+
+\begin{prop}[Teorema de Bolzano]
+Seja $f(x)$ uma função contínua no intervalo $[a, b]$. Se $f(a)f(b) < 0$, então há pelo menos uma raiz $\xi \in (a,b)$.
+\end{prop}
+
+\textcolor{red}{Adicionarei um exemplo com gráfico(s).}
+
+Outra forma de localizar raízes de uma dada função $f(x)$ é escrevê-la como a diferença entre as funções $g(x)-h(x)$, pois se $f(\xi) = 0$ temos que $g(\xi) - h(\xi) = 0$ ou, equivalentemente, $g(\xi) = h(\xi)$. Graficamente, $\xi$ é a abscissa do ponto de interseção entre as funções g(x) e h(x).
+
+, como $f(x) = x^3 -9x + 3$,
+por exemplo, $x^3 = 9x - 3$.
+
+\textcolor{red}{idem}
+
+%\subsection{Impossibilidade na exatidão}
+
+%\textcolor{orange}{Aproveitar para introdução da próxima seção?}
+
+%Entretanto, apesar dos métodos apresentados, nem sempre é possível determinar exatamente a(s) raiz(es) $\xi$ de uma função (vale ressaltar que os métodos sempre funcionam, mesmo que uma solução algébrica seja possível), para isso, a partir da delimitação, pelos métodos já expostos, de um intervalo inicial, é possível, com funções de iteração, refinar a busca da raiz $\xi$, delimitando a raiz até uma margem de erro desejada. No restante do capítulo serão apresentados 2 destes métodos iterativos para o refinamento da busca por $\xi$.
+
+%\textcolor{blue}{Contar uma história do tipo "nem sempre é possível determinar raízes de funções de forma analítica e por isso recorremos a métodos numéricos e bla bla bla".} %Evitar usar e.g., i.e.
+
+\section{Método do Ponto Fixo}
+
+O método do ponto fixo \emph{é um método iterativo} que %parte da ideia de que as interseções de duas curvas construídas a partir de uma função f(x) revelam suas raízes para então construir uma função $\varphi(x)$ e buscar suas interseções com a reta identidade, que 
+transforma o problema de buscar as raízes de uma função $f(x)$ no problema de encontrar os pontos fixos de uma outra função $\varphi(x)$, denominada de \textbf{função de iteração de ponto fixo}. %tal que $\varphi(x_k) = x_{k+1}$.
+A partir dessa função de iteração uma sequência é construída recursivamente começando em um valor inicial $x_0$ que convergirá para a raiz $\xi$ de $f(x)$ desde que sejam observadas certas condições sob a função $\varphi(x)$ e o dado inicial $x_0$.
+%Os pontos fixos de $\varphi(x)$ são encontrados então a partir de um chute $x_0$ que será aplicado à função de iteração de ponto fixo $\varphi(x)$ que sob certas condições gera uma sequência de aproximações para $\xi$.
+
+%Isolando x, estamos igualando duas funções (a identidade, y = x, e a de iteração, $\varphi$), ou seja, obtendo as interseções entre ambas as funções, construídas a partir de f, que é um método para localizar suas raízes. Além disso, pelas interseções de $\varphi$ serem com a função identidade, elas são também ponto fixo de $\varphi$.
+
+%Todas essas funções tem um ponto fixo $\varphi(\xi) = \xi$ na raíz de f, $f(\xi) = 0$, uma vez que as interseções entre $\varphi(x)$ e a função identidade (duas funções construídas a partir de f), são raízes $\xi$ da função original f(x). 
+%\textcolor{blue}{Enunciar de forma mais precisa essa equivalência, não está legal aqui.} \textcolor{orange}{Agora está legal?} \textcolor{blue}{Faça isso ser uma proposição. Faça isso depois de definir a fórmula geral de uma função de iteração $\varphi(x) = x + A(x)f(x)$} \textcolor{orange}{a proposição vem depois, junto com a fórmula geral, isto por 2 motivos que são, essencialmente, o mesmo: 1. Redundância; 2. Esse fato é uma exposição intuitiva que decorre do que já foi apresentado antes, a formalização sistemática com a prova vem depois como redundância.}
+
+%\subsection{Ponto Fixo}
+%O ponto fixo de uma função f(x) é todo aquele em que alimentando a função com um valor x,  ela retorna o mesmo valor f(x) = x. Por exemplo, todos os pontos na reta da função identidade são pontos fixos.
+
+%\textcolor{blue}{Comece aqui a descrever o método do ponto fixo. Diga em linguagem escrita qual é a essência do MPF.} %\textcolor{gray}{Achei interessante que tu que criou o título dessa seção, indicando que vc farejou a linha mental entre o parágrafo anterior e essa parte após esse comentário aqui em cinza}
+
+%Após localizar um intervalo que contenha uma raiz pelos métodos expostos,
+O primeiro passo é gerar funções de iteração $\varphi$ para $f(x)$, o que pode ser feito isolando $x$ na equação $f(x) = 0$. Por exemplo, manipulando a função $x^3 -9x + 3$  da seguinte forma 
+\begin{equation*}
+    x^3 - 8x + 3 = x 
+\end{equation*} 
+obtemos a função de iteração $\varphi(x) = x^3 - 8x + 3$. Com a mesma lógica, outras possíveis funções de iteração para $f$ são
+
+%Pode-se sistematizar essa prática construindo-se uma função de iteração na qual se isola x em um lado da igualdade. Usando o mesmo exemplo podemos obter, por exemplo:
+
+\begin{multicols}{2}
+\begin{itemize} %itemize (era enumerate)
+    \item[a)] $\varphi_1(x) = \frac{x^3}{9} + \frac{1}{3}$
+    \item[b)] $\varphi_2(x) = \sqrt[3]{9x-3}$
+    \item[c)] $\varphi_3(x) = \frac{9}{x} - \frac{3}{x^2}$
+    \item[d)] $\varphi_4(x) = \sqrt{9 - \frac{3}{x}}$
+    \item[e)] $\varphi_5(x) = -\sqrt{9 - \frac{3}{x}}$
+    \item[f)] $\varphi_6(x) = x^3 - 8x + 3$
+\end{itemize}
+\end{multicols}
+A forma geral da função de iteração é 
+\begin{equation}
+    \varphi(x) = x + A(x)f(x) \label{it}
+\end{equation}
+%com $A(\xi) \ne 0$. Podemos reescrever, por exemplo, $\varphi_5$ da função $f(x) = x^3 -9x + 3$ a essa forma através da seguinte manipulação algébrica, começando por somar 0 (somando e subtraindo x):
+com $A(\xi) \ne 0$. %Que será necessária para relacionar a raiz da função com os pontos fixos da função de iteração associada. 
+%É necessário verificar então se as funções de iteração geradas respeitam essa condição de $A(\xi) \neq 0$. 
+%Por essa forma, A(x) sempre será $\frac{\varphi(x) - x}{f(x)}$, utilizando isso podemos obter $A(x) = \frac{1}{9}$ para $\varphi_1$ e portanto escrever $\varphi_1$ da função $f(x) = x^3 -9x + 3$ como $x + \frac{1}{9}f(x)$, o que é possível verificar pelas seguintes contas
+Por exemplo, a $\varphi_1 = \frac{x^3}{9} + \frac{1}{3}$ na forma geral ficaria 
+%Podemos reescrever, por exemplo, $\varphi_1$ da função $f(x) = x^3 -9x + 3$ a essa forma através da seguinte manipulação algébrica:
+\begin{equation*}
+    \varphi_1(x) = x + \frac{1}{9}f(x)
+\end{equation*}
+\begin{comment}
+    \varphi_1(x) &= x + \frac{1}{9}(x^3 - 9x + 3) \\
+    \varphi_1(x) &= x + \frac{x^3}{9} - x + \frac{1}{3} \\
+    \varphi_1(x) &= \frac{x^3}{9} + \frac{1}{3}
+\end{comment}
+em que $A(x) = \frac{1}{9}$. Nesse caso, pode-se observar que A($\xi) \neq 0$.
+
+O resultado a seguir relaciona a raiz de uma função com pontos fixos de uma função de iteração associada a essa função. %\textcolor{gray}{Não é pra lançar seco assim não né?}
+%O resultado a seguir mostra a relação da raiz da função $f(x)$ com os pontos fixos de uma função de iteração $\varphi(x)$ associada, usando sua forma geral.
+
+%\textcolor{blue}{Escreva algo do tipo ''vamos demonstrar o resultado da Proposição XXX". Use um ambiente do tipo proof ou prova.} \textcolor{purple}{Qual prova?} \textcolor{orange}{da bicondicional né?}
+
+\begin{prop}
+Seja $\xi$ uma raiz de uma função $f(x)$ e seja $\varphi(x)$ uma função de iteração de associada a $f(x)$. Então, $f(\xi) = 0$ se, e somente se, $\varphi(\xi) = \xi$.
+%$f(\xi) = 0$ . Para isso, usaremos a forma geral da função de iteração $\varphi(x) = x + A(x)f(x)$.
+\end{prop}
+
+%Provando primeiramente que a raiz da função é ponto fixo da função de iteração, $f(\xi) = 0 \Rightarrow \varphi(\xi) = \xi$. Começa-se calculando a função de iteração para a raiz $\xi$, isto é, $\varphi(\xi)$, obtendo então, pela forma geral, a raiz somada ao produto da função A pela função original $ \xi + A(\xi)f(\xi)$. Dado que $\xi$ é raiz de f(x), o valor da função calculado em $\xi$ é 0, portanto se tem $\xi + A(\xi) \cdot 0$; o que anula o produto com a função A, $\xi + 0$. Com isso, concluí-se que a função de iteração calculada na raíz é de fato igual a $\xi$.
+
+\begin{proof}
+%Provando primeiramente que a raiz da função $\xi$ é ponto fixo da função de iteração. 
+($\Rightarrow$) Pela forma geral da função de iteração temos que $\varphi(\xi) = \xi + A(\xi)f(\xi)$. Uma vez que $f(\xi) = 0$, então $\varphi(\xi) = \xi$.
+
+%Interessa agora provar que o ponto fixo da função de iteração é a raiz da função f. 
+($\Leftarrow$) Começando novamente pela forma geral da função de iteração, temos que $\varphi(\xi) = \xi + A(\xi)f(\xi)$. Como $\varphi(\xi) = \xi$, concluímos que $A(\xi) f(\xi) = 0$. Tendo como hipótese que $A(\xi) \neq 0$, então $f(\xi) = 0$.
+%ou seja, o ponto fixo $\xi$ da função de iteração $\varphi$ é raíz da função original $f(x)$. %q.e.d. (\textit{quod erat demonstrandum}, qual estava-se a demonstrar).
+\end{proof}
+
+%\newpage
+
+%\subsection{Prova da convergência}
+\textcolor{blue}{Aqui, antes de ir para o resultado principal, dar exemplos de funções de iteração que fazem a sequencia convergir e divergir. Inserir gráficos assim como no livro da Vera.} \textcolor{green}{ok!}\\
+
+Sob condições a respeito da função de iteração, sua derivada e o dado inicial, a convergência da sequência iterativa é garantida, como pode-se observar a seguir.
+%Enfim é importante verificar se a função de iteração de ponto fixo respeita as condições para convergência.
+
+\begin{teo}
+    Seja $\xi$ uma raiz de f(x), isolada num intervalo I centrado nessa raiz. Considere uma função de iteração $\varphi(x)$ associada a f(x). Sob as seguintes hipóteses:
+    \begin{itemize}
+        \item[i)] $\varphi(x)$ e $\varphi'(x)$ são contínuas em I,
+        \item [ii)] $|\varphi'(x)| \leq M < 1$ em I,
+        \item [iii)] $x_0 \in I$,
+    \end{itemize}
+    a sequência $x_{k+1} = \varphi(x_k)$ converge para a raiz $\xi$. 
+\end{teo}
+%Dada uma função $\varphi(x)$ ela é chamada de função de iteração, pois $\varphi(x_k) = x_{k+1}$ e através dessas iterações podemos buscar o ponto fixo dela na qual $x_k = \xi$. Provaremos a seguir que dada uma raíz $\xi$ de f(x) isolada num intervalo I centrado na mesma, a sequência recursiva $\varphi(x_k) = x_{k+1}$ converge para $\xi$ tendo: a função contínua e derivável, e sua derivada também contínua, no intervalo (a,b); o módulo (M) de sua derivada limitado e inferior a unidade no intervalo ($|\varphi'(x)| \leq M < 1$ $\forall x \in (a, b)$); e o primeiro valor da iteração no intervalo ($x_0 \in I$).
+\begin{proof}
+Como $x_{k+1} = \varphi(x_k)$, subtraindo $\xi$ de ambos os lados da igualdade e usando o fato de que $\varphi(\xi)=\xi$ temos
+    \begin{equation}\label{lab1}
+        x_{k+1} - \xi = \varphi(x_k) - \varphi(\xi).
+    \end{equation}
+    Pelo Teorema do Valor Médio (TVM) podemos escrever \\
+    \begin{equation}\label{tvm}
+        \varphi(x_k) - \varphi(\xi) = \varphi'(c_k) (x_k - \xi)
+    \end{equation}
+    com $c_k$ entre $x_k$ e $\xi$. Então, substituindo (\ref{tvm}) em (\ref{lab1}), temos
+    \begin{align}\label{des}
+        %x_{k+1} - \xi &= (x_k - \xi) \ \varphi'(c_k) \\
+        |x_{k+1} - \xi| &= |(x_k - \xi) \ \varphi'(c_k)| \nonumber \\
+        &= |x_k - \xi| \ |\varphi'(c_k)| \\
+        &< |x_k - \xi| \nonumber
+    \end{align}
+    uma vez que $|\varphi'(x)| < 1$. Como $x_0 \in I$, podemos concluir que $x_k \in I$ para todo $k$ já que, por (\ref{des}), $|x_k - \xi| < |x_0 - \xi|$. 
+
+    Na sequência, provaremos que $x_k$ converge para a raiz $\xi$. Vamos começar mostrando que 
+    \begin{equation}\label{lab2}
+        |x_1 - \xi| \leq M \ |x_0 - \xi|.
+    \end{equation}
+    Observe que, como $x_1=\varphi(x_0)$, temos que $x_1 - \xi = \varphi(x_0) - \varphi(\xi)$. Pelo Teorema do Valor Médio temos que $\varphi(x_0) - \varphi(\xi) = (x_0 - \xi) \ \varphi'(c_0)$, para algum $c_0$ entre $x_0$ e $\xi$. Uma vez que $|\varphi'(x)| \leq M$ no intervalo $I$, a seguinte desigualdade é válida
+    \begin{align*}
+        |x_1 - \xi|&= |x_0 - \xi| \ |\varphi'(c_0)|\\
+        &\leq M \ |x_0 - \xi|
+    \end{align*}
+    e provamos a desigualdade (\ref{lab2}).
+    %\begin{align*}
+    %    |x_1 - \xi| &= |\varphi(x_0) - \xi| \\
+    %    \text{Pelo TVM,} \ \varphi(x_0) - \xi &= (x_0 - \xi) \ \varphi'(c_0) \text{, com $c_0 \in (x_0, \xi)$} \\
+    %    |x_1 - \xi| &= |x_0 - \xi| \ |\varphi'(c_0)| \\
+    %    \text{Como $|\varphi'(x)| \leq M$,} \ |\varphi'(c_0)| \ |x_0 - \xi| &\leq M \ |x_0 - \xi| \\
+    %    |x_1 - \xi| &\leq M \ |x_0 - \xi|
+    %\end{align*}
+    De modo similar prova-se que $|x_2 - \xi| \leq M \ |x_1 - \xi|$ que, combinado com (\ref{lab2}), implica que $|x_2 - \xi| \leq M^2 \ |x_0 - \xi|$. Repetindo o processo k vezes pode-se concluir que
+    \begin{equation}
+        |x_k - \xi| \leq M^k \ |x_0 - \xi|.
+    \end{equation}
+    Como $0 < M < 1$, se k tende a infinito, $M^k$ tende a 0 e, portanto, $M^k \ |x_0 - \xi|$ também tende a 0. Assim, provamos que
+    %\begin{align*}
+    %\lim_{k \to \infty} |x_k - \xi| &\leq M^k \ |x_0 - \xi| \\
+    %\lim_{k \to \infty} |x_k - \xi| &\leq 0 \ |x_0 - \xi| \\
+    %\lim_{k \to \infty} |x_k - \xi| &= 0 \ \text{logo, }
+    %\end{align*}
+    \begin{equation}
+        \lim_{k \to \infty} x_k = \xi, \label{conv.mpf}
+    \end{equation}
+    ou seja, $x_k$ converge para a raiz.
+\end{proof}
+
+\subsection{Ordem de convergência}
+
+
+$\varphi'(x) = \frac{x^2}{3}$ \\ $|\varphi'(x)| < 1$ para $x \in (-\sqrt{3}, \sqrt{3})$ 
+    
+%--------------------------------------------------------------------
+\section{Método de Newton-Raphson}

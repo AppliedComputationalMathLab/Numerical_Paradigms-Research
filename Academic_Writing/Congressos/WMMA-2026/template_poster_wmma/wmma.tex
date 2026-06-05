@@ -1,0 +1,256 @@
+\documentclass[a0,portrait]{a0poster}
+
+\usepackage{palatino}
+\usepackage{epsfig}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{amsmath,amsthm,amsfonts}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+
+% ----------------------------------------------------
+% Paleta em azul p\'etroleo escuro
+% ----------------------------------------------------
+\definecolor{PetroleoEscuro}{RGB}{1,52,82}
+\definecolor{Laranja}{RGB}{200, 95, 30}
+% ----------------------------------------------------
+% Macro para t\'itulos de se\c c\~ao com espa\c camento "aberto" (op\c c\~ao C)
+% ----------------------------------------------------
+\newcommand{\SectionHeader}[1]{%
+  \begin{center}
+    \parbox{15cm}{%
+      \begin{center}
+        {\color{Laranja}\rule[0.3cm]{15cm}{0.5cm}}\\[0.4cm]
+        {\bfseries\LARGE #1}\\[0.3cm]
+        {\color{Laranja}\rule[0.0cm]{15cm}{0.5cm}}
+      \end{center}
+    }
+  \end{center}
+}
+
+\newcommand{\FaixaPatrocinadoresFigura}{%
+  \AddToShipoutPictureBG*{%
+    \AtPageLowerLeft{%
+      \raisebox{1.5cm}{% distancia do rodapé
+        \hspace*{2cm}% margem esquerda
+        \includegraphics[width=80cm,height=6cm]{rodape_rede.png}%
+      }%
+    }%
+  }%
+}
+
+\begin{document}
+\FaixaPatrocinadoresFigura
+\small
+
+% ----------------------------------------------------
+% Faixa superior / logo
+% ----------------------------------------------------
+\begin{center}
+  \hspace{-2cm}
+  \includegraphics[width=80cm,height=12cm]{faixa.png}
+\end{center}
+
+% ----------------------------------------------------
+% T\'itulo do evento
+% ----------------------------------------------------
+\vspace{1cm}
+\begin{center}
+  \parbox{70cm}{
+    \textcolor{Gray}{\rule[0cm]{70cm}{0.6cm}}\\[0.2cm]
+    {\color{PetroleoEscuro}\Huge \bfseries \centering
+      TÍTULO DO TRABALHO\\[0.3cm]
+    }\\[0.2cm]
+    \textcolor{Gray}{\rule[0cm]{70cm}{0.6cm}}
+  }
+\end{center}
+
+% ----------------------------------------------------
+% Autores
+% ----------------------------------------------------
+\vspace{1cm}
+\begin{center}
+{\LARGE \bf
+  Primeiro Autor$^{1,*}$, Segundo Autor$^2$, Terceiro Autor$^3$\\[0.5cm]
+  1. Institui\c c\~ao 1\\
+  2. Institui\c c\~ao 2\\
+  3. Institui\c c\~ao 3\\[0.5cm]
+  $^{*}$Contato: autor@exemplo.br
+}
+\end{center}
+
+\vspace{1.5cm}
+
+% ====================================================
+%                      3 COLUNAS
+% ====================================================
+
+\noindent
+% -------------------- COLUNA 1 ----------------------
+\begin{minipage}[t]{0.31\textwidth}
+  \raggedright\large
+
+  % INTRODUCAO
+  \SectionHeader{INTRODU\c C\~AO}
+
+  \parbox{24cm}{
+    {\LARGE\textsf{
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Sed eget urna sit amet lorem gravida dignissim. Suspendisse potenti.\\[0.8cm]
+      Curabitur et lacus nec urna placerat interdum non a augue. Integer
+      rutrum nisl non tincidunt ullamcorper, mi arcu aliquam arcu.\\[0.8cm]
+      Donec blandit magna ut laoreet sodales. Integer convallis dignissim lorem,
+      quis sollicitudin dui pharetra ut. Vestibulum ante ipsum primis in faucibus
+      orci luctus et ultrices posuere cubilia curae.
+    }}
+  }
+
+  \vspace{1.5cm}
+
+  % OBJETIVOS
+  \SectionHeader{OBJETIVOS}
+
+  \parbox{24cm}{
+    {\LARGE\textsf{
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Proin sodales urna a vehicula dapibus. Cras tristique fermentum dolor a congue.
+    }}
+  }
+
+  \vspace{1cm}
+
+  {\LARGE
+    \begin{eqnarray}
+      X(\xi_N) &=& \sum_{i=1}^N \sum_{j=1}^N (x_i - x_j)^2 +
+      \int_{\theta} f(\theta)\,d\theta.
+      \nonumber
+    \end{eqnarray}
+  }
+
+\end{minipage}
+\hfill
+% -------------------- COLUNA 2 ----------------------
+\begin{minipage}[t]{0.31\textwidth}
+  \raggedright\large
+
+  % METODOLOGIA
+  \SectionHeader{METODOLOGIA}
+
+  \parbox{24cm}{
+    {\LARGE\textsf{
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Nam laoreet feugiat purus, nec tempor elit blandit in.
+      Integer volutpat sem sit amet laoreet elementum.\\[0.8cm]
+      Mauris interdum congue lacus, sed auctor lectus ultrices et.
+      Donec quis blandit ligula. Sed tempus justo eget tortor semper
+      tristique. Maecenas faucibus nisi at sem suscipit, vel porta
+      turpis feugiat.
+    }}
+  }
+
+  \vspace{1.5cm}
+
+  % RESULTADOS
+  \SectionHeader{RESULTADOS}
+
+  \vspace{1cm}
+
+  \begin{center}
+    \includegraphics[width=13cm,height=13cm]{figura1.pdf}
+  \end{center}
+
+  \parbox{24cm}{
+    {\Large\textsf{
+      \textbf{Figura 1:} Exemplo de legenda fict\'icia usando texto lorem
+      ipsum apenas para compor o painel.
+    }}
+  }
+
+  \vspace{1.8cm}
+
+  \begin{center}
+    \includegraphics[width=13cm,height=10cm]{figura2.pdf}
+  \end{center}
+
+  \parbox{24cm}{
+    {\Large\textsf{
+      \textbf{Figura 2:} Outra legenda ilustrativa descrevendo uma varia\c c\~ao
+      em duas condi\c c\~oes gen\'ericas.
+    }}
+  }
+
+\end{minipage}
+\hfill
+% -------------------- COLUNA 3 ----------------------
+\begin{minipage}[t]{0.31\textwidth}
+  \raggedright\large
+
+  % TABELA
+  \parbox{24cm}{
+    {\Large\textsf{
+      \textbf{Tabela 1:} Exemplo de tabela com estimativas de par\^ametros
+      em um modelo gen\'erico.
+    }}
+  }
+
+  \vspace{0.8cm}
+
+  \begin{center}
+    \begin{tabular}{ccc}
+      \hline
+      Par\^ametro & Estimativa & Valor p \\
+      \hline
+      $\beta_0$ & 1.23 & 0.12 \\
+      $\beta_1$ & 0.98 & $< 0.001$ \\
+      $\beta_2$ & 0.51 & 0.03 \\
+      \hline
+    \end{tabular}
+  \end{center}
+
+  \vspace{2cm}
+
+  % CONCLUS\~AO
+  \SectionHeader{CONCLUS\~AO}
+
+  \parbox{24cm}{
+    {\LARGE\textsf{
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Vestibulum aliquam augue et convallis accumsan. Sed vitae
+      tortor nec sapien volutpat venenatis. Integer congue nisi
+      sed magna aliquet, vel faucibus est malesuada.
+    }}
+  }
+
+  \vspace{1.5cm}
+
+  % REFER\^ENCIAS
+  \SectionHeader{REFER\^ENCIAS}
+
+  \parbox{24cm}{
+    {\LARGE
+      [1] Lorem ipsum dolor sit amet.\\[0.5cm]
+      [2] Integer bibendum ipsum quis sem hendrerit.\\[0.5cm]
+      [3] Pellentesque habitant morbi tristique senectus.
+    }
+  }
+
+  \vspace{1.5cm}
+
+  % AGRADECIMENTOS
+  \SectionHeader{AGRADECIMENTOS}
+
+  \parbox{24cm}{
+    {\LARGE\textsf{
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Agradecimentos a ag\^encias de fomento e colaboradores podem
+      ser inclu\'idos aqui.
+    }}
+  }
+
+\end{minipage}
+
+\end{document}
+
+

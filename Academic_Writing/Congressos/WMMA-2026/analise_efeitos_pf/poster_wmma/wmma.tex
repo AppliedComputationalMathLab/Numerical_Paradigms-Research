@@ -1,0 +1,237 @@
+\documentclass[a0,portrait]{a0poster}
+\usepackage{palatino}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{amsmath,amsthm,amsfonts}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+% ----------------------------------------------------
+% Paleta em azul p\'etroleo escuro
+% ----------------------------------------------------
+\definecolor{PetroleoEscuro}{RGB}{1,52,82}
+\definecolor{Laranja}{RGB}{200, 95, 30}
+% ----------------------------------------------------
+% Macro para t\'itulos de se\c c\~ao com espa\c camento "aberto" (op\c c\~ao C)
+% ----------------------------------------------------
+\newcommand{\SectionHeader}[1]{%
+  \begin{center}
+    \parbox{15cm}{%
+      \begin{center}
+        {\color{Laranja}\rule[0.3cm]{15cm}{0.5cm}}\\[0.4cm]
+        {\bfseries\LARGE #1}\\[0.3cm]
+        {\color{Laranja}\rule[0.0cm]{15cm}{0.5cm}}
+      \end{center}
+    }
+  \end{center}
+}
+\newcommand{\FaixaPatrocinadoresFigura}{%
+  \AddToShipoutPictureBG*{%
+    \AtPageLowerLeft{%
+      \raisebox{1.5cm}{% distancia do rodapé
+        \hspace*{2cm}% margem esquerda
+        \includegraphics[width=80cm,height=6cm]{rodape_rede.png}%
+      }%
+    }%
+  }%
+}
+\begin{document}
+\FaixaPatrocinadoresFigura
+\small
+% ----------------------------------------------------
+% Faixa superior / logo
+% ----------------------------------------------------
+\begin{center}
+  \hspace{-2cm}
+  \includegraphics[width=80cm,height=12cm]{faixa.png}
+\end{center}
+% ----------------------------------------------------
+% T\'itulo do evento
+% ----------------------------------------------------
+\vspace{1cm}
+\begin{center}
+  \parbox{70cm}{
+    \textcolor{Gray}{\rule[0cm]{70cm}{0.6cm}}\\[0.2cm]
+    {\color{PetroleoEscuro}\Huge \bfseries \centering
+      Explorando alguns efeitos dos erros de Ponto Flutuante\\[0.3cm]
+    }
+    \textcolor{Gray}{\rule[0cm]{70cm}{0.6cm}}
+  }
+\end{center}
+% ----------------------------------------------------
+% Autores
+% ----------------------------------------------------
+\vspace{-.2cm}
+\begin{center}
+{\LARGE \bf
+  Ribas, E. R. L. D.$^{1,*}$, Pazini, D. S.$^2$, D`Afonseca, L. A.$^3$, Rocha, L. M.$^4$\\[0.5cm]
+  Departamento de Matemática, Centro Federal de Educação Tecnológica de Minas Gerais (CEFET-MG)\\[0.5cm]
+  $^{*}$Contato: enzorochaleitedinizribas@gmail.com
+}
+\end{center}
+
+\vspace{1.5cm}
+
+% ====================================================
+%                      3 COLUNAS
+% ====================================================
+
+\noindent
+% -------------------- COLUNA 1 ----------------------
+\begin{minipage}[t]{0.31\textwidth}
+  \raggedright\large
+  % INTRODUCAO
+  \SectionHeader{Introdução}
+  \parbox{24cm}{
+    {
+      A \textit{aritmética de ponto flutuante} é o sistema adotado por computadores para que lidem com números reais utilizando uma notação compacta e eficaz. Essa técnica é utilizada para representar e manipular números reais de forma prática e eficiente. Ela permite representar números de grandezas diversas, que não podem ser armazenados com precisão, utilizando apenas números inteiros. 
+      
+      A aritmética de ponto flutuante é amplamente utilizada em diversas áreas, como computação científica, gráficos de computador, simulações numéricas e processamento de sinais. No entanto, é importante compreender suas limitações e os possíveis erros que podem ocorrer durante as operações aritméticas, a fim de garantir resultados precisos e confiáveis em cálculos numéricos. Os resultados a seguir são derivados de estudos realizados em um projeto de iniciação científica.
+    }
+  }
+   % ARITMETICA DE PF
+  \SectionHeader{Ponto Flutuante}
+  \parbox{24cm}{
+    {
+      Um sistema de ponto flutuante $F$ pode ser definido como
+      \[
+      F(\beta, t, L, U)\]
+      cuja representação normalizada de um número real N nesse sistema é dada por
+      \begin{equation}
+      N = \pm (d_{1}.d_{2} . . . d_{t})_\beta \times \beta^e 
+      \end{equation}
+      em que
+      \begin{itemize}
+        \item \( N \) é o número real;
+        \item \(\beta\) é a base que a máquina opera;
+        \item \( t \) é o número de dígitos na mantissa, tal que \( 0 \leq d_{j} \leq \beta-1 \), j = 1, ...,t, \(d_{1} \neq 0\);
+        \item \( L \) é o menor expoente inteiro;
+        \item \( U \) é o maior expoente inteiro;
+        \item \( e \) é o expoente inteiro no intervalo [\( L \),\( U \)].
+      \end{itemize}
+    }
+  }
+  \vspace{1cm}
+   % METODOLOGIA
+  \SectionHeader{Metodologia}
+  \parbox{24cm}{
+      Para investigar os efeitos dos erros de ponto flutuante, foram realizados experimentos computacionais utilizando diferentes configurações de precisão numérica. Através da linguagem de programação Python junto a bibliotecas NumPy e Scipy para melhor confiabilidade das operações e outras bibliotecas gráficas como Matplotlib, seaborn, plotly, foram implementados algoritmos que reproduzem instabilidades em operações aritméticas.
+  }
+\end{minipage}
+\hfill
+% -------------------- COLUNA 2 ----------------------
+\begin{minipage}[t]{0.31\textwidth}
+  \raggedright\large
+  % RESULTADOS
+  \SectionHeader{Fenômenos Observados}
+  % ERRO 1
+  
+  \parbox{24cm}{
+  Um erro comum neste sistema é o da perda de significância, ou cancelamento catastrófico, que ocorre quando a subtração de dois números resulta em um valor com menos dígitos significativos do que os números originais. Para ilustrar isso consideramos duas situações.
+  
+  Na Figura 1, a função $f(x) = x^{10} + 1 - x^{10}$, embora para $x \in \mathbb{R}$ o resultado seja igual a 1, ao efetuarmos os cálculos usando ponto flutuante, observamos um comportamento inesperado em que o valor correto é exibido apenas até um certo valor de $x$. Após esse valor observamos um intervalo em que ocorre uma oscilação no resultado da função e, em seguida, observamos que a função assume o valor zero.
+  }
+  % figura 1
+  \begin{center}
+    \includegraphics{images/NumError1_mplt.pdf}
+  \end{center}
+  \parbox{24cm}{
+    {
+      \textbf{Figura 1:} Gráfico de $f(x)$ com precisão de 32 bits.
+    }
+  }
+  \vspace{1cm}
+
+  % % ERRO 2
+  \parbox{24cm}{
+    Já na Figura 2, consideramos a função $g(x) = \frac{(1+x)-1}{x}$, que matematicamente é igual a 1 para todo \(x \neq 0\). Contudo, ao calcular essa função utilizando ponto flutuante, para valores de $x$ muito pequenos, também observamos um comportamento oscilatório.
+  % ERRO 1
+  }
+  % figura 4
+  \begin{center}
+    \includegraphics{images/NumError4_mplt}
+  \end{center}
+
+  \parbox{24cm}{
+    {
+      \textbf{Figura 2:} Gráfico de $g(x)$ com precisão de 64 bits.
+    }
+  }
+
+  \vspace{1cm}
+   \parbox{24cm}
+    {
+      % ERRO 2
+      Um outro erro é o não cancelamento adequado de termos em expressões matematicamente equivalentes. A Figura 3 apresenta a comparação entre os resultados obtidos ao calcular $p(x) = (x-1)^{6}$ e sua forma expandida $q(x) = x^6-6x^5+15x^4-20x^3+15x^2-6x+1$. Nesta figura, o gráfico de $p$ exibe os resultados obtidos pelo cálculo da expressão fatorada utilizando ponto flutuante obtendo a curva esperada. Entretanto, o gráfico da expressão expandida $q$, calculado no mesmo sistema de ponto flutuante, produz resultados caóticos.
+      Note que, apesar de possivelmente surpreendente, esse fenômeno não invalida a utilidade do ponto flutuante, pois o erro observado é da ordem de $10^{-14}$.
+    }
+
+\end{minipage}
+\hfill
+% -------------------- COLUNA 3 ----------------------
+\begin{minipage}[t]{0.31\textwidth}
+  \raggedright\large
+  \vspace{1cm}
+  % figura 2
+  \begin{center}
+    \includegraphics{images/NumError2_mplt}
+  \end{center}
+  \parbox{24cm}{
+    {
+    \textbf{Figura 3:} Gráfico das curvas $p(x)$ e $q(x)$ com precisão de 64 bits.
+    }
+  }
+  \vspace{1cm}
+
+  % ERRO 3 DERIVADA NUMÉRICA
+  
+  \parbox{24cm}{
+  Também observamos erros em expressões racionais onde o numerador e o denominador ficam pequenos simultaneamente.
+  Utilizando Diferenças finitas para aproximar a derivada de uma função $z(x)$ pelo quociente
+  }
+  {
+  \[
+    \textit{$D_z(x,h)$} = \frac{\textit{z}(x+h) - z(x-h)}{2h},
+  \]
+  }
+  \parbox{24cm}{
+  espera-se que, ao diminuir o valor de \(h\), a aproximação melhore. Mas devido aos erros de arredondamento em ponto flutuante, para h muito pequeno, o erro na aproximação começa a se comportar de forma caótica. A Figura 4 ilustra esse fenômeno para a função $z(x) = \frac{x^{3}}{3} - 3x + 3$ cuja derivada é dada por $z'(x) = x^{2} - 3$.
+  }
+  
+  \vspace{0.5cm}
+
+  \parbox{24cm}{
+  A derivada numérica via diferença central é então comparada com o valor exato da derivada em \(x = 1\), e o erro é definido como
+  }
+  {
+  \[
+    \textit{E}(h) = |z'(1) - D_z(1,h)|.
+  \]
+  }    
+  % figura 4
+  \begin{center}
+    \includegraphics{images/NumError3_mplt}
+  \end{center}
+  \parbox{24cm}{
+    {
+      \textbf{Figura 4:} Gráfico de $\textit{E}(h)$ com precisão de 32 bits.
+    }
+  }
+  
+  \vspace{1cm}
+  % REFER\^ENCIAS
+  \SectionHeader{Referências}
+  \parbox{24cm}{
+    {
+      [1] Chapra, S. C., Canale, R. P. Numerical Methods for Engineers. McGraw-Hill International Editions, 1985. \\[0.5cm]
+      [2] IEE Standard for Floating-Point Arithmetic. IEEE Std 754-2019, 2019. \\[0.5cm]
+      [3] Faires J. D., Burden R. L. Numerical Analysis. 7th Edition. Brooks/Cole, 2001.\\[0.5cm]
+      [4] Ruggiero, M. A. G., Lopes, V. L. R. Cálculo Numérico: Aspectos Teóricos e Computacionais. 2th Edition. Pearson. 2010.
+    }
+  }
+\end{minipage}
+
+\end{document}
+
+

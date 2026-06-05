@@ -1,0 +1,116 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{times}
+\usepackage{tgtermes}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,latexsym, cite}
+\usepackage{color,graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{multicol}
+
+\setstretch{1,15}
+
+
+\newcommand{\R}{\mathbb {R}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\F}{{\mathcal F}}
+\newcommand{\W}{{\mathcal W}}
+\newcommand{\T}{{\mathcal T}}
+\renewcommand{\O}{{\mathcal O}}
+\renewcommand{\S}{{\mathcal S}}
+\renewcommand{\phi}{{\varphi}}
+\newcommand{\dist}{{\rm dist}}
+\newcommand{\Int}{\mathrm{Int}}
+\newcommand{\Tr}{{\rm Tr}}
+\renewcommand{\div}{{\rm div}}
+\newcommand{\eps}{{\varepsilon}}
+\renewcommand{\epsilon}{{\varepsilon}}
+\renewcommand{\theta}{{\vartheta}}
+
+\numberwithin{equation}{section}
+
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\fontsize{16}{20}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\fontsize{16}{20}\bfseries}{\thesubsection}{1em}{}
+\titlespacing*{\section}
+{0pt}{2.ex plus 1ex minus .2ex}{.0ex}
+\titlespacing*{\subsection}
+{0pt}{0.ex}{.0ex}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 2pt minus 1 pt}
+\topmargin  -12mm
+\evensidemargin 5mm
+\oddsidemargin  0mm
+\textwidth  158mm
+\textheight 245mm
+\headheight 14pt
+\headsep 1.2cm
+
+
+\pagestyle{fancy}
+\rfoot{}
+\chead{}
+\lfoot{
+\textit{\hrule \hfill 
+\\
+I Workshop Mineiro de Matemática Aplicada}
+}
+\lhead{
+ \textit{I Workshop de Verão do Doutorado Multicêntrico em Matemática de Minas Gerais}
+ \rhead{
+  \textit{03 a 05 de Fevereiro de 2026}}}
+\begin{document}
+%\pagestyle{empty}
+\pagenumbering{gobble}
+\begin{center}
+\begin{spacing}{2.05}
+{\fontsize{20}{20}
+\bf
+Explorando alguns efeitos dos erros de Ponto Flutuante
+}
+\end{spacing}
+\end{center}
+\vspace{-1.25cm}
+\begin{center}
+{\fontsize{14}{20}
+\bf
+E. R. L. D. Ribas\textsuperscript{\textdagger}, D. S. Pazini\textsuperscript{\textdaggerdbl}, L. A. D'Afonseca, L. M. Rocha }
+\bigskip
+
+{\fontsize{12}{20}
+Centro Federal de Educação Tecnológica de Minas Gerais (CEFET-MG) \\
+enzorochaleitedinizribas@gmail.com\textsuperscript{\textdagger}, danieldspazini3@gmail.com\textsuperscript{\textdaggerdbl}
+}
+\end{center}
+\vspace{10pt}
+\subsection*{Resumo}
+Este trabalho apresenta resultados de estudos realizados em um projeto de iniciação científica cujo objetivo é explorar graficamente alguns efeitos do cálculos realizados com ponto flutuante.
+
+Um sistema de ponto flutuante é a maneira utilizada pelos computadores para representar números reais através de uma notação compacta e eficaz, padronizado pelo IEEE. Ele permite escrever números de grandezas diversas utilizando apenas números inteiros. No entanto, essa representação fica limitada ao adequar o número ao sistema adotado, causando erros que podem se acumular em operações sucessivas, produzindo resultados imprecisos ou incorretos.
+
+Um erro comum neste sistema é o da perda de significância, ou cancelamento catastrófico, que ocorre quando a subtração de dois números resulta em um valor com menos dígitos significativos do que os números originais.
+Um exemplo desse comportamento é a função $f(x) = x^{10} + 1 - x^{10}$. Embora para $x \in \mathbb{R}$ o resultado é igual a 1, ao efetuarmos os cálculos usando ponto flutuante, observamos o comportamento ilustrado no gráfico da Figura 1, em que o valor correto é exibido apenas até um certo valor de $x$. Após esse valor observamos um intervalo em que ocorre uma oscilação caótica no resultado da função. Posteriormente, observamos que a função assume o valor zero.
+
+\begin{multicols}{2}
+\begin{center}
+  \includegraphics[height=3cm,width=7.5cm]{imagens/erro1}
+  Figura 1: Perda de significância.
+\end{center}
+\begin{center}
+  \includegraphics[height=3cm,width=7.5cm]{imagens/error2zoomzoom}\\
+  Figura 2: Expressões equivalentes.
+\end{center}
+\end{multicols}
+\vspace{-0.5\baselineskip}
+
+Um outro erro é o não cancelamento adequado de termos em expressões matematicamente equivalentes. A Figura 2 apresenta a comparação entre os resultados obtidos ao calcular $p(x) = (x-1)^{6}$ e sua forma expandida $q(x) = x^6-6x^5+15x^4-20x^3+15x^2-6x+1$. Nesta figura, o gráfico de $p$ exibe os resultados obtidos pelo cálculo da expressão fatorada utilizando ponto flutuante obtendo a curva esperada. Entretanto, o gráfico da expressão expandida $q$, calculado no mesmo sistema de ponto flutuante, produz resultados caóticos. Note que, apesar de possivelmente surpreendente, esse fenômeno não invalida a utilidade do ponto flutuante, pois o erro observado é da ordem de $10^{-14}$.
+
+Os fenômenos observados nas figuras decorrem de erros de arredondamento inerentes ao sistema de ponto flutuante, destacando a importância da escolha das expressões matemáticas em implementações computacionais.
+
+\end{document} 
+

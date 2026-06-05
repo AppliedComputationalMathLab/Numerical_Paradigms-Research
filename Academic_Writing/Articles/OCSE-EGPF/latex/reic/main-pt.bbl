@@ -1,0 +1,30 @@
+\begin{thebibliography}{}
+
+\bibitem[Harrison, 1999]{HarrisonMachineCheckedFP}
+Harrison, J. (1999).
+\newblock A machine-checked theory of floating-point arithmetic.
+\newblock Technical Report EY2-03, Intel Corporation, 5200 NE Elam Young
+  Parkway, Hillsboro, OR 97124, USA.
+\newblock Intel Corporation.
+
+\bibitem[{IEEE Computer Society}, 2008]{IEEE754_2008}
+{IEEE Computer Society} (2008).
+\newblock {IEEE} standard for floating-point arithmetic.
+\newblock Technical Report IEEE Std 754-2008, Institute of Electrical and
+  Electronics Engineers (IEEE).
+
+\bibitem[{IEEE Computer Society}, 2019]{IEEE754_2019}
+{IEEE Computer Society} (2019).
+\newblock {IEEE} standard for floating-point arithmetic.
+\newblock Technical Report IEEE Std 754-2019, Institute of Electrical and
+  Electronics Engineers (IEEE).
+\newblock Available as IEEE Std 754-2019.
+
+\bibitem[Muller, 2016]{Muller2016}
+Muller, J.-M. (2016).
+\newblock {\em Elementary Functions: Algorithms and Implementation}.
+\newblock Springer Science+Business Media (Birkh\"auser), New York, 2 edition.
+\newblock 1st ed.\ 1997, 2nd ed.\ 2006; © Birkh\"auser 1997/2006; © Springer
+  Science+Business Media New York 2016.
+
+\end{thebibliography}
