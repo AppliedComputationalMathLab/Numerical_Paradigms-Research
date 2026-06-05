@@ -1,0 +1,11 @@
+,,wall_time_ms,wall_time_ms,cpu_usage_percent,cpu_usage_percent,memory_used_mb,memory_used_mb
+,,mean,std,mean,std,mean,std
+method,paradigm,,,,,,
+euler,functional,1.3996,0.059,99.947,4.6782,0.0018,0.0131
+euler,imperative,1.2564,0.0417,99.87,3.5755,0.0,0.0
+fixed_point,functional,0.085,0.0164,98.279,94.7925,0.0021,0.0089
+fixed_point,imperative,0.0776,0.0063,99.652,100.9083,0.0001,0.0007
+newton_1d,functional,0.0368,0.0012,97.981,180.2336,0.0002,0.0012
+newton_1d,imperative,0.0359,0.0009,99.57,183.1292,0.0,0.0004
+newton_2d,functional,0.2292,0.0219,99.748,35.2246,0.0003,0.0013
+newton_2d,imperative,0.2097,0.0201,98.765,35.2894,0.0,0.0

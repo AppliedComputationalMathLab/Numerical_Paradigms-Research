@@ -1,0 +1,127 @@
+	.file	"min4_C.c"
+	.text
+	.def	printf;	.scl	3;	.type	32;	.endef
+	.seh_proc	printf
+printf:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	pushq	%rbx
+	.seh_pushreg	%rbx
+	subq	$56, %rsp
+	.seh_stackalloc	56
+	leaq	48(%rsp), %rbp
+	.seh_setframe	%rbp, 48
+	.seh_endprologue
+	movq	%rcx, 32(%rbp)
+	movq	%rdx, 40(%rbp)
+	movq	%r8, 48(%rbp)
+	movq	%r9, 56(%rbp)
+	leaq	40(%rbp), %rax
+	movq	%rax, -16(%rbp)
+	movq	-16(%rbp), %rbx
+	movl	$1, %ecx
+	movq	__imp___acrt_iob_func(%rip), %rax
+	call	*%rax
+	movq	%rbx, %r8
+	movq	32(%rbp), %rdx
+	movq	%rax, %rcx
+	call	__mingw_vfprintf
+	movl	%eax, -4(%rbp)
+	movl	-4(%rbp), %eax
+	addq	$56, %rsp
+	popq	%rbx
+	popq	%rbp
+	ret
+	.seh_endproc
+	.globl	f1
+	.def	f1;	.scl	2;	.type	32;	.endef
+	.seh_proc	f1
+f1:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	.seh_endprologue
+	movl	$1, %eax
+	popq	%rbp
+	ret
+	.seh_endproc
+	.globl	f2
+	.def	f2;	.scl	2;	.type	32;	.endef
+	.seh_proc	f2
+f2:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	.seh_endprologue
+	movl	$2, %eax
+	popq	%rbp
+	ret
+	.seh_endproc
+	.globl	f3
+	.def	f3;	.scl	2;	.type	32;	.endef
+	.seh_proc	f3
+f3:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	.seh_endprologue
+	movl	$3, %eax
+	popq	%rbp
+	ret
+	.seh_endproc
+	.globl	f4
+	.def	f4;	.scl	2;	.type	32;	.endef
+	.seh_proc	f4
+f4:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	.seh_endprologue
+	movl	$4, %eax
+	popq	%rbp
+	ret
+	.seh_endproc
+	.def	__main;	.scl	2;	.type	32;	.endef
+	.section .rdata,"dr"
+.LC0:
+	.ascii "%d\12\0"
+	.text
+	.globl	main
+	.def	main;	.scl	2;	.type	32;	.endef
+	.seh_proc	main
+main:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	pushq	%rbx
+	.seh_pushreg	%rbx
+	subq	$56, %rsp
+	.seh_stackalloc	56
+	leaq	48(%rsp), %rbp
+	.seh_setframe	%rbp, 48
+	.seh_endprologue
+	call	__main
+	call	f1
+	movl	%eax, %ebx
+	call	f2
+	addl	%eax, %ebx
+	call	f3
+	addl	%eax, %ebx
+	call	f4
+	addl	%ebx, %eax
+	movl	%eax, -4(%rbp)
+	movl	-4(%rbp), %eax
+	movl	%eax, %edx
+	leaq	.LC0(%rip), %rcx
+	call	printf
+	movl	$0, %eax
+	addq	$56, %rsp
+	popq	%rbx
+	popq	%rbp
+	ret
+	.seh_endproc
+	.ident	"GCC: (tdm64-1) 10.3.0"
+	.def	__mingw_vfprintf;	.scl	2;	.type	32;	.endef

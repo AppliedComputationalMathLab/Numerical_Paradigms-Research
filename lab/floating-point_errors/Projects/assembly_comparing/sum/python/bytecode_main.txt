@@ -1,0 +1,23 @@
+﻿  0           RESUME                   0
+
+  1           LOAD_CONST               0 (<code object soma at 0x00000237B8B2AF70, file "D:\Users\Enzo HD\Github\Repos\ic-metodos-numericos\Ponto-Flutuante\Projects\assembly_comparing\sum\python\main.py", line 1>)
+              MAKE_FUNCTION
+              STORE_NAME               0 (soma)
+
+  4           LOAD_NAME                1 (print)
+              PUSH_NULL
+              LOAD_NAME                0 (soma)
+              PUSH_NULL
+              LOAD_CONST               1 (1)
+              LOAD_CONST               2 (2)
+              CALL                     2
+              CALL                     1
+              POP_TOP
+              RETURN_CONST             3 (None)
+
+Disassembly of <code object soma at 0x00000237B8B2AF70, file "D:\Users\Enzo HD\Github\Repos\ic-metodos-numericos\Ponto-Flutuante\Projects\assembly_comparing\sum\python\main.py", line 1>:
+  1           RESUME                   0
+
+  2           LOAD_FAST_LOAD_FAST      1 (a, b)
+              BINARY_OP                0 (+)
+              RETURN_VALUE

@@ -1,0 +1,205 @@
+﻿   0            RESUME                   0
+
+   1            LOAD_CONST               0 (0)
+                LOAD_CONST               1 (None)
+                IMPORT_NAME              0 (math)
+                STORE_NAME               0 (math)
+
+   3            LOAD_CONST              11 ((1e-06, 100))
+                LOAD_CONST               2 (<code object fixed_point_iteration at 0x0000019950291B30, file "D:\Users\Enzo HD\Github\Repos\ic-metodos-numericos\Metodo-do-Ponto-Fixo\Projeto\python\mpf.py", line 3>)
+                MAKE_FUNCTION
+                SET_FUNCTION_ATTRIBUTE   1 (defaults)
+                STORE_NAME               1 (fixed_point_iteration)
+
+  30            LOAD_NAME                2 (__name__)
+                LOAD_CONST               3 ('__main__')
+                COMPARE_OP              88 (bool(==))
+                POP_JUMP_IF_FALSE       82 (to L5)
+
+  31            LOAD_CONST               4 (<code object <lambda> at 0x000001995030D680, file "D:\Users\Enzo HD\Github\Repos\ic-metodos-numericos\Metodo-do-Ponto-Fixo\Projeto\python\mpf.py", line 31>)
+                MAKE_FUNCTION
+                STORE_NAME               3 (g)
+
+  33            LOAD_CONST               5 (1.5)
+                STORE_NAME               4 (x0)
+
+  35            NOP
+
+  36    L1:     LOAD_NAME                1 (fixed_point_iteration)
+                PUSH_NULL
+                LOAD_NAME                3 (g)
+                LOAD_NAME                4 (x0)
+                CALL                     2
+                UNPACK_SEQUENCE          3
+                STORE_NAME               5 (root)
+                STORE_NAME               6 (iters)
+                STORE_NAME               7 (history)
+
+  37            LOAD_NAME                8 (print)
+                PUSH_NULL
+                LOAD_CONST               6 ('Raiz aproximada: ')
+                LOAD_NAME                5 (root)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+
+  38            LOAD_NAME                8 (print)
+                PUSH_NULL
+                LOAD_CONST               7 ('N·mero de iteraþ§es: ')
+                LOAD_NAME                6 (iters)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+
+  39            LOAD_NAME                8 (print)
+                PUSH_NULL
+                LOAD_CONST               8 ('Hist¾rico de aproximaþ§es:')
+                CALL                     1
+                POP_TOP
+
+  40            LOAD_NAME                9 (enumerate)
+                PUSH_NULL
+                LOAD_NAME                7 (history)
+                CALL                     1
+                GET_ITER
+        L2:     FOR_ITER                20 (to L3)
+                UNPACK_SEQUENCE          2
+                STORE_NAME              10 (i)
+                STORE_NAME              11 (val)
+
+  41            LOAD_NAME                8 (print)
+                PUSH_NULL
+                LOAD_CONST               9 ('  IteraþÒo ')
+                LOAD_NAME               10 (i)
+                FORMAT_SIMPLE
+                LOAD_CONST              10 (': ')
+                LOAD_NAME               11 (val)
+                FORMAT_SIMPLE
+                BUILD_STRING             4
+                CALL                     1
+                POP_TOP
+                JUMP_BACKWARD           22 (to L2)
+
+  40    L3:     END_FOR
+                POP_TOP
+        L4:     RETURN_CONST             1 (None)
+
+  30    L5:     RETURN_CONST             1 (None)
+
+  --    L6:     PUSH_EXC_INFO
+
+  42            LOAD_NAME               12 (Exception)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE       18 (to L10)
+                STORE_NAME              13 (e)
+
+  43    L7:     LOAD_NAME                8 (print)
+                PUSH_NULL
+                LOAD_NAME               13 (e)
+                CALL                     1
+                POP_TOP
+        L8:     POP_EXCEPT
+                LOAD_CONST               1 (None)
+                STORE_NAME              13 (e)
+                DELETE_NAME             13 (e)
+                RETURN_CONST             1 (None)
+
+  --    L9:     LOAD_CONST               1 (None)
+                STORE_NAME              13 (e)
+                DELETE_NAME             13 (e)
+                RERAISE                  1
+
+  42   L10:     RERAISE                  0
+
+  --   L11:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+ExceptionTable:
+  L1 to L4 -> L6 [0]
+  L6 to L7 -> L11 [1] lasti
+  L7 to L8 -> L9 [1] lasti
+  L9 to L11 -> L11 [1] lasti
+
+Disassembly of <code object fixed_point_iteration at 0x0000019950291B30, file "D:\Users\Enzo HD\Github\Repos\ic-metodos-numericos\Metodo-do-Ponto-Fixo\Projeto\python\mpf.py", line 3>:
+  3           RESUME                   0
+
+ 14           LOAD_CONST               1 (0)
+              STORE_FAST               4 (iter_count)
+
+ 15           LOAD_FAST                1 (x0)
+              STORE_FAST               5 (x)
+
+ 16           LOAD_FAST                1 (x0)
+              BUILD_LIST               1
+              STORE_FAST               6 (values)
+
+ 18           LOAD_FAST_LOAD_FAST     67 (iter_count, max_iter)
+              COMPARE_OP              18 (bool(<))
+              POP_JUMP_IF_FALSE       63 (to L3)
+
+ 19   L1:     LOAD_FAST                0 (g)
+              PUSH_NULL
+              LOAD_FAST                5 (x)
+              CALL                     1
+              STORE_FAST               7 (x_next)
+
+ 20           LOAD_FAST                6 (values)
+              LOAD_ATTR                1 (append + NULL|self)
+              LOAD_FAST                7 (x_next)
+              CALL                     1
+              POP_TOP
+
+ 22           LOAD_GLOBAL              3 (abs + NULL)
+              LOAD_FAST_LOAD_FAST    117 (x_next, x)
+              BINARY_OP               10 (-)
+              CALL                     1
+              LOAD_FAST                2 (tol)
+              COMPARE_OP              18 (bool(<))
+              POP_JUMP_IF_FALSE        7 (to L2)
+
+ 23           LOAD_FAST_LOAD_FAST    116 (x_next, iter_count)
+              LOAD_CONST               2 (1)
+              BINARY_OP                0 (+)
+              LOAD_FAST                6 (values)
+              BUILD_TUPLE              3
+              RETURN_VALUE
+
+ 25   L2:     LOAD_FAST                7 (x_next)
+              STORE_FAST               5 (x)
+
+ 26           LOAD_FAST                4 (iter_count)
+              LOAD_CONST               2 (1)
+              BINARY_OP               13 (+=)
+              STORE_FAST               4 (iter_count)
+
+ 18           LOAD_FAST_LOAD_FAST     67 (iter_count, max_iter)
+              COMPARE_OP              18 (bool(<))
+              POP_JUMP_IF_FALSE        2 (to L3)
+              JUMP_BACKWARD           63 (to L1)
+
+ 28   L3:     LOAD_GLOBAL              5 (Exception + NULL)
+              LOAD_CONST               3 ('O mÚtodo nÒo convergiu dentro do n·mero mßximo de iteraþ§es.')
+              CALL                     1
+              RAISE_VARARGS            1
+
+Disassembly of <code object <lambda> at 0x000001995030D680, file "D:\Users\Enzo HD\Github\Repos\ic-metodos-numericos\Metodo-do-Ponto-Fixo\Projeto\python\mpf.py", line 31>:
+ 31           RESUME                   0
+              LOAD_GLOBAL              0 (math)
+              LOAD_ATTR                2 (sin)
+              PUSH_NULL
+              LOAD_GLOBAL              0 (math)
+              LOAD_ATTR                4 (pow)
+              PUSH_NULL
+              LOAD_FAST                0 (x)
+              LOAD_CONST               1 (2)
+              CALL                     2
+              LOAD_GLOBAL              0 (math)
+              LOAD_ATTR                6 (cos)
+              PUSH_NULL
+              LOAD_FAST                0 (x)
+              CALL                     1
+              BINARY_OP                0 (+)
+              CALL                     1
+              RETURN_VALUE
