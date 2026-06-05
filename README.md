@@ -1,81 +1,145 @@
-# IC Métodos Numéricos
+# Paradigms of Numerical Computing
 
-## 📝 Artigo: ???
+> Research repository dedicated to the study of numerical methods, floating-point arithmetic, computational mathematics, and programming paradigms.
 
-## Contribuição
+## Overview
 
-Padrões de Tags:
+This repository contains the results, implementations, experiments, reports, articles, and educational material developed throughout research activities in Computational Mathematics and Scientific Computing.
 
-% TODO: Revisar a introdução
-% FIXME: Fórmula incorreta
-% NOTE: Essa parte foi atualizada por Enzo
-% HACK: Gambiarra temporária
-% BUG: Comportamento inesperado
-% @EnzoR: Marca Enzo
-% @LucasM: Marca Lucas
-% @Daniel: Marca Daniel
-% @LuisD: Marca Luis
+The project investigates how different programming paradigms and computational approaches influence the implementation, performance, precision, maintainability, and numerical stability of algorithms.
 
-## 🧪 Article: Setup do Ambiente
+The research covers topics such as:
 
-Este repositório usa **LaTeX com Visual Studio Code** para garantir uma colaboração fluida entre todos os autores.
+- Floating-point arithmetic (IEEE 754)
+- Numerical error analysis
+- Units in the Last Place (ULP)
+- Catastrophic cancellation
+- Numerical differentiation
+- Scientific computing
+- Mathematical modeling
+- Benchmarking across programming languages
+- Multi-paradigm implementations of numerical algorithms
 
----
-
-### ✅ Requisitos
-
-1. [MiKTeX](https://miktex.org/download) — compilador LaTeX
-2. [Visual Studio Code](https://code.visualstudio.com/) — editor de texto
-3. [Perl](https://strawberryperl.com/)
-4. Extensões do VS Code:
-   - `latex`
-   - `latex-workshop`
-   - `latex-snippets` (opcional)
+The long-term goal is to build an open collection of studies, code, visualizations, articles, and educational resources that may eventually support the development of a book on Numerical Computing and Programming Paradigms.
 
 ---
 
-### ⚙️ Configuração
+## Research Questions
 
-#### 1. Instale o MiKTeX
+Some of the questions investigated by this project include:
 
-Durante a instalação, marque:
+- How do different programming paradigms affect numerical algorithm design?
+- How do floating-point errors propagate through computational systems?
+- What numerical phenomena emerge from finite machine representations?
+- How can numerical experiments be used to teach computational mathematics?
+- Which languages and paradigms provide the best trade-offs between performance, readability, safety, and accuracy?
 
-> ☑ Install missing packages on-the-fly
+---
 
-#### 2. Instale o Perl
+## Current Topics
 
-#### 3. Instale o VS Code
+### Floating-Point Arithmetic
 
-Depois, instale as extensões (Aperte Ctrl+Shift+X):
+Study of machine representation of real numbers under the IEEE 754 standard.
 
-- `Ctrl + Shift + X` → Pesquise e instale:
-  - `LaTeX Workshop`
-  - `LaTeX Snippets` (opcional)
+Topics include:
 
-#### 4. Clone este repositório
+- Representation formats
+- Rounding modes
+- Infinity and NaN values
+- Precision limitations
+- Error propagation
 
-```bash
-git clone https://github.com/IC-Metodos-Numericos/article
-cd article
-```
+### Units in the Last Place (ULP)
 
-#### 5. Compile o projeto
+Investigation of the spacing between adjacent floating-point numbers and its impact on numerical computations.
 
-Abra o arquivo main.tex
+Topics include:
 
-Pressione Ctrl + Alt + B para compilar
+- ULP definitions
+- Quantum representation
+- Relative precision
+- Numerical accuracy metrics
 
-Veja o PDF sendo gerado automaticamente
+### Numerical Stability
 
-#### 6. Verifique o `latexmk`
+Experimental analysis of numerical instability phenomena such as:
 
-✅ Teste seu ambiente
-Execute no terminal:
+- Catastrophic cancellation
+- Loss of significance
+- Round-off errors
+- Finite difference limitations
+- Polynomial evaluation instability
 
-```bash
-latexmk -v
-```
+---
 
-Se aparecer a versão, tudo está certo. ✨
+## Publications
 
->Se tiver dúvidas, fale com @Enzo 🧠
+### Articles
+
+- _The Computer Always Errs: A Graphical Exploration of Floating-Point Arithmetic Effects_
+- _Visual Analysis of Floating-Point Errors and Units of Last Place in Computational Experiments_
+
+### Posters and Scientific Communications
+
+- _Exploring Some Effects of Floating-Point Errors_
+
+---
+
+## Technologies
+
+The project uses multiple languages and tools depending on the experiment.
+
+### Languages
+
+- Python
+- C
+- C++
+- Java
+- Rust
+- Haskell
+
+### Libraries
+
+- NumPy
+- SciPy
+- Matplotlib
+- Plotly
+- Pandas
+
+---
+
+## Future Directions
+
+- Comparative studies across programming paradigms
+- High-performance numerical computing
+- Numerical methods for engineering applications
+- Floating-point formal verification
+- Educational scientific computing resources
+- Open textbook development
+
+---
+
+## Author
+
+**Enzo Rocha Leite Diniz Ribas**
+
+## Supervisors
+
+**Prof. Dr. Luis Alberto D'Afonseca**
+**Prof. Dr. Lucas Martins Rocha**
+
+Research interests:
+
+- Scientific Computing
+- Numerical Methods
+- Computational Mathematics
+- Robotics
+- Programming Languages
+- Software Engineering
+
+---
+
+## License
+
+This repository is released under the MIT License.
