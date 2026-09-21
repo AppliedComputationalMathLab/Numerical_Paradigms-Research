@@ -1,14 +1,19 @@
-\frametitle{Newton-Raphson: perspectiva funcional}
-\begin{lstlisting}[language=Haskell]
-newtonStep f df x =
-    x - f x / df x
-\end{lstlisting}
-    Sua estrutura é:
-    \[
-        (f,f',x)\longmapsto x-\frac{f(x)}{f'(x)}.
-    \]
-    Uma iteração completa pode ser construída pela aplicação repetida de
-    \texttt{newtonStep}.
-    \begin{block}{Observação}
-        A estrutura matemática da iteração fica explícita no programa.
-    \end{block}
+\frametitle{Newton: implementação funcional}
+Um passo de Newton pode ser escrito como uma função pura:
+
+  \begin{lstlisting}[language=Haskell]
+newtonStep f df x = x - f x / df x
+  \end{lstlisting}
+
+  Para $f(x)=x^2-2$:
+
+  \begin{lstlisting}[language=Haskell]
+f  x = x*x - 2
+df x = 2*x
+
+x1 = newtonStep f df x0
+  \end{lstlisting}
+
+  \begin{block}{Leitura matemática}
+    \texttt{newtonStep} recebe $f$, $f'$ e $x_n$, devolvendo $x_{n+1}$.
+  \end{block}

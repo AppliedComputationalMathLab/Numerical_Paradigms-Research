@@ -23,499 +23,638 @@
 \title[Programação Funcional]{Programação Funcional:\\do Cálculo Lambda à Implementação de Métodos Numéricos}
 \author[Ribas et al.]{Enzo Rocha Leite Diniz Ribas \and Luis A. D'Afonseca \and Lucas Martins Rocha}
 \institute[CEFET-MG]{Centro Federal de Educação Tecnológica de Minas Gerais\\Belo Horizonte -- MG}
-\date{Semana de Iniciação Científica -- CEFET-MG}
+\date{22ª Semana de Ciência \& Tecnologia do CEFET-MG}
 
 \begin{document}
 
-\begin{frame}\titlepage\end{frame}
+\begin{frame}
+  \titlepage
+\end{frame}
 
-\begin{frame}{Roteiro}
-    \tableofcontents
+\begin{frame}{Objetivo da apresentação}
+  \begin{block}{Pergunta central}
+    Como ideias de programação funcional ajudam a escrever, testar e raciocinar sobre métodos numéricos?
+  \end{block}
+
+  \vspace{0.2cm}
+  \begin{enumerate}
+    \item Funções matemáticas e funções em programas.
+    \item Cálculo lambda como modelo formal de aplicação de funções.
+    \item Composição, erros explícitos e iteração numérica.
+    \item Newton--Raphson como exemplo principal.
+  \end{enumerate}
+
+  \vspace{0.2cm}
 \end{frame}
 
 \section{Motivação}
 
-\begin{frame}{A pergunta central}
-    \begin{center}\Large\textbf{O que significa implementar uma função matemática?}\end{center}
-    \vspace{0.4cm}
-    \begin{itemize}
-        \item Na matemática, uma função relaciona entradas válidas a saídas.
-        \item Na programação, uma função pode modificar estado, realizar E/S ou produzir
-              erros.
-        \item A programação funcional busca aproximar a computação do comportamento
-              matemático das funções.
-    \end{itemize}
-    \begin{block}{Ideia-guia}
-        Quanto mais explícito for o comportamento de uma função, mais fácil é raciocinar, testar e compor o programa.
-    \end{block}
+\begin{frame}{Da função matemática ao programa}
+  Na matemática, uma função associa entradas válidas a saídas:
+  \begin{equation}\label{eq:raiz-dominio}
+    f:\mathbb{R}_{\geq 0}\longrightarrow \mathbb{R}_{\geq 0},\qquad
+    f(x)=\sqrt{x}.
+  \end{equation}
+
+  \begin{center}
+    \begin{tabular}{c|c}
+      \toprule
+      Entrada & Resultado em $\mathbb{R}$ \\
+      \midrule
+      $4$ & $2$ \\
+      $0$ & $0$ \\
+      $-1$ & não definido em $\mathbb{R}$ \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+
+  \begin{alertblock}{Problema computacional}
+    Como o programa deve representar uma entrada fora do domínio?
+  \end{alertblock}
 \end{frame}
 
-\begin{frame}{Do problema matemático ao programa}
-    Considere
-    \[
-        f(x)=\sqrt{x},\qquad \operatorname{Dom}(f)=\{x\in\mathbb{R}:x\geq0\}.
-    \]
-    \begin{itemize}
-        \item $f(4)=2$
-        \item $f(0)=0$
-        \item $f(-1)$ não possui resultado em $\mathbb{R}$
-    \end{itemize}
-    \begin{alertblock}{Problema computacional}
-        Como representar, no programa, que nem toda entrada possui um resultado válido?
-    \end{alertblock}
-\end{frame}
-
-\section{Programação Imperativa}
-
-\begin{frame}[fragile]{Uma implementação imperativa}
-    \begin{lstlisting}[language=Java]
+\begin{frame}[fragile]{Imperativo: erro fora da assinatura}
+  \begin{lstlisting}[language=Java]
 double sqrt(double x) {
     if (x < 0)
         throw new IllegalArgumentException();
-
     return Math.sqrt(x);
 }
-\end{lstlisting}
-    \begin{itemize}
-        \item comportamento normal;
-        \item condição de erro;
-        \item exceção durante a execução.
-    \end{itemize}
+  \end{lstlisting}
+
+  \begin{itemize}
+    \item A assinatura sugere apenas: \texttt{double -> double}.
+    \item A exceção existe, mas aparece fora do fluxo normal do valor.
+    \item O chamador precisa conhecer esse comportamento por documentação, teste ou leitura do código.
+  \end{itemize}
+
+  \begin{block}{Ideia funcional}
+    Tornar o caso inválido parte explícita do resultado.
+  \end{block}
 \end{frame}
 
-\begin{frame}{Exceções: uma solução, mas com custo conceitual}
-    \begin{itemize}
-        \item Exceções são importantes para representar falhas.
-        \item O fluxo de erro fica separado do fluxo normal.
-        \item A assinatura tradicional nem sempre comunica as falhas possíveis.
-    \end{itemize}
-    \begin{exampleblock}{Pergunta}
-        E se o possível erro fizesse parte do próprio resultado?
-    \end{exampleblock}
-    \[
-        \texttt{sqrt}:\mathbb{R}\longrightarrow\texttt{Maybe}\;\mathbb{R}
-    \]
+\begin{frame}{Funcional: erro como valor}
+  Em vez de esconder a falha em uma exceção, podemos modelar:
+  \begin{equation*}
+    \texttt{safeSqrt}:\mathbb{R}\longrightarrow \texttt{Maybe}\;\mathbb{R}.
+  \end{equation*}
+
+  \begin{equation*}
+    \texttt{safeSqrt}(x)=
+    \begin{cases}
+      \texttt{Just}(\sqrt{x}), & x\geq 0,\\
+      \texttt{Nothing}, & x<0.
+    \end{cases}
+  \end{equation*}
+
+  \begin{center}
+    \begin{tabular}{c|c}
+      \toprule
+      Entrada & Resultado \\
+      \midrule
+      $4$ & \texttt{Just 2} \\
+      $0$ & \texttt{Just 0} \\
+      $-1$ & \texttt{Nothing} \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
 \end{frame}
 
-\begin{frame}{Testes e contratos}
-    \[
-        \begin{array}{c|c}
-            \text{Entrada} & \text{Comportamento esperado} \\ \hline
-            4              & 2                             \\
-            0              & 0                             \\
-            -1             & \text{falha controlada}
-        \end{array}
-    \]
-    \begin{itemize}
-        \item Testes verificam comportamentos específicos.
-        \item Tipos e contratos podem tornar erros explícitos.
-        \item A programação funcional explora essa ideia sistematicamente.
-    \end{itemize}
+\section{Cálculo Lambda}
+
+\begin{frame}{Cálculo lambda: três ideias}
+  O cálculo lambda é um modelo formal para representar funções e computações.
+
+  \begin{center}
+    \begin{tabular}{c|c|c}
+      \toprule
+      Ideia & Forma & Leitura \\
+      \midrule
+      Abstração & $\lambda x.\;e$ & função que recebe $x$ e calcula $e$ \\
+      Aplicação & $e_1\;e_2$ & aplica $e_1$ ao argumento $e_2$ \\
+      Redução & $(\lambda x.\;e)\;v \to e[x:=v]$ & substitui $x$ por $v$ em $e$ \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+
+  \vspace{0.2cm}
+  Exemplo:
+  \begin{equation*}
+    \lambda x.\;x^2
+  \end{equation*}
+  representa a função que recebe $x$ e devolve $x^2$.
+\end{frame}
+
+\begin{frame}{Beta Reduction}
+  Considere a função que soma $1$ ao argumento:
+  \begin{equation*}
+    (\lambda x.\;x+1)\;4.
+  \end{equation*}
+
+  A aplicação é avaliada por substituição:
+  \begin{equation*}
+    (\lambda x.\;x+1)\;4
+    \longrightarrow
+    4+1
+    \longrightarrow
+    5.
+  \end{equation*}
+
+  Outro exemplo, com função quadrática:
+  \begin{equation*}
+    (\lambda x.\;x\cdot x + 1)\;3
+    \longrightarrow
+    3\cdot 3+1
+    \longrightarrow
+    10.
+  \end{equation*}
+
+  \begin{block}{No contexto de métodos numéricos}
+    Uma iteração numérica também aplica uma transformação a uma aproximação atual para produzir a próxima.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Funções que recebem funções}
+  Em cálculo lambda, funções podem ser argumentos de outras funções.
+
+  \begin{equation*}
+    \operatorname{aplicarDuasVezes}=\lambda g.\lambda x.\;g(g(x)).
+  \end{equation*}
+
+  Se $g(x)=x+1$:
+  \begin{equation*}
+    (\lambda g.\lambda x.\;g(g(x)))\;(\lambda y.\;y+1)\;3
+    \longrightarrow
+    5.
+  \end{equation*}
+
+  \begin{block}{Ideia importante}
+    Métodos iterativos seguem exatamente essa estrutura: aplicar repetidamente uma função de atualização.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Currying e especialização}
+  Uma função de dois argumentos pode ser vista como uma função que retorna outra função:
+  \begin{equation*}
+    f(x,y)=x+y
+    \qquad\Longleftrightarrow\qquad
+    f=\lambda x.\lambda y.\;x+y.
+  \end{equation*}
+
+  Fixando $x=10$:
+  \begin{equation*}
+    \operatorname{somar10}=f(10)=\lambda y.\;10+y.
+  \end{equation*}
+
+  Logo:
+  \begin{equation*}
+    \operatorname{somar10}(5)=15.
+  \end{equation*}
+
+  \begin{block}{Uso prático}
+    Currying permite criar funções especializadas a partir de funções gerais.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Composição com contexto}
+  Algumas operações possuem restrições de domínio:
+  \begin{equation*}
+    x \xrightarrow{\sqrt{\phantom{x}}} \sqrt{x}
+      \xrightarrow{\log} \log(\sqrt{x}).
+  \end{equation*}
+
+  Usando \texttt{Maybe}, cada etapa informa se produziu valor ou falhou:
+  \begin{equation*}
+    \texttt{Maybe}\;A
+    \longrightarrow
+    (A\rightarrow\texttt{Maybe}\;B)
+    \longrightarrow
+    \texttt{Maybe}\;B.
+  \end{equation*}
+
+  \begin{center}
+    \begin{tabular}{c|c}
+      \toprule
+      Entrada & Resultado de $\log(\sqrt{x})$ \\
+      \midrule
+      $4$ & $\texttt{Just}(\log 2)$ \\
+      $0$ & \texttt{Nothing}, pois $\log(0)$ é inválido \\
+      $-1$ & \texttt{Nothing}, pois $\sqrt{-1}$ é inválido \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
 \end{frame}
 
 \section{Programação Funcional}
 
 \begin{frame}{O que é programação funcional?}
-    A programação funcional trata \textbf{funções como abstrações fundamentais da computação}.
+  A programação funcional trata \textbf{funções como abstrações centrais da computação}.
+
+  \vspace{0.25cm}
+  Em vez de organizar o programa principalmente por comandos e mutações de estado,
+  ela organiza a computação por \textbf{transformações de dados}.
+
+  \vspace{0.3cm}
+  \begin{columns}[T]
+    \column{0.48\textwidth}
     \begin{itemize}
-        \item funções de primeira classe;
-        \item funções puras;
-        \item imutabilidade;
-        \item composição;
-        \item recursão;
-        \item efeitos colaterais controlados ou isolados.
+      \item funções de primeira classe;
+      \item funções puras;
+      \item imutabilidade.
     \end{itemize}
-    \begin{block}{Função pura}
-        Para uma mesma entrada, uma função pura produz sempre a mesma saída e não altera o estado observável do programa.
-    \end{block}
+
+    \column{0.48\textwidth}
+    \begin{itemize}
+      \item composição;
+      \item recursão;
+      \item efeitos controlados.
+    \end{itemize}
+  \end{columns}
 \end{frame}
 
-\begin{frame}{Função matemática $\times$ função pura}
-    \[
-        f(x)=x^2+1
-    \]
-    Uma função pura pode ser vista como
-    \[
-        f:\mathbb{R}\rightarrow\mathbb{R}.
-    \]
-    \begin{itemize}
-        \item Não depende de variável global.
-        \item Não altera variável externa.
-        \item Não escreve em arquivo.
-        \item Não depende de entrada externa.
-    \end{itemize}
-    \begin{block}{Resultado}
-        A função pode ser analisada como uma transformação entrada $\rightarrow$ saída.
-    \end{block}
+\begin{frame}{Funções de primeira classe}
+  Uma função é de primeira classe quando pode ser tratada como um valor.
+
+  \vspace{0.2cm}
+  Isso significa que ela pode ser:
+
+  \begin{itemize}
+    \item armazenada em uma variável;
+    \item passada como argumento;
+    \item retornada por outra função.
+  \end{itemize}
+
+  \begin{exampleblock}{Ligação com métodos numéricos}
+    Um método de Newton genérico recebe $f$ e $f'$ como argumentos.
+  \end{exampleblock}
+
+  \begin{equation*}
+    \texttt{newtonStep}(f,f',x)
+    =
+    x-\frac{f(x)}{f'(x)}.
+  \end{equation*}
 \end{frame}
 
-\begin{frame}[fragile]{Efeitos colaterais}
-    \begin{lstlisting}
+\begin{frame}{Funções puras}
+  Uma função pura depende apenas dos argumentos de entrada.
+
+  \begin{block}{Definição prática}
+    Para a mesma entrada, produz sempre a mesma saída e não altera o estado observável do programa.
+  \end{block}
+
+  \begin{equation}\label{eq:funcao-pura}
+    f:\mathbb{R}\longrightarrow\mathbb{R},
+    \qquad
+    f(x)=x^2+1.
+  \end{equation}
+
+  \vspace{0.15cm}
+  A chamada da função pode ser entendida como uma transformação matemática:
+
+  \begin{equation*}
+    x\xmapsto{\ f\ }f(x).
+  \end{equation*}
+\end{frame}
+
+\begin{frame}[fragile]{Efeito colateral}
+  \textbf{Com efeito colateral:}
+
+  \begin{lstlisting}
 int counter = 0;
 
 int f(int x) {
     counter++;
     return x * x;
 }
-\end{lstlisting}
-    Embora pareça simples, o comportamento observável depende de estado externo.
-    \begin{alertblock}{Consequência}
-        A função deixa de ser apenas uma transformação entre entrada e saída.
-    \end{alertblock}
+  \end{lstlisting}
+
+  \begin{alertblock}{O que acontece?}
+    Além de retornar $x^2$, a função altera \texttt{counter}. Portanto,
+    seu comportamento não é descrito apenas por $x\mapsto x^2$.
+  \end{alertblock}
 \end{frame}
 
-\section{Cálculo Lambda}
+\begin{frame}[fragile]{Função pura}
+  \textbf{Sem efeito colateral:}
 
-\begin{frame}{A base formal: Cálculo Lambda}
-    O cálculo lambda fornece um modelo formal para representar funções e computações.
-    \begin{enumerate}
-        \item \textbf{Abstração}: definir uma função;
-        \item \textbf{Aplicação}: aplicar uma função;
-        \item \textbf{Substituição}: avaliar a aplicação.
-    \end{enumerate}
-    Exemplo:
-    \[
-        \lambda x.\;x^2
-    \]
-    representa uma função que recebe $x$ e retorna $x^2$.
+  \begin{lstlisting}
+int f(int x) {
+    return x * x;
+}
+  \end{lstlisting}
+
+  \begin{equation*}
+    f:x\longmapsto x^2.
+  \end{equation*}
+
+  \begin{block}{Consequência}
+    A função fica mais fácil de testar, compor e reproduzir.
+  \end{block}
 \end{frame}
 
-\begin{frame}{BNF: descrevendo a sintaxe}
-    Uma gramática simples:
-    \[
-        \begin{aligned}
-            \langle expr\rangle::={} & \langle var\rangle                                \\
-                                     & \mid\lambda\langle var\rangle.\langle expr\rangle \\
-                                     & \mid\langle expr\rangle\;\langle expr\rangle
-        \end{aligned}
-    \]
-    \begin{itemize}
-        \item $\lambda x.e$: abstração;
-        \item $e_1e_2$: aplicação;
-        \item $\langle var\rangle$: variável.
-    \end{itemize}
-    \begin{block}{Ponte conceitual}
-        O cálculo lambda conecta a definição matemática de função a uma representação formal de computação.
-    \end{block}
+\begin{frame}{Imutabilidade}
+  Imutabilidade significa evitar sobrescrever valores já criados.
+
+  \vspace{0.2cm}
+  Em um método iterativo, isso combina bem com a própria notação matemática:
+
+  \begin{equation*}
+    x_0\longrightarrow x_1\longrightarrow x_2\longrightarrow\cdots
+  \end{equation*}
+
+  \vspace{0.2cm}
+  Cada aproximação é um novo valor, não a ``mesma variável'' modificada.
+
+  \begin{exampleblock}{Leitura numérica}
+    Em vez de pensar apenas em \texttt{x = ...}, pensamos em uma sequência
+    $x_0,x_1,x_2,\ldots$.
+  \end{exampleblock}
 \end{frame}
 
-\begin{frame}{Aplicação e redução}
-    Considere
-    \[
-        (\lambda x.\;x*x)\;5.
-    \]
-    Pela substituição $x\leftarrow5$:
-    \[
-        5*5=25.
-    \]
-    A redução beta é
-    \[
-        (\lambda x.e)\;v\longrightarrow e[x:=v].
-    \]
-    \begin{block}{Ideia}
-        Programar pode ser interpretado como construir e reduzir expressões.
-    \end{block}
+\begin{frame}{Composição}
+  Composição é construir uma função a partir de outras funções.
+
+  \begin{equation}\label{eq:composicao}
+    f:A\longrightarrow B,
+    \qquad
+    g:B\longrightarrow C
+    \qquad\Rightarrow\qquad
+    g\circ f:A\longrightarrow C.
+  \end{equation}
+
+  \vspace{0.15cm}
+  A aplicação composta é:
+
+  \begin{equation*}
+    (g\circ f)(x)=g(f(x)).
+  \end{equation*}
+
+  \begin{block}{Em métodos numéricos}
+    Podemos separar cálculo do passo, validação, critério de parada e atualização.
+  \end{block}
 \end{frame}
 
-\section{Currying e Composição}
+\begin{frame}{Recursão}
+  Recursão descreve uma computação em termos dela mesma.
 
-\begin{frame}{Currying}
-    Uma função pode ser escrita como
-    \[
-        f(x,y)=x+y.
-    \]
-    No cálculo lambda:
-    \[
-        f=\lambda x.\lambda y.\;x+y.
-    \]
-    Aplicação:
-    \[
-        f(2)(3)=5.
-    \]
-    \begin{block}{Currying}
-        Uma função de vários argumentos é representada como uma sequência de funções de um único argumento.
-    \end{block}
+  \vspace{0.15cm}
+  Um exemplo clássico é o fatorial:
+
+  \begin{equation*}
+    n! =
+    \begin{cases}
+      1, & n=0,\\
+      n\cdot(n-1)!, & n>0.
+    \end{cases}
+  \end{equation*}
+
+  \begin{exampleblock}{Ligação com iteração}
+    Métodos numéricos também podem ser vistos recursivamente:
+  \end{exampleblock}
+
+  \begin{equation*}
+    x_{n+1}=N(x_n).
+  \end{equation*}
 \end{frame}
 
-\begin{frame}{Por que Currying é útil?}
-    \[
-        \operatorname{somar}\;x\;y=x+y.
-    \]
-    Fixando $x=10$:
-    \[
-        \operatorname{somar10}=\operatorname{somar}\;10.
-    \]
-    Logo,
-    \[
-        \operatorname{somar10}(5)=15.
-    \]
-    \begin{itemize}
-        \item especialização;
-        \item reutilização;
-        \item composição;
-        \item construção de pipelines.
-    \end{itemize}
+\begin{frame}{Efeitos controlados}
+  Nem toda computação é uma função matemática pura.
+
+  \vspace{0.2cm}
+  Programas reais lidam com:
+
+  \begin{itemize}
+    \item erros;
+    \item entrada e saída;
+    \item estado;
+    \item valores ausentes;
+    \item falhas de convergência.
+  \end{itemize}
+
+  \begin{block}{Ideia funcional}
+    O efeito não precisa ficar escondido. Ele pode aparecer no tipo ou no resultado.
+  \end{block}
 \end{frame}
 
-\section{Monads e Efeitos}
+\begin{frame}{Efeitos controlados em métodos numéricos}
+  Em Newton--Raphson, nem toda execução converge.
 
-\begin{frame}{Do erro para um valor}
-    Em vez de
-    \[
-        \texttt{sqrt}(x)\rightarrow\text{exceção},
-    \]
-    podemos modelar
-    \[
-        \texttt{sqrt}(x)\rightarrow\texttt{Maybe}\;\mathbb{R}.
-    \]
-    \[
-        \begin{cases}
-            \texttt{Just}(y), & x\geq0, \\
-            \texttt{Nothing}, & x<0.
-        \end{cases}
-    \]
-    O possível fracasso passa a fazer parte do resultado.
+  \vspace{0.2cm}
+  Em vez de retornar apenas um número, o algoritmo pode retornar um resultado estruturado:
+
+  \begin{equation*}
+    \texttt{NewtonResult}
+    =
+    \texttt{Converged}
+    \mid
+    \texttt{MaxIterations}
+    \mid
+    \texttt{InvalidDerivative}
+    \mid\cdots
+  \end{equation*}
+
+  \begin{alertblock}{Ponto central}
+    A falha deixa de ser um comportamento escondido e passa a fazer parte da interface do método.
+  \end{alertblock}
 \end{frame}
 
-\begin{frame}{Monads: composição com contexto}
-    Uma apresentação inicial de Monad:
-    \begin{center}\textbf{uma abstração para compor computações que carregam um contexto.}\end{center}
-    Exemplos:
-    \begin{itemize}
-        \item ausência: \texttt{Maybe};
-        \item erro: \texttt{Either};
-        \item entrada e saída: \texttt{IO};
-        \item estado;
-        \item listas.
-    \end{itemize}
-    \begin{block}{Cuidado conceitual}
-        Monad não é simplesmente ``tratamento de exceções''. O ponto central é a composição de computações contextualizadas.
-    \end{block}
-\end{frame}
+\begin{frame}{Ponte com métodos numéricos}
+  Considere a função de atualização de Newton:
 
-\begin{frame}{Compondo operações que podem falhar}
-    Considere
-    \[
-        x\xrightarrow{\sqrt{\phantom{x}}}\sqrt{x}
-        \xrightarrow{\log}\log(\sqrt{x}).
-    \]
-    Ambas possuem restrições de domínio. Com um contexto como \texttt{Maybe},
-    podemos compor:
-    \[
-        \texttt{Maybe}\;A
-        \longrightarrow
-        (A\rightarrow\texttt{Maybe}\;B)
-        \longrightarrow
-        \texttt{Maybe}\;B.
-    \]
-    Se uma etapa falhar, a composição preserva o contexto de falha.
+  \begin{equation}\label{eq:newton-pf}
+    N_{f,f'}(x)
+    =
+    x-\frac{f(x)}{f'(x)}.
+  \end{equation}
+
+  A iteração é a aplicação repetida dessa função:
+
+  \begin{equation}\label{eq:iteracao-newton-pf}
+    x_{n+1}=N_{f,f'}(x_n).
+  \end{equation}
+
+  \begin{center}
+    \small
+    funções de primeira classe $\rightarrow$ função pura $\rightarrow$ composição $\rightarrow$ iteração
+  \end{center}
 \end{frame}
 
 \section{Métodos Numéricos}
 
-\begin{frame}{Por que isso importa para métodos numéricos?}
-    Métodos numéricos são algoritmos construídos a partir de transformações matemáticas.
-    Para Newton--Raphson:
-    \[
-        x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}.
-    \]
-    Definindo
-    \[
-        N_f(x)=x-\frac{f(x)}{f'(x)},
-    \]
-    temos
-    \[
-        x_{n+1}=N_f(x_n).
-    \]
-    \begin{block}{Perspectiva funcional}
-        A iteração pode ser vista como aplicação repetida de uma função.
-    \end{block}
+\begin{frame}{Métodos numéricos como transformações}
+  Métodos numéricos são algoritmos construídos a partir de transformações matemáticas.
+
+  Para Newton--Raphson:
+  \begin{equation}\label{eq:newton-raphson}
+    x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}.
+  \end{equation}
+
+  Definindo a função de atualização:
+  \begin{equation}\label{eq:funcao-atualizacao-newton}
+    N_f(x)=x-\frac{f(x)}{f'(x)},
+  \end{equation}
+
+  a sequência de aproximações é:
+  \begin{equation*}
+    x_0,\quad N_f(x_0),\quad N_f(N_f(x_0)),\quad N_f^3(x_0),\ldots
+  \end{equation*}
+
+  \begin{block}{Perspectiva funcional}
+    A iteração é aplicação repetida de uma função.
+  \end{block}
 \end{frame}
 
-\begin{frame}{Newton-Raphson: formulação funcional}
-    \[
-        N(f,f')(x)=x-\frac{f(x)}{f'(x)}.
-    \]
-    A iteração:
-    \[
-        x_0,\quad N(x_0),\quad N^2(x_0),\quad N^3(x_0),\ldots
-    \]
-    ou
-    \[
-        x_{n+1}=N(x_n).
-    \]
+\begin{frame}{Exemplo numérico: raiz de $x^2-2$}
+  Queremos aproximar $\sqrt{2}$ resolvendo:
+  \begin{equation*}
+    f(x)=x^2-2,\qquad f'(x)=2x.
+  \end{equation*}
+
+  A função de Newton é:
+  \begin{equation*}
+    N_f(x)=x-\frac{x^2-2}{2x}=\frac{x}{2}+\frac{1}{x}.
+  \end{equation*}
+
+  Começando com $x_0=1$:
+  \begin{center}
+    \begin{tabular}{c|c}
+      \toprule
+      Iteração & Aproximação \\
+      \midrule
+      $x_0$ & $1.0000$ \\
+      $x_1=N_f(x_0)$ & $1.5000$ \\
+      $x_2=N_f(x_1)$ & $1.4167$ \\
+      $x_3=N_f(x_2)$ & $1.4142$ \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Newton: implementação funcional}
+  Um passo de Newton pode ser escrito como uma função pura:
+
+  \begin{lstlisting}[language=Haskell]
+newtonStep f df x = x - f x / df x
+  \end{lstlisting}
+
+  Para $f(x)=x^2-2$:
+
+  \begin{lstlisting}[language=Haskell]
+f  x = x*x - 2
+df x = 2*x
+
+x1 = newtonStep f df x0
+  \end{lstlisting}
+
+  \begin{block}{Leitura matemática}
+    \texttt{newtonStep} recebe $f$, $f'$ e $x_n$, devolvendo $x_{n+1}$.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Falhas também fazem parte do método}
+  Newton--Raphson pode falhar por razões matemáticas ou computacionais:
+
+  \begin{columns}
+    \column{0.5\textwidth}
     \begin{itemize}
-        \item $f$ é uma função recebida como argumento;
-        \item $f'$ é uma função recebida como argumento;
-        \item $N$ constrói a próxima aproximação.
+      \item derivada nula;
+      \item domínio inválido;
+      \item divergência;
     \end{itemize}
-\end{frame}
 
-\begin{frame}[fragile]{Newton-Raphson: versão imperativa}
-    \begin{lstlisting}
-x = x0;
-
-for (int i = 0; i < maxIter; i++) {
-    x = x - f(x) / df(x);
-
-    if (abs(f(x)) < tol)
-        break;
-}
-\end{lstlisting}
-    O estado é atualizado:
-    \[
-        x^{(0)}\rightarrow x^{(1)}\rightarrow x^{(2)}
-        \rightarrow\cdots
-    \]
-    \begin{alertblock}{Contraste}
-        A implementação é descrita como uma sequência de mutações de estado.
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}[fragile]{Newton-Raphson: perspectiva funcional}
-    \begin{lstlisting}[language=Haskell]
-newtonStep f df x =
-    x - f x / df x
-\end{lstlisting}
-    Sua estrutura é:
-    \[
-        (f,f',x)\longmapsto x-\frac{f(x)}{f'(x)}.
-    \]
-    Uma iteração completa pode ser construída pela aplicação repetida de
-    \texttt{newtonStep}.
-    \begin{block}{Observação}
-        A estrutura matemática da iteração fica explícita no programa.
-    \end{block}
-\end{frame}
-
-\begin{frame}{Casos problemáticos em métodos numéricos}
-    Métodos numéricos possuem condições de falha:
+    \column{0.5\textwidth}
     \begin{itemize}
-        \item derivada nula;
-        \item divergência;
-        \item máximo de iterações;
-        \item domínio inválido;
-        \item perda de precisão numérica.
+      \item máximo de iterações;
+      \item tolerância não atingida;
+      \item perda de precisão.
     \end{itemize}
-    Uma representação explícita pode ser:
-    \[
-        \texttt{NewtonResult}=
-        \texttt{Converged}\mid
-        \texttt{MaxIterations}\mid
-        \texttt{InvalidDerivative}\mid\cdots
-    \]
-    Assim, o algoritmo não precisa representar todos os resultados como um simples
-    número.
+  \end{columns}
+
+  \vspace{0.25cm}
+  Uma saída mais informativa é:
+  \begin{equation*}
+    \texttt{NewtonResult}=\texttt{Converged}\mid\texttt{MaxIterations}\mid\texttt{InvalidDerivative}\mid\cdots
+  \end{equation*}
+
+  \begin{alertblock}{Ponto central}
+    O algoritmo não precisa fingir que todo resultado é apenas um número.
+  \end{alertblock}
 \end{frame}
 
-\section{Vantagens e Limitações}
+\section{Fechamento}
 
-\begin{frame}{Principais vantagens}
-    \begin{columns}
-        \column{0.48\textwidth}
-        \textbf{Funções puras}
+\begin{frame}{Síntese}
+  \begin{enumerate}
+    \item Funções puras aproximam o programa da notação matemática.
+    \item Cálculo lambda formaliza abstração, aplicação e substituição.
+    \item Currying e funções de alta ordem permitem especialização.
+    \item Contextos como \texttt{Maybe} tornam falhas explícitas.
+    \item Métodos numéricos podem ser vistos como composição e aplicação repetida de funções.
+  \end{enumerate}
+
+  \vspace{0.2cm}
+  \begin{block}{Mensagem final}
+    A programação funcional não substitui os métodos numéricos: ela oferece uma forma mais explícita de estruturá-los.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Contato}
+    \begin{center}
+        \Large\textbf{Enzo Rocha Leite Diniz Ribas}
+    \end{center}
+    
+    \vspace{0.2cm}
+    \begin{columns}[T]
+        \column{0.5\textwidth}
         \begin{itemize}
-            \item previsibilidade;
-            \item testes;
-            \item raciocínio matemático.
-        \end{itemize}
-        \textbf{Imutabilidade}
-        \begin{itemize}
-            \item menos estado compartilhado;
-            \item menos dependências ocultas.
-        \end{itemize}
-        \column{0.48\textwidth}
-        \textbf{Composição}
-        \begin{itemize}
-            \item modularidade;
-            \item pipelines.
-        \end{itemize}
-        \textbf{Tipos e contextos}
-        \begin{itemize}
-            \item erros explícitos;
-            \item contratos mais claros.
-        \end{itemize}
-        \textbf{Currying}
-        \begin{itemize}
-            \item especialização;
-            \item reutilização.
+        \item GitHub: \texttt{@oenzoribas}
+        \item LinkedIn: \texttt{Enzo Ribas}
+        \item E-mail: \texttt{enzorochaleitedinizribas@gmail.com}
+        \item Instagram: \texttt{ribas\_enzo}
         \end{itemize}
     \end{columns}
 \end{frame}
 
-\begin{frame}{Programação funcional não elimina o imperativo}
-    \begin{center}\Large\textbf{Paradigmas são ferramentas, não religiões.}\end{center}
-    \vspace{0.3cm}
-    Linguagens modernas combinam paradigmas:
-    \begin{itemize}
-        \item Java: lambdas e streams;
-        \item Python: funções de primeira classe;
-        \item JavaScript: composição e funções de alta ordem;
-        \item Rust: imutabilidade, pattern matching e tipos algébricos;
-        \item Haskell: forte orientação funcional.
-    \end{itemize}
-    \begin{block}{Questão de engenharia}
-        A escolha deve considerar clareza, segurança, desempenho, domínio do problema e custo de desenvolvimento.
-    \end{block}
-\end{frame}
+\begin{frame}{Agradecimentos}
+  \begin{center}
+    \Huge\textbf{Do Cálculo Lambda à Programação Funcional.}
+  \end{center}
 
-\section{Conclusão}
-
-\begin{frame}{Conclusão}
-    \begin{enumerate}
-        \item Funções matemáticas fornecem uma base conceitual natural.
-        \item O imperativo descreve computação por mudanças de estado.
-        \item O funcional privilegia funções puras, imutabilidade e composição.
-        \item O cálculo lambda fornece uma fundamentação formal para funções e aplicação.
-        \item Currying permite especialização e composição.
-        \item Monads estruturam computações que carregam contexto.
-        \item Métodos numéricos podem ser expressos por composição e aplicação de funções.
-    \end{enumerate}
-\end{frame}
-
-\begin{frame}{Mensagem final}
-    \begin{center}
-        \Huge\textbf{Do cálculo à computação.}
-        \vspace{0.6cm}
-
-        \Large
-        Funções matemáticas
-        $\rightarrow$
-        Cálculo Lambda
-        $\rightarrow$
-        Programação Funcional
-        $\rightarrow$
-        Métodos Numéricos
-    \end{center}
-    \vfill
-    \begin{center}\normalsize Obrigado.\end{center}
+  \vfill
+  \begin{center}
+    \normalsize Thanks for your attention.
+  \end{center}
 \end{frame}
 
 \begin{frame}[allowframebreaks]{Referências}
-    \footnotesize
-    \begin{thebibliography}{9}
+  \footnotesize
+  \begin{thebibliography}{9}
+    \bibitem{pierce}
+    PIERCE, B. C.
+    \newblock \emph{Types and Programming Languages}.
+    \newblock MIT Press, 2002.
 
-        \bibitem{pierce}
-        PIERCE, B. C.
-        \newblock \emph{Types and Programming Languages}.
-        \newblock MIT Press, 2002.
+    \bibitem{hutton}
+    HUTTON, G.
+    \newblock \emph{Programming in Haskell}.
+    \newblock Cambridge University Press.
 
-        \bibitem{hutton}
-        HUTTON, G.
-        \newblock \emph{Programming in Haskell}.
-        \newblock Cambridge University Press.
+    \bibitem{Chapra}
+    CHAPRA, S. C.; CANALE, R. P.
+    \newblock \emph{Numerical Methods for Engineers}.
+    \newblock McGraw-Hill Education.
 
-        \bibitem{burden}
-        BURDEN, R. L.; FAIRES, J. D.
-        \newblock \emph{Numerical Analysis}.
-        \newblock Cengage Learning.
+    \bibitem{Church}
+    CHURCH, A.
+    \newblock \emph{An Unsolvable Problem of Elementary Number Theory}.
+    \newblock American Journal of Mathematics, 1936.
 
-        \bibitem{abelson}
-        ABELSON, H.; SUSSMAN, G.
-        \newblock \emph{Structure and Interpretation of Computer Programs}.
-        \newblock MIT Press.
+    \bibitem{burden}
+    BURDEN, R. L.; FAIRES, J. D.
+    \newblock \emph{Numerical Analysis}.
+    \newblock Cengage Learning.
 
-    \end{thebibliography}
+  \end{thebibliography}
 \end{frame}
 
 \end{document}

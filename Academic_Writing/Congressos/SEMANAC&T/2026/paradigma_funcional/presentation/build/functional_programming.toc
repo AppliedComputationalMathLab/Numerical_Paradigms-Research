@@ -1,10 +1,6 @@
 \babel@toc {brazilian}{}\relax 
 \beamer@sectionintoc {1}{Motivação}{3}{0}{1}
-\beamer@sectionintoc {2}{Programação Imperativa}{5}{0}{2}
-\beamer@sectionintoc {3}{Programação Funcional}{8}{0}{3}
-\beamer@sectionintoc {4}{Cálculo Lambda}{11}{0}{4}
-\beamer@sectionintoc {5}{Currying e Composição}{14}{0}{5}
-\beamer@sectionintoc {6}{Monads e Efeitos}{16}{0}{6}
-\beamer@sectionintoc {7}{Métodos Numéricos}{19}{0}{7}
-\beamer@sectionintoc {8}{Vantagens e Limitações}{24}{0}{8}
-\beamer@sectionintoc {9}{Conclusão}{26}{0}{9}
+\beamer@sectionintoc {2}{Cálculo Lambda}{6}{0}{2}
+\beamer@sectionintoc {3}{Programação Funcional}{11}{0}{3}
+\beamer@sectionintoc {4}{Métodos Numéricos}{22}{0}{4}
+\beamer@sectionintoc {5}{Fechamento}{26}{0}{5}

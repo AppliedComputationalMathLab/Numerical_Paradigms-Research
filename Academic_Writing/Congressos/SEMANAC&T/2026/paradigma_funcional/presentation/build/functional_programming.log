@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.22)  1 SEP 2026 20:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.22)  20 SEP 2026 21:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -801,96 +801,416 @@ Dictionary: translator-numbers-dictionary, Language: English
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 \c@lstlisting=\count383
- (f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.nav) [1
+ (f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.nav)
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 28--28
+ [] [] 
+ []
 
-{C:/Users/maria/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.toc) [2
 
-] [3
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 32--32
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[1
+
+{C:/Users/maria/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 48--48
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[2
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 66.
- (C:\Users\maria\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 74--74
+ [] [] 
+ []
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 74.
+(C:\Users\maria\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 66.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 74.
  (C:\Users\maria\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 66.
+LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 74.
  (C:\Users\maria\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mathkerncmss.
-) [4
+)
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[3
 
 ]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 76--76
+ [] [] 
+ []
+
 \openout4 = `functional_programming.vrb'.
 
- (f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.vrb (C:\Users\maria\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 94--94
+ [] [] 
+ []
+
+(f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.vrb (C:\Users\maria\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 3.
-) [5
+)
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
 
-] [6
-
-] [7
-
-] [8
-
-] [9
+[4
 
 ]
-\openout4 = `functional_programming.vrb'.
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 121--121
+ [] [] 
+ []
 
- (f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.vrb) [10
 
-] [11
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
 
-] [12
-
-] [13
-
-] [14
-
-] [15
-
-] [16
-
-] [17
-
-] [18
-
-] [19
-
-] [20
+[5
 
 ]
-\openout4 = `functional_programming.vrb'.
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 146--146
+ [] [] 
+ []
 
- (f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.vrb) [21
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[6
 
 ]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 175--175
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[7
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 194--194
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[8
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 217--217
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[9
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 246--246
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[10
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 273--273
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[11
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 296--296
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[12
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 317--317
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[13
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 319--319
+ [] [] 
+ []
+
 \openout4 = `functional_programming.vrb'.
 
- (f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.vrb (C:\Users\maria\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 335--335
+ [] [] 
+ []
+
+(f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.vrb)
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[14
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 337--337
+ [] [] 
+ []
+
+\openout4 = `functional_programming.vrb'.
+
+
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 353--353
+ [] [] 
+ []
+
+(f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.vrb)
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[15
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 372--372
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[16
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 395--395
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[17
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 418--418
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[18
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 437--437
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[19
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 459--459
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[20
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 480--480
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[21
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 505--505
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[22
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 531--531
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[23
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 533--533
+ [] [] 
+ []
+
+\openout4 = `functional_programming.vrb'.
+
+
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 552--552
+ [] [] 
+ []
+
+(f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.vrb (C:\Users\maria\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (C:\Users\maria\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty
 File: lstlang2.sty 2025/11/14 1.11b listings language file
-)) [22
+))
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
 
-] [23
+[24
 
-] [24
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 582--582
+ [] [] 
+ []
 
-] [25
 
-] [26
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
 
-] [27
+[25
 
-] [28
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 599--599
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[26
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 616--616
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[27
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 627--627
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[28
+
+]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 658--658
+ [] [] 
+ []
+
+
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[29
 
  <C:/Users/maria/AppData/Local/Programs/MiKTeX/tex/latex/beamer/beamericonarticle.pdf>]
+Overfull \hbox (15.68182pt too wide) has occurred while \output is active
+ [] [] 
+ []
+
+[30
+
+
+]
 \tf@nav=\write6
 \openout6 = `functional_programming.nav'.
 
@@ -906,20 +1226,20 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
 Package rerunfilecheck Info: File `functional_programming.out' has not changed.
-(rerunfilecheck)             Checksum: 11DE4AFEAADF059E15489F7E5151D7FC;1214.
+(rerunfilecheck)             Checksum: 45A17BEEF39212D0A375F55082C23712;600.
  ) 
 Here is how much of TeX's memory you used:
- 26387 strings out of 467870
- 505784 string characters out of 5418355
- 1130486 words of memory out of 5000000
- 54660 multiletter control sequences out of 15000+600000
- 650362 words of font info for 96 fonts, out of 8000000 for 9000
+ 26381 strings out of 467870
+ 505352 string characters out of 5418355
+ 1113599 words of memory out of 5000000
+ 54644 multiletter control sequences out of 15000+600000
+ 653166 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,123p,539b,1668s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsi0900.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0900.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2488.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1095.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1200.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0600.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0800.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1095.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1440.pk><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.pdf" (28 pages, 342282 bytes).
+ 128i,15n,123p,539b,1670s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsi0900.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0900.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2488.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1000.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1095.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1200.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss0600.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0600.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1095.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0800.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1095.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1440.pk><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.pdf" (30 pages, 398085 bytes).
 PDF statistics:
- 1003 PDF objects out of 1200 (max. 8388607)
- 70 named destinations out of 1000 (max. 500000)
- 655 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1113 PDF objects out of 1200 (max. 8388607)
+ 78 named destinations out of 1000 (max. 500000)
+ 779 words of extra memory for PDF output out of 10000 (max. 10000000)
 
