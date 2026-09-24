@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.22)  20 SEP 2026 21:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.22)  24 SEP 2026 09:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -657,24 +657,24 @@ Package babel Info: 'brazilian' activates 'portuges' shorthands.
 )
 \openout1 = `functional_programming.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -729,64 +729,64 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\maria\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 28.
+Package hyperref Info: Link coloring OFF on input line 61.
  (f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.out) (f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.out)
 \@outlinefile=\write5
 \openout5 = `functional_programming.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 28.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 61.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 28.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 61.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 28.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 28.
+(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 61.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 28.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 28.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 28.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 61.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 28.
+(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 28.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 28.
+(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 61.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 28.
+(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 28.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 28.
+(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 61.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 28.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 28.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 61.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 28.
+(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 61.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 28.
+(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 28.
+(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/cmss/b/n --> T1/cmss/b/n on input line 28.
+(Font)                  T1/cmss/b/n --> T1/cmss/b/n on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 28.
+(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 28.
+(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/cmtt/m/n --> T1/cmtt/b/n on input line 28.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 28.
+(Font)                  T1/cmtt/m/n --> T1/cmtt/b/n on input line 61.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 61.
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `normal' on input line 28.
+(Font)              `pureletters' in the math version `normal' on input line 61.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 28.
+(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 61.
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `bold' on input line 28.
+(Font)              `pureletters' in the math version `bold' on input line 61.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 28.
+(Font)                  T1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 61.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on input line 28.
+(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on input line 61.
  (C:\Users\maria\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (C:\Users\maria\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-bibliography-dictionary-English.dict
@@ -802,15 +802,20 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 \c@lstlisting=\count383
  (f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.nav)
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 28--28
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 61--61
  [] [] 
  []
 
 
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 32--32
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 65--65
  [] [] 
  []
 
+<capacy.png, id=46, 1927.2pt x 1084.05pt>
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 65.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -818,11 +823,15 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 
 [1
 
-{C:/Users/maria/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 48--48
+{C:/Users/maria/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./capacy.png>]
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 81--81
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 81.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -831,22 +840,27 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [2
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 74--74
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 107--107
  [] [] 
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 74.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 107.
 (C:\Users\maria\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 74.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 107.
  (C:\Users\maria\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 74.
+LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 107.
  (C:\Users\maria\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mathkerncmss.
 )
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 107.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
+
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
  []
@@ -854,14 +868,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [3
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 76--76
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 109--109
  [] [] 
  []
 
 \openout4 = `functional_programming.vrb'.
 
 
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 94--94
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 127--127
  [] [] 
  []
 
@@ -871,6 +885,14 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 3.
 )
+Overfull \vbox (2.71577pt too high) detected at line 127
+ []
+
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 127.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
+
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
  []
@@ -878,10 +900,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [4
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 121--121
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 154--154
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 154.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -890,10 +916,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [5
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 146--146
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 179--179
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 179.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -902,10 +932,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [6
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 175--175
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 208--208
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 208.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -914,10 +948,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [7
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 194--194
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 227--227
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 227.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -926,10 +964,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [8
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 217--217
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 250--250
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 250.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -938,10 +980,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [9
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 246--246
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 279--279
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 279.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -950,10 +996,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [10
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 273--273
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 306--306
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 306.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -962,10 +1012,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [11
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 296--296
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 329--329
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 329.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -974,10 +1028,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [12
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 317--317
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 350--350
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 350.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -986,18 +1044,23 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [13
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 319--319
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 352--352
  [] [] 
  []
 
 \openout4 = `functional_programming.vrb'.
 
 
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 335--335
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 368--368
  [] [] 
  []
 
 (f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.vrb)
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 368.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
+
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
  []
@@ -1005,18 +1068,23 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [14
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 337--337
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 370--370
  [] [] 
  []
 
 \openout4 = `functional_programming.vrb'.
 
 
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 353--353
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 386--386
  [] [] 
  []
 
 (f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.vrb)
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 386.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
+
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
  []
@@ -1024,10 +1092,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [15
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 372--372
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 405--405
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 405.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -1036,10 +1108,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [16
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 395--395
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 428--428
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 428.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -1048,10 +1124,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [17
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 418--418
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 451--451
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 451.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -1060,10 +1140,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [18
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 437--437
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 470--470
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 470.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -1072,10 +1156,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [19
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 459--459
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 492--492
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 492.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -1084,10 +1172,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [20
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 480--480
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 513--513
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 513.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -1096,10 +1188,18 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [21
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 505--505
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 538--538
  [] [] 
  []
 
+
+Overfull \vbox (4.06866pt too high) detected at line 538
+ []
+
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 538.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -1108,10 +1208,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [22
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 531--531
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 564--564
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 564.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -1120,14 +1224,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [23
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 533--533
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 566--566
  [] [] 
  []
 
 \openout4 = `functional_programming.vrb'.
 
 
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 552--552
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 585--585
  [] [] 
  []
 
@@ -1136,6 +1240,14 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (C:\Users\maria\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty
 File: lstlang2.sty 2025/11/14 1.11b listings language file
 ))
+Overfull \vbox (0.54462pt too high) detected at line 585
+ []
+
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 585.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
+
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
  []
@@ -1143,10 +1255,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [24
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 582--582
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 615--615
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 615.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -1155,10 +1271,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [25
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 599--599
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 632--632
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 632.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -1167,10 +1287,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [26
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 616--616
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 649--649
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 649.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -1179,10 +1303,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [27
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 627--627
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 660--660
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 660.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -1191,10 +1319,14 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [28
 
 ]
-Overfull \hbox (15.68182pt too wide) in paragraph at lines 658--658
+Overfull \hbox (15.68182pt too wide) in paragraph at lines 715--715
  [] [] 
  []
 
+File: capacy.png Graphic file (type png)
+<use capacy.png>
+Package pdftex.def Info: capacy.png  used on input line 715.
+(pdftex.def)             Requested size: 455.2446pt x 227.60759pt.
 
 Overfull \hbox (15.68182pt too wide) has occurred while \output is active
  [] [] 
@@ -1203,14 +1335,6 @@ Overfull \hbox (15.68182pt too wide) has occurred while \output is active
 [29
 
  <C:/Users/maria/AppData/Local/Programs/MiKTeX/tex/latex/beamer/beamericonarticle.pdf>]
-Overfull \hbox (15.68182pt too wide) has occurred while \output is active
- [] [] 
- []
-
-[30
-
-
-]
 \tf@nav=\write6
 \openout6 = `functional_programming.nav'.
 
@@ -1229,17 +1353,17 @@ Package rerunfilecheck Info: File `functional_programming.out' has not changed.
 (rerunfilecheck)             Checksum: 45A17BEEF39212D0A375F55082C23712;600.
  ) 
 Here is how much of TeX's memory you used:
- 26381 strings out of 467870
- 505352 string characters out of 5418355
- 1113599 words of memory out of 5000000
- 54644 multiletter control sequences out of 15000+600000
- 653166 words of font info for 104 fonts, out of 8000000 for 9000
+ 26375 strings out of 467870
+ 505096 string characters out of 5418355
+ 1112357 words of memory out of 5000000
+ 54641 multiletter control sequences out of 15000+600000
+ 652387 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,123p,539b,1670s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsi0900.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0900.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2488.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1000.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1095.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1200.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss0600.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0600.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1095.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0800.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1095.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1440.pk><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.pdf" (30 pages, 398085 bytes).
+ <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsi0800.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2488.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1000.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1095.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1200.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss0600.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0600.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1095.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0800.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1095.pk> <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1440.pk><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/maria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "f:/Users\Enzo HD\Github\Repos\ACML\Numerical_Paradigms-Research\Academic_Writing\Congressos\SEMANAC&T\2026\paradigma_funcional\presentation\build\functional_programming.pdf" (29 pages, 680871 bytes).
 PDF statistics:
- 1113 PDF objects out of 1200 (max. 8388607)
- 78 named destinations out of 1000 (max. 500000)
- 779 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1094 PDF objects out of 1200 (max. 8388607)
+ 76 named destinations out of 1000 (max. 500000)
+ 784 words of extra memory for PDF output out of 10000 (max. 10000000)
 

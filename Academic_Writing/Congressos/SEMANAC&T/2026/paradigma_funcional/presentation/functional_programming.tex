@@ -8,6 +8,39 @@
 \usepackage{listings}
 \usepackage{xcolor}
 
+\usepackage{graphicx}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+\usebackgroundtemplate{%
+    \includegraphics[
+        width=\paperwidth,
+        height=\paperheight-1cm
+    ]{capacy.png}%
+}
+
+\setbeamersize{
+    text margin left=1.0cm,
+    text margin right=1.0cm
+}
+
+\setbeamerfont{frametitle}{
+    size=\Large,
+    series=\bfseries
+}
+
+\setbeamercolor{frametitle}{
+    fg=black
+}
+
+\setbeamertemplate{frametitle}{%
+    \vspace{1.35cm}
+    \insertframetitle
+    \vspace{0.15cm}
+}
+
+
 \usetheme{Madrid}
 \setbeamertemplate{navigation symbols}{}
 
@@ -52,7 +85,7 @@
 \begin{frame}{Da função matemática ao programa}
   Na matemática, uma função associa entradas válidas a saídas:
   \begin{equation}\label{eq:raiz-dominio}
-    f:\mathbb{R}_{\geq 0}\longrightarrow \mathbb{R}_{\geq 0},\qquad
+    f:\mathbb{R}\longrightarrow \mathbb{R},\qquad
     f(x)=\sqrt{x}.
   \end{equation}
 
@@ -183,7 +216,7 @@ double sqrt(double x) {
 
   Se $g(x)=x+1$:
   \begin{equation*}
-    (\lambda g.\lambda x.\;g(g(x)))\;(\lambda y.\;y+1)\;3
+    (\lambda \textcolor{blue}{g}.\lambda \textcolor{red}{x}.\;\textcolor{blue}{g}(\textcolor{blue}{g}(\textcolor{red}{x})))\;\textcolor{blue}{(\lambda y.\;y+1)}\;\textcolor{red}{3}
     \longrightarrow
     5.
   \end{equation*}
@@ -589,12 +622,12 @@ x1 = newtonStep f df x0
     \item Cálculo lambda formaliza abstração, aplicação e substituição.
     \item Currying e funções de alta ordem permitem especialização.
     \item Contextos como \texttt{Maybe} tornam falhas explícitas.
-    \item Métodos numéricos podem ser vistos como composição e aplicação repetida de funções.
+    \item Métodos numéricos podem ser mais naturalmente modelados como composição e aplicação repetida de funções.
   \end{enumerate}
 
   \vspace{0.2cm}
   \begin{block}{Mensagem final}
-    A programação funcional não substitui os métodos numéricos: ela oferece uma forma mais explícita de estruturá-los.
+    A programação funcional não substitui a imperativa, mas oferece ferramentas para estruturar problemas matemáticos de forma mais natural e segura.
   \end{block}
 \end{frame}
 
@@ -626,35 +659,58 @@ x1 = newtonStep f df x0
   \end{center}
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Referências}
-  \footnotesize
-  \begin{thebibliography}{9}
-    \bibitem{pierce}
-    PIERCE, B. C.
-    \newblock \emph{Types and Programming Languages}.
-    \newblock MIT Press, 2002.
+\begin{frame}{Referências}
 
-    \bibitem{hutton}
-    HUTTON, G.
-    \newblock \emph{Programming in Haskell}.
-    \newblock Cambridge University Press.
+  \scriptsize
 
-    \bibitem{Chapra}
-    CHAPRA, S. C.; CANALE, R. P.
-    \newblock \emph{Numerical Methods for Engineers}.
-    \newblock McGraw-Hill Education.
+  \begin{columns}[T,onlytextwidth]
 
-    \bibitem{Church}
-    CHURCH, A.
-    \newblock \emph{An Unsolvable Problem of Elementary Number Theory}.
-    \newblock American Journal of Mathematics, 1936.
+    % =========================
+    % COLUNA ESQUERDA
+    % =========================
+    \column{0.49\textwidth}
 
-    \bibitem{burden}
-    BURDEN, R. L.; FAIRES, J. D.
-    \newblock \emph{Numerical Analysis}.
-    \newblock Cengage Learning.
+    \begin{thebibliography}{9}
 
-  \end{thebibliography}
+      \bibitem{pierce}
+      PIERCE, B. C.
+      \newblock \emph{Types and Programming Languages}.
+      \newblock MIT Press, 2002.
+
+      \bibitem{hutton}
+      HUTTON, G.
+      \newblock \emph{Programming in Haskell}.
+      \newblock Cambridge University Press.
+
+      \bibitem{Chapra}
+      CHAPRA, S. C.; CANALE, R. P.
+      \newblock \emph{Numerical Methods for Engineers}.
+      \newblock McGraw-Hill Education.
+
+    \end{thebibliography}
+
+    % =========================
+    % COLUNA DIREITA
+    % =========================
+    \column{0.49\textwidth}
+
+    \begin{thebibliography}{9}
+
+      \setcounter{enumiv}{3}
+
+      \bibitem{Church}
+      CHURCH, A.
+      \newblock \emph{An Unsolvable Problem of Elementary Number Theory}.
+      \newblock American Journal of Mathematics, 1936.
+
+      \bibitem{burden}
+      BURDEN, R. L.; FAIRES, J. D.
+      \newblock \emph{Numerical Analysis}.
+      \newblock Cengage Learning.
+
+    \end{thebibliography}
+
+  \end{columns}
+
 \end{frame}
-
 \end{document}
